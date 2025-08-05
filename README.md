@@ -37,8 +37,9 @@ This website has been made by the efforts of:
 - Art Young | Treasurer 2024-2025 | @Atsubyo
 - Luis Albos | Historian 2024-2025 | @Luis-Albos
 - Vijayadatta Seetharam | Design Intern 2024-2025 | @MikamiV
+- Nick Truong | Secretary 2025-2026 | @nicktnc24
 
-If there are any issues regarding the website, please first reach out to __**ART YOUNG**__ via email [art.tyoung@gmail.com](mailto:art.tyoung@gmail.com).
+If there are any issues regarding the website, please first reach out to __**NICK TRUONG**__ via email [nicktnc24@gmail.com](mailto:nicktnc24@gmail.com).
 
 ## Project Configurations
 
