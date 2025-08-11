@@ -48,12 +48,6 @@ export const NavBar = () => {
                 <div className="ml-10 flex items-baseline space-x-10">
                   {/* Add your navigation links here */}
                   <Link
-                    href="/"
-                    className="hover-underline-animation rounded-md text-gray-500"
-                  >
-                    Home
-                  </Link>
-                  <Link
                     href="/about"
                     className="hover-underline-animation rounded-md text-gray-500"
                   >

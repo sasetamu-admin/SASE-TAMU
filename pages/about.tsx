@@ -17,17 +17,18 @@ const about = () => {
             <h1 className="font-bebas text-5xl">OUR MISSION</h1>
             <div className="pb-5 pt-5">
               <div>
-                The Society of Asian Scientists and Engineers (SASE) was founded
-                in November 2007 to help Asian heritage scientific and
-                engineering professionals achieve their full potential.
-              </div>
-              <div className="font-bold">
-                SASE is dedicated to the advancement of Asian heritage
+                The Society of Asian Scientists and Engineers (SASE) is dedicated to the advancement of Asian heritage
                 scientists and engineers in education and employment so that
                 they can achieve their full career potential. In addition to
                 professional development, SASE also encourages members to
                 contribute to the enhancement of the communities in which they
                 live.
+              </div>
+              <br/>
+              <div>
+                The Society of Asian Scientists and Engineers (SASE) was founded in 
+                November 2007 and now has over 110+ collegiate chapters, 15+ professional chapters,
+                and dozens of corporate/academic partners.
               </div>
               <div className="font-bold">
                 For more information about SASE's national mission, check out{" "}
@@ -55,71 +56,94 @@ const about = () => {
 
         <div className="flex h-max justify-center bg-white p-10 pt-20 md:p-20"></div>
 
-        <div>
-          <h1 className="pl-10 pr-5 pt-20 font-bebas text-5xl md:pl-20">
-            Core Pilars
+        <div className="bg-white py-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <h1 className="mb-12 text-center font-bebas text-5xl text-black">
+            Core Pillars
           </h1>
 
-          <section
-            id="projects"
-            className="grid justify-center gap-5 bg-white py-10 pl-10 pr-10 font-source text-lg text-black md:flex-row md:pl-20 md:pr-20 lg:flex"
-          >
-            <div className="w-100 card bg-base-100 shadow-lg md:w-96">
-              <figure>
-                <Image src="/NC2.jpg" width={384} height={512} alt="NC" />
-                <div className="text-shadow-md absolute inset-0 z-10 flex justify-center rounded-2xl pt-10 font-bebas text-3xl text-white opacity-0 duration-300 hover:bg-black hover:bg-opacity-25 hover:opacity-100">
-                  SASE @ NC
+          <section className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {/* Professional Development card */}
+            <div className="group overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+              <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
+                <h2 className="text-center font-bebas text-2xl text-white">Professional Development</h2>
+              </div>
+              <div className="relative overflow-hidden">
+                <Image
+                  src="/NC2.jpg"
+                  alt="SASE TAMU at National Conference"
+                  width={384}
+                  height={320}
+                  className="h-80 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 flex items-center bg-black justify-center bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-40">
+                  <span className="font-bebas text-2xl text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    SASE TAMU @ NC
+                  </span>
                 </div>
-              </figure>
-              <div className="card-body bg-white">
-                <p className="pb-10">
-                  Prepare Asian-heritage students for success in the
-                  transnational, global business world.
+              </div>
+              <div className="p-6">
+                <p className="text-gray-700 leading-relaxed">
+                  Preparing Asian-heritage students for success in
+                  the transnational, global business world.
                 </p>
               </div>
             </div>
 
-            <div className="w-100 card bg-base-100 shadow-lg md:w-96">
-              <figure>
+            {/* Cultural Awareness card */}
+            <div className="group overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+              <div className="bg-gradient-to-r from-sky-600 to-sky-700 px-6 py-4">
+                <h2 className="text-center font-bebas text-2xl text-white">Cultural Awareness & Inclusion</h2>
+              </div>
+              <div className="relative overflow-hidden">
                 <Image
                   src="/LANTERN.jpg"
-                  width={384}
-                  height={512}
                   alt="Lantern Making Social"
-                  title="Social"
+                  width={384}
+                  height={320}
+                  className="h-80 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="text-shadow-md absolute inset-0 z-10 flex justify-center rounded-2xl pt-10 font-bebas text-3xl text-white opacity-0 duration-300 hover:bg-black hover:bg-opacity-25 hover:opacity-100">
-                  Our Lantern Making Social!
+                <div className="absolute inset-0 flex items-center bg-black justify-center bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-40">
+                  <span className="font-bebas text-2xl text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    SASE TAMU @ NC
+                  </span>
                 </div>
-              </figure>
-              <div className="card-body bg-white">
-                <p className="pb-10">
-                  Promote diversity and tolerance on campuses and in the
-                  workplace.
+              </div>
+              <div className="p-6">
+                <p className="text-gray-700 leading-relaxed">
+                  Promoting diversity and tolerance on campuses
+                  and in the workplace.
                 </p>
               </div>
             </div>
 
-            <div className="w-100 card bg-base-100 shadow-lg md:w-96">
-              <figure>
+            {/* Community Service card */}
+            <div className="group overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+              <div className="bg-gradient-to-r from-green-500 to-green-600 px-6 py-4">
+                <h2 className="text-center font-bebas text-2xl text-white">Community Service</h2>
+              </div>
+              <div className="relative overflow-hidden">
                 <Image
                   src="/STEMFEST.jpg"
+                  alt="SASE TAMU at STEMFest"
                   width={384}
-                  height={512}
-                  alt="SASE at STEMFest"
+                  height={320}
+                  className="h-80 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="text-shadow-md absolute inset-0 z-10 flex justify-center rounded-2xl pt-10 font-bebas text-3xl text-white opacity-0 duration-300 hover:bg-black hover:bg-opacity-25 hover:opacity-100">
-                  SASE @ Stemfest
+                <div className="absolute inset-0 flex items-center bg-black justify-center bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-40">
+                  <span className="font-bebas text-2xl text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    SASE @ STEMFest
+                  </span>
                 </div>
-              </figure>
-              <div className="card-body bg-white">
-                <p className="pb-10">
-                  Provide opportunities for its members to make contributions to
-                  their local communities.
+              </div>
+              <div className="p-6">
+                <p className="text-gray-700 leading-relaxed">
+                  Providing opportunities for members to make contributions to their local communities.
                 </p>
               </div>
             </div>
           </section>
+          </div>
         </div>
 
         <div className="flex h-max justify-center bg-white p-5 md:p-20"></div>
@@ -147,7 +171,6 @@ const about = () => {
             />
           </div>
         </div>
-
         <div className="flex h-max justify-center bg-white p-10 pt-20 md:p-20"></div>
       </div>
 

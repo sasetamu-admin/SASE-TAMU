@@ -71,11 +71,6 @@ const Home: NextPage = () => {
             <h1 className="font-bebas text-5xl">Our Mission</h1>
             <div className="pt-5 md:pb-5">
               <div>
-                The Society of Asian Scientists and Engineers (SASE) was founded
-                in November 2007 to help Asian heritage scientific and
-                engineering professionals achieve their full potential.
-              </div>
-              <div className="font-bold">
                 SASE is dedicated to the advancement of Asian heritage
                 scientists and engineers in education and employment so that
                 they can achieve their full career potential. In addition to

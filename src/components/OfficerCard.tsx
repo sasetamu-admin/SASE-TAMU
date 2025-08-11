@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { BsLinkedin } from "react-icons/bs";
-import type { TeamMemberCard } from "~/constants/OfficerList";
+import { TeamMemberCard } from "../constants/constants";
 
 interface OfficerCardProps {
   cardInfo: TeamMemberCard;
@@ -10,7 +10,7 @@ interface OfficerCardProps {
 
 const OfficerCard: React.FC<OfficerCardProps> = ({ cardInfo }) => {
   return (
-    <div className="card h-96 w-64 bg-base-100 shadow-xl">
+    <div className="card h-96 w-60 shadow-xl">
       <figure>
         <Image
           src={cardInfo.image.src}
@@ -18,12 +18,11 @@ const OfficerCard: React.FC<OfficerCardProps> = ({ cardInfo }) => {
           height={cardInfo.image.height}
           alt={cardInfo.image.alt}
         />
-        <div className="text-shadow-md flex justify-center rounded-2xl pt-10 font-sans"></div>
       </figure>
-      <div className="text-md card-body bg-white">
-        <div>
+      <div className="text-md card-body bg-white rounded-b-xl h-72">
+        <div className="flex flex-col">
           <div className="inline-flex">
-            <p className="text-black">{cardInfo.name}</p>
+            <p className="text-black">{cardInfo.role}</p>
             <div className="mt-1 pl-4">
               <Link
                 href={cardInfo.link}
@@ -34,8 +33,8 @@ const OfficerCard: React.FC<OfficerCardProps> = ({ cardInfo }) => {
               </Link>
             </div>
           </div>
-          <p className="text-gray-400">{cardInfo.major}</p>
-          <p className="text-gray-400">{cardInfo.role}</p>
+          <p className="text-gray-400">{cardInfo.name}</p>
+          <p className="text-gray-400 italic">{cardInfo.major}</p>
         </div>
       </div>
     </div>
