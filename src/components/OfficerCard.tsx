@@ -17,6 +17,7 @@ const OfficerCard: React.FC<OfficerCardProps> = ({ cardInfo }) => {
           width={cardInfo.image.width}
           height={cardInfo.image.height}
           alt={cardInfo.image.alt}
+          className="object-cover h-96 w-60"
         />
       </figure>
       <div className="text-md card-body bg-white rounded-b-xl h-72">
