@@ -1,5 +1,5 @@
-import type { ImageProps } from "next/image";
-import { EBoardOfficerList, GeneralOfficerList, EBoardOfficerRoles, GeneralOfficerRoles } from "./constants";
+import type { EBoardOfficerList, GeneralOfficerList } from "../constants";
+import { EBoardOfficerRoles, GeneralOfficerRoles } from "../constants";
 
 export const PastEBoardOfficers2425: EBoardOfficerList = {
   president: {

@@ -4,13 +4,13 @@ import { NavBar } from "src/components/NavBar";
 import { Footer } from "src/components/Footer";
 import OfficerCard from "~/components/OfficerCard";
 import { Advisors } from "~/constants/Advisor";
-import type { EBoardOfficerList, GeneralOfficerList } from "~/constants/constants";
+import type { AdvisorList, EBoardOfficerList, GeneralOfficerList, TeamMemberCard } from "~/constants/constants";
 // current year officers
 import { EBoardOfficers, GeneralOfficers } from "~/constants/CurrentOfficerList";
 //23-24
-import {PastEBoardOfficers2324, PastGeneralOfficers2324} from "~/constants/PastOfficerList23-24";
+import {PastEBoardOfficers2324, PastGeneralOfficers2324} from "~/constants/pastofficerlists/PastOfficerList23-24";
 //24-25
-import { PastEBoardOfficers2425, PastGeneralOfficers2425 } from "~/constants/PastOfficerList24-25";
+import { PastEBoardOfficers2425, PastGeneralOfficers2425 } from "~/constants/pastofficerlists/PastOfficerList24-25";
 
 // Interface for past officer years
 interface PastOfficerYear {
@@ -23,16 +23,21 @@ interface PastOfficerYear {
 const Team: NextPage = () => {
   const [openYear, setOpenYear] = useState<string | null>(null);
 
-  //configuration for all past officer years - easy to add new years here
+  /**
+   * Configuration for all past officer years.
+   * 
+   * To add future past officers:
+   * 1. Create new constants for the officer lists in the appropriate file (e.g., PastEBoardOfficers2526, PastGeneralOfficers2526).
+   * 2. Add a new object to the 'pastOfficerYears' array below, following the format:
+   *    {
+   *      year: "2025-26",
+   *      displayName: "2025-26 Officers",
+   *      eboard: PastEBoardOfficers2526,
+   *      general: PastGeneralOfficers2526,
+   *    }
+   * 3. Place the newest year at the top of the array for correct display order.
+   */
   const pastOfficerYears: PastOfficerYear[] = [
-    // latest year should be first
-    // to add future past officers, simply add a new object here that looks like this:
-    // {
-    //   year: "2022-23",
-    //   displayName: "2022-23 Officers",
-    //   eboard: PastEBoardOfficers2324,
-    //   general: PastGeneralOfficers2324,
-    // }
     {
       year: "2024-25",
       displayName: "2024-25 Officers",
@@ -51,18 +56,19 @@ const Team: NextPage = () => {
     setOpenYear(openYear === year ? null : year);
   };
 
-  // component function to render officers
-  const renderOfficerCards = (officers: Record<string, any>) => {
-    return (
-      <div className="flex flex-wrap justify-center gap-20 pt-10">
-        {Object.keys(officers).map((key: string, idx: number) => {
-          const officer = officers[key];
-          if (!officer) return null;
-          return <OfficerCard key={idx} cardInfo={officer} />;
-        })}
-      </div>
-    );
-  };
+  const renderOfficerCards = (
+  officers: EBoardOfficerList | GeneralOfficerList | AdvisorList
+) => {
+  return (
+    <div className="flex flex-wrap justify-center gap-20 pt-10">
+      {Object.keys(officers).map((key: string, idx: number) => {
+        const officer = (officers as Record<string, TeamMemberCard>)[key];
+        if (!officer) return null;
+        return <OfficerCard key={idx} cardInfo={officer} />;
+      })}
+    </div>
+  );
+};
 
   // component functions to render past officer years
   const renderPastOfficers = () => {

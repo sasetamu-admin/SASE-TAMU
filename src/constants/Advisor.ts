@@ -1,4 +1,4 @@
-import {AdvisorList} from "./constants";
+import type {AdvisorList} from "./constants";
 
 export const Advisors: AdvisorList = {
     pauline: {
