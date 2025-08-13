@@ -40,7 +40,7 @@ export const PastEBoardOfficers2324: EBoardOfficerList = {
   },
   treasurer: {
     image: {
-      src: "/headshots/23-24/TRES_Emma.JPG",
+      src: "/headshots/23-24/TRES_Emma.jpg",
       width: 256,
       height: 256,
       alt: "Emma Headshot",
@@ -52,7 +52,7 @@ export const PastEBoardOfficers2324: EBoardOfficerList = {
   },
   secretary: {
     image: {
-      src: "/headshots/23-24/SEC_Roshan.JPG",
+      src: "/headshots/23-24/SEC_Roshan.jpg",
       width: 256,
       height: 256,
       alt: "Roshan Headshot",
