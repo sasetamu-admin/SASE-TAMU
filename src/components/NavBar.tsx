@@ -59,50 +59,12 @@ export const NavBar = () => {
                   >
                     Our Team
                   </Link>
-                  <div className="relative inline-block text-left">
-                    <button
-                      type="button"
-                      onClick={toggleMenu}
-                      className="flex items-center justify-between text-gray-500 hover:bg-gray-50 md:border-0 md:p-0 md:hover:bg-transparent"
-                    >
-                      <div
-                        onClick={toggleMenu}
-                        className="hover-underline-animation"
-                      >
-                        Events
-                      </div>
-                      <svg
-                        className="ml-1 h-4 w-4"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        ></path>
-                      </svg>
-                    </button>
-                    {isMenuOpen && (
-                      <div className="absolute right-0 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-                        <div
-                          className="text-md py-1"
-                          role="menu"
-                          aria-orientation="vertical"
-                          aria-labelledby="options-menu"
-                        >
-                          <Link
-                            href="/upcoming-events"
-                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                            role="menuitem"
-                          >
-                            Upcoming Events
-                          </Link>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  <Link
+                    href="/upcoming-events"
+                    className="hover-underline-animation rounded-md text-gray-500"
+                  >
+                    Upcoming Events
+                  </Link>
                   <Link
                     href="/join"
                     className="hover-underline-animation rounded-md text-gray-500"
