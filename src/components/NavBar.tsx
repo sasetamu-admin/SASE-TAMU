@@ -110,6 +110,12 @@ export const NavBar = () => {
                     Join
                   </Link>
                   <Link
+                    href="/get-involved"
+                    className="hover-underline-animation rounded-md text-gray-500"
+                  >
+                    Get Involved
+                  </Link>
+                  <Link
                     href="/sponsor"
                     className="hover-underline-animation rounded-md text-gray-500"
                   >
