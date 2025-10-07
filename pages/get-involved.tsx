@@ -5,16 +5,9 @@ import { motion } from "framer-motion";
 import { Footer } from '~/components/Footer';
 import { MdArrowForwardIos } from "react-icons/md";
 
-enum layout {
-    vertical,
-    horizontal
-}
-
 const GetInvolvedPage: React.FC = () => {
     const [opacity, setOpacity] = useState<number>(1);
-    let layout_to_show: layout = layout.vertical
     
-
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
@@ -42,8 +35,7 @@ const GetInvolvedPage: React.FC = () => {
                         </div>
                     </div>
                 </div>
-
-                {layout_to_show == layout.vertical && <motion.div
+                <motion.div
                     initial={{ opacity: 0, y: 100}}
                     whileInView={{ opacity: 1, y: 0}}
                     transition={{ duration: 1.2, ease: "easeInOut"}}
@@ -179,17 +171,6 @@ const GetInvolvedPage: React.FC = () => {
                                 Application Link
                             </button>
                         </motion.div>
-                        {/* <div className='text-black text-justify w-full p-3'>
-                            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-                            sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
-                            Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer 
-                            nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra 
-                            inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-                            sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
-                            Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer 
-                            nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra 
-                            inceptos himenaeos.
-                        </div> */}
                     </div>
                     <div className = "bg-sky-100 bg-gradient-to-l from-sky-100 to-slate-50 w-full my-2 flex flex-col items-start p-2 rounded-xl">
                         <div className='flex flex-row items-center'>
@@ -305,143 +286,8 @@ const GetInvolvedPage: React.FC = () => {
                                 </div>
                             </div>
                         </motion.div>
-                        
-                        
-                        
-                        {/* <div className='text-black text-justify w-full p-3'>
-                            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-                            sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
-                            Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer 
-                            nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra 
-                            inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-                            sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
-                            Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer 
-                            nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra 
-                            inceptos himenaeos.
-                        </div> */}
                     </div>
-                </motion.div>}
-
-                {layout_to_show == layout.horizontal && <motion.div
-                    initial={{ opacity: 0, y: 100}}
-                    whileInView={{ opacity: 1, y: 0}}
-                    transition={{ duration: 1.2, ease: "easeInOut"}}
-                    viewport={{ once: true }}
-                    className = "bg-white flex flex-row p-4 h-fit"
-                >
-                    <motion.div 
-                    initial={{ opacity: 0, y: 0, x:-100}}
-                    whileInView={{ opacity: 1, y: 0, x:0}}
-                    transition={{ duration: 1.2, ease: "easeInOut"}}
-                    viewport={{ once: true }}
-                    className = "bg-white h-fit w-full my-2 flex flex-col items-start p-2 mr-2"
-                    >
-                        <div className='flex flex-col justify-center items-start'>
-                            <div className = "text-black font-bebas text-5xl font-bold my-2 ml-2 tracking-wide">
-                                Interested in Event Planning and Leadership?
-                            </div>
-                            <div className = "text-sky-700 font-bebas text-5xl font-bold my-2 ml-2 tracking-wide hover:text-6xl hover:text-sky-800 transition-all duration-500 ease-in-out">
-                                Join SASE Committee!
-                            </div>
-                        </div>
-                        <div className = "text-black font-bebas text-5xl font-bold my-2 flex flex-row justify-between ">
-                            <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2, ease: "easeInOut"}}>
-                                <Image
-                                    className="w-full rounded-xl px-2"
-                                    src="/scrc.jpg"
-                                    width={440}
-                                    height={330}
-                                    alt="Picture of SASE SCRC"
-                                />
-                            </motion.div>
-                            <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2, ease: "easeInOut"}}>
-                                <Image
-                                    className="w-full rounded-xl px-2"
-                                    src="/scrc.jpg"
-                                    width={440}
-                                    height={330}
-                                    alt="Picture of SASE SCRC"
-                                />
-                            </motion.div>
-                            <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2, ease: "easeInOut"}}>
-                                <Image
-                                    className="w-full rounded-xl px-2"
-                                    src="/scrc.jpg"
-                                    width={440}
-                                    height={330}
-                                    alt="Picture of SASE SCRC"
-                                />
-                            </motion.div>
-                        </div>
-                        <div className='text-black text-justify w-full ml-2'>
-                            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-                            sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
-                            Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer 
-                            nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra 
-                            inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-                            sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
-                            Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer 
-                            nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra 
-                            inceptos himenaeos.
-                        </div>
-                    </motion.div>
-                    <motion.div 
-                    initial={{ opacity: 0, y: 0, x:100}}
-                    whileInView={{ opacity: 1, y: 0, x:0}}
-                    transition={{ duration: 1.2, ease: "easeInOut"}}
-                    viewport={{ once: true }}
-                    className = "bg-white h-fit w-full my-2 flex flex-col items-start p-2"
-                    >
-                        <div className='flex flex-col justify-center items-start'>
-                            <div className = "text-black font-bebas text-5xl font-bold my-2 ml-2 tracking-wide">
-                                Interested in Technical Marketing and Web-Dev?
-                            </div>
-                            <div className = "text-sky-700 font-bebas text-5xl font-bold my-2 ml-2 tracking-wide hover:text-6xl hover:text-sky-800 transition-all duration-500 ease-in-out">
-                                Join Design Team!
-                            </div>
-                        </div>
-                        <div className = "text-black font-bebas text-5xl font-bold my-2 flex flex-row justify-between ">
-                            <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2, ease: "easeInOut"}}>
-                                <Image
-                                    className="w-full rounded-xl px-2"
-                                    src="/scrc.jpg"
-                                    width={440}
-                                    height={330}
-                                    alt="Picture of SASE SCRC"
-                                />
-                            </motion.div>
-                            <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2, ease: "easeInOut"}}>
-                                <Image
-                                    className="w-full rounded-xl px-2"
-                                    src="/scrc.jpg"
-                                    width={440}
-                                    height={330}
-                                    alt="Picture of SASE SCRC"
-                                />
-                            </motion.div>
-                            <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2, ease: "easeInOut"}}>
-                                <Image
-                                    className="w-full rounded-xl px-2"
-                                    src="/scrc.jpg"
-                                    width={440}
-                                    height={330}
-                                    alt="Picture of SASE SCRC"
-                                />
-                            </motion.div>
-                        </div>
-                        <div className='text-black text-justify w-full ml-2'>
-                            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-                            sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
-                            Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer 
-                            nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra 
-                            inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-                            sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
-                            Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer 
-                            nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra 
-                            inceptos himenaeos.
-                        </div>
-                    </motion.div>
-                </motion.div> }
+                </motion.div>
             </div>
             <div className="flex h-96 items-center justify-center bg-white bg-officer bg-cover bg-fixed bg-center md:block"></div>
             <Footer />
