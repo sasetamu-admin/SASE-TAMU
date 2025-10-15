@@ -4,9 +4,10 @@ import { NavBar } from "src/components/NavBar";
 import { Footer } from "src/components/Footer";
 import OfficerCard from "~/components/OfficerCard";
 import { Advisors } from "~/constants/Advisor";
+import Image from "next/image";
 import type { AdvisorList, EBoardOfficerList, GeneralOfficerList, TeamMemberCard } from "~/constants/constants";
 // current year officers
-import { EBoardOfficers, GeneralOfficers } from "~/constants/CurrentOfficerList";
+import { EBoardOfficers, GeneralOfficers, OfficerTeamPhoto } from "~/constants/CurrentOfficerList";
 //23-24
 import {PastEBoardOfficers2324, PastGeneralOfficers2324} from "~/constants/pastofficerlists/PastOfficerList23-24";
 //24-25
@@ -55,6 +56,8 @@ const Team: NextPage = () => {
   const toggleYear = (year: string) => {
     setOpenYear(openYear === year ? null : year);
   };
+
+  
 
   const renderOfficerCards = (
   officers: EBoardOfficerList | GeneralOfficerList | AdvisorList
@@ -109,6 +112,16 @@ const Team: NextPage = () => {
       
       <div className="pt-20 flex justify-center font-bebas text-5xl text-black">
         Meet our Team 2025-26
+      </div>
+
+      <div className="my-10 mx-5 flex justify-center">
+        <Image
+          src={OfficerTeamPhoto.src}
+          alt="Officer Team Photo"
+          width={1200}
+          height={600}
+          className="w-full max-w-6xl rounded-lg object-cover"
+        />
       </div>
 
       <div className="flex justify-center font-bebas text-4xl text-gray-400">
