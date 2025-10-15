@@ -6,7 +6,7 @@ import { EBoardOfficerRoles, GeneralOfficerRoles } from "./constants";
 export const EBoardOfficers: EBoardOfficerList = {
   president: {
     image: {
-      src: "/headshots/25-26/Pres_Pranav_2526.JPG",
+      src: "/headshots/25-26/Pres_Pranav_2526.jpg",
       width: 256,
       height: 256,
       alt: "Pranav Headshot",
@@ -141,7 +141,7 @@ export const GeneralOfficers: GeneralOfficerList = {
   },
   science: {
     image: {
-      src: "/headshots/25-26/Science_Aidan_2526.JPG",
+      src: "/headshots/25-26/Science_Aidan_2526.jpg",
       width: 256,
       height: 256,
       alt: "Aidan Headshot",
@@ -153,7 +153,7 @@ export const GeneralOfficers: GeneralOfficerList = {
   },
   sports: {
     image: {
-      src: "/headshots/25-26/Sports_Ryan_2526.JPG",
+      src: "/headshots/25-26/Sports_Ryan_2526.jpg",
       width: 256,
       height: 256,
       alt: "Ryan Headshot",
