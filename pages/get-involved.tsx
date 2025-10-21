@@ -1,13 +1,50 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { NavBar } from '~/components/NavBar';
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { animate, motion, PanInfo, useMotionValue } from "framer-motion";
 import { Footer } from '~/components/Footer';
 import { MdArrowForwardIos } from "react-icons/md";
 
 const GetInvolvedPage: React.FC = () => {
     const [opacity, setOpacity] = useState<number>(1);
-    
+    const [committeeCarouselIndex, setCommitteeCarouselIndex] = useState<number>(0);
+    const [isCommitteeCarouselDragging, setCommitteeCarouselDragging] = useState<boolean>(false);
+    const x = useMotionValue(0);
+    const carouselRef = useRef<HTMLDivElement>(null);
+    const committeePictures = ["/scrc.jpg", "/scrc.jpg", "/scrc.jpg"];
+
+    function handleDrag(e: TouchEvent | MouseEvent | PointerEvent, info: PanInfo) {
+        setCommitteeCarouselDragging(false);
+        if (!carouselRef.current) return;
+
+        const containerWidth = carouselRef.current.offsetWidth;
+        const offset = info.offset.x;
+        const velocity = info.velocity.x;
+        let newIndex = committeeCarouselIndex;
+
+        if (Math.abs(velocity) > 500) {
+            newIndex = velocity > 0 ? committeeCarouselIndex - 1 : committeeCarouselIndex + 1;
+        } else if (Math.abs(offset) > containerWidth * 0.3) {
+            newIndex = offset > 0 ? committeeCarouselIndex - 1 : committeeCarouselIndex + 1;
+        }
+
+        newIndex = Math.max(0, Math.min(committeePictures.length - 1, newIndex));
+        setCommitteeCarouselIndex(newIndex);
+    }
+
+    useEffect(() => {
+    if (!isCommitteeCarouselDragging && carouselRef.current) {
+        const containerWidth = carouselRef.current.offsetWidth;
+        const targetX = -committeeCarouselIndex * containerWidth;
+
+        animate(x, targetX, {
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
+        });
+    }
+    }, [committeeCarouselIndex, x, isCommitteeCarouselDragging]);
+
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
@@ -61,7 +98,7 @@ const GetInvolvedPage: React.FC = () => {
                             whileInView={{ opacity: 1}}
                             transition={{ duration: 1.2, ease: "easeInOut"}}
                             viewport={{ once: true }}
-                        className = "text-black font-bebas text-5xl font-bold my-2 flex flex-row justify-between ">
+                        className = "hidden sm:flex text-black font-bebas text-5xl font-bold my-2 flex-row justify-between ">
                             <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2, ease: "easeInOut"}}>
                                 <Image
                                     className="w-full rounded-xl px-2"
@@ -90,6 +127,28 @@ const GetInvolvedPage: React.FC = () => {
                                 />
                             </motion.div>
                         </motion.div>
+                        <div ref={carouselRef} className="flex sm:hidden relative overflow-hidden w-full">
+                            <motion.div
+                                className="flex"
+                                drag="x"
+                                dragElastic={0.2}
+                                dragMomentum={false}
+                                onDragStart={() => setCommitteeCarouselDragging(true)}
+                                onDragEnd={(e, info) => {handleDrag(e, info)}}
+                                style={{ x }}
+                            >
+                                {committeePictures.map((item, id) => (
+                                    <div key={id} className="shrink-0 w-full h-[50vh] sm:h-[400px]">
+                                        <img
+                                            src={item}
+                                            alt={`committee ${id}`}
+                                            className="w-full h-full object-cover rounded-lg pointer-events-none"
+                                            draggable={false}
+                                        />
+                                    </div>
+                                ))}
+                            </motion.div>
+                        </div>
                         <motion.div 
                             initial={{ opacity: 0}}
                             whileInView={{ opacity: 1}}
