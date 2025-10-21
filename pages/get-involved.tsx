@@ -154,7 +154,8 @@ const GetInvolvedPage: React.FC = () => {
                             whileInView={{ opacity: 1}}
                             transition={{ duration: 1.2, ease: "easeInOut"}}
                             viewport={{ once: true }}
-                            className='flex flex-row w-full justify-evenly m-1'
+                            //className='flex flex-row w-full justify-evenly m-1'
+                            className='flex flex-col md:flex-row w-full justify-evenly m-1 gap-4'
                         >
                             <div className='flex flex-col w-[50%] border-2 border-emerald-300 p-4 mx-2 rounded-md'>
                                 <div className='text-black font-bebas text-3xl'>
@@ -284,7 +285,8 @@ const GetInvolvedPage: React.FC = () => {
                             whileInView={{ opacity: 1}}
                             transition={{ duration: 0.8, ease: "easeInOut"}}
                             viewport={{ once: true }}
-                            className='flex flex-row w-full justify-evenly m-1'
+                            //className='flex flex-row w-full justify-evenly m-1'
+                            className='flex flex-col md:flex-row w-full justify-evenly m-1 gap-4'
                         >
                             <div className='flex flex-col w-[50%] border-2 border-sky-300 p-4 mx-2 rounded-md'>
                                 <div className='text-black font-bebas text-3xl'>
