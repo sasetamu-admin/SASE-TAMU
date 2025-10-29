@@ -4,63 +4,26 @@ import Image from "next/image";
 import { animate, motion, PanInfo, useMotionValue } from "framer-motion";
 import { Footer } from '~/components/Footer';
 import { MdArrowForwardIos } from "react-icons/md";
+import AutoCarousel from '~/components/ImageCarousel';
 
 const GetInvolvedPage: React.FC = () => {
     const [opacity, setOpacity] = useState<number>(1);
-    const [committeeCarouselIndex, setCommitteeCarouselIndex] = useState<number>(0);
-    const [isCommitteeCarouselDragging, setCommitteeCarouselDragging] = useState<boolean>(false);
-    const x = useMotionValue(0);
-    const carouselRef = useRef<HTMLDivElement>(null);
-    const committeePictures = ["/scrc.jpg", "/scrc.jpg", "/scrc.jpg"];
-
-    function handleDrag(e: TouchEvent | MouseEvent | PointerEvent, info: PanInfo) {
-        setCommitteeCarouselDragging(false);
-        if (!carouselRef.current) return;
-
-        const containerWidth = carouselRef.current.offsetWidth;
-        const offset = info.offset.x;
-        const velocity = info.velocity.x;
-        let newIndex = committeeCarouselIndex;
-
-        if (Math.abs(velocity) > 500) {
-            newIndex = velocity > 0 ? committeeCarouselIndex - 1 : committeeCarouselIndex + 1;
-        } else if (Math.abs(offset) > containerWidth * 0.3) {
-            newIndex = offset > 0 ? committeeCarouselIndex - 1 : committeeCarouselIndex + 1;
-        }
-
-        newIndex = Math.max(0, Math.min(committeePictures.length - 1, newIndex));
-        setCommitteeCarouselIndex(newIndex);
-    }
-
     useEffect(() => {
-    if (!isCommitteeCarouselDragging && carouselRef.current) {
-        const containerWidth = carouselRef.current.offsetWidth;
-        const targetX = -committeeCarouselIndex * containerWidth;
-
-        animate(x, targetX, {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-        });
-    }
-    }, [committeeCarouselIndex, x, isCommitteeCarouselDragging]);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-            const fadePoint = 900; 
-            const newOpacity = Math.max(1 - scrollY / fadePoint, 0);
-            setOpacity(newOpacity);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+              const handleScroll = () => {
+                  const scrollY = window.scrollY;
+                  const fadePoint = 900; 
+                  const newOpacity = Math.max(1 - scrollY / fadePoint, 0);
+                  setOpacity(newOpacity);
+              };
+      
+              window.addEventListener("scroll", handleScroll);
+              return () => window.removeEventListener("scroll", handleScroll);
+          }, []);
 
     return (
         <>
-            <div className="z-40 w-full">
-                <NavBar />
+            <div className="z-40 w-full absolute">
+                <NavBar transparent = {true}/>
             </div>
             <div className='bg-white font-source text-black overflow-x-hidden overflow-y-hidden'>
                 <div className=' flex h-screen items-center justify-center bg-white bg-informational bg-cover bg-fixed bg-center' style={{ opacity, transition: "opacity 0.3s linear" }}>
@@ -127,28 +90,7 @@ const GetInvolvedPage: React.FC = () => {
                                 />
                             </motion.div>
                         </motion.div>
-                        <div ref={carouselRef} className="flex sm:hidden relative overflow-hidden w-full">
-                            <motion.div
-                                className="flex"
-                                drag="x"
-                                dragElastic={0.2}
-                                dragMomentum={false}
-                                onDragStart={() => setCommitteeCarouselDragging(true)}
-                                onDragEnd={(e, info) => {handleDrag(e, info)}}
-                                style={{ x }}
-                            >
-                                {committeePictures.map((item, id) => (
-                                    <div key={id} className="shrink-0 w-full h-[50vh] sm:h-[400px]">
-                                        <img
-                                            src={item}
-                                            alt={`committee ${id}`}
-                                            className="w-full h-full object-cover rounded-lg pointer-events-none"
-                                            draggable={false}
-                                        />
-                                    </div>
-                                ))}
-                            </motion.div>
-                        </div>
+                        <AutoCarousel className='sm:hidden'/>
                         <motion.div 
                             initial={{ opacity: 0}}
                             whileInView={{ opacity: 1}}
@@ -232,8 +174,8 @@ const GetInvolvedPage: React.FC = () => {
                             </button>
                         </motion.div>
                     </div>
-                    <div className = "bg-sky-100 bg-gradient-to-l from-sky-100 to-slate-50 w-full my-2 flex flex-col items-start p-2 rounded-xl">
-                        <div className='flex flex-row items-center'>
+                    <div className = "bg-white w-full my-2 flex flex-col items-start p-2 rounded-xl">
+                        <div className='flex flex-col items-start sm:items-center sm:flex-row'>
                             <div className = "text-black font-bebas text-5xl font-bold my-2 ml-2 tracking-wide">
                                 Interested in Technical Marketing and Web-Dev?
                             </div>
@@ -246,107 +188,15 @@ const GetInvolvedPage: React.FC = () => {
                                 Join Design Team!
                             </motion.div>
                         </div>
-                        <motion.div className = "text-black font-bebas text-5xl font-bold my-2 flex flex-row justify-between "
-                            initial={{ opacity: 0}}
-                            whileInView={{ opacity: 1}}
-                            transition={{ duration: 0.8, ease: "easeInOut"}}
-                            viewport={{ once: true }}
-                        >
-                            <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2, ease: "easeInOut"}}>
-                                <Image
-                                    className="w-full rounded-xl px-2"
-                                    src="/scrc.jpg"
-                                    width={440}
-                                    height={330}
-                                    alt="Picture of SASE SCRC"
-                                />
-                            </motion.div>
-                            <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2, ease: "easeInOut"}}>
-                                <Image
-                                    className="w-full rounded-xl px-2"
-                                    src="/scrc.jpg"
-                                    width={440}
-                                    height={330}
-                                    alt="Picture of SASE SCRC"
-                                />
-                            </motion.div>
-                            <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2, ease: "easeInOut"}}>
-                                <Image
-                                    className="w-full rounded-xl px-2"
-                                    src="/scrc.jpg"
-                                    width={440}
-                                    height={330}
-                                    alt="Picture of SASE SCRC"
-                                />
-                            </motion.div>
-                        </motion.div>
-                        <motion.div 
-                            initial={{ opacity: 0}}
-                            whileInView={{ opacity: 1}}
-                            transition={{ duration: 0.8, ease: "easeInOut"}}
-                            viewport={{ once: true }}
-                            //className='flex flex-row w-full justify-evenly m-1'
-                            className='flex flex-col md:flex-row w-full justify-evenly m-1 gap-4'
-                        >
-                            <div className='flex flex-col w-[50%] border-2 border-sky-300 p-4 mx-2 rounded-md'>
-                                <div className='text-black font-bebas text-3xl'>
-                                    Responsibilities
-                                </div>
-                                <div className='flex flex-row items-center'>
-                                    <MdArrowForwardIos size={20} className='text-sky-900'/>
-                                    <div className='text-xl ml-2'>
-                                        Lorem ipsum dolor sit amet consectetur adipiscing elit
-                                    </div>
-                                </div>
-                                <div className='flex flex-row items-center'>
-                                    <MdArrowForwardIos size={20} className='text-sky-900'/>
-                                    <div className='text-xl ml-2'>
-                                        Quisque faucibus ex sapien vitae pellentesque
-                                    </div>
-                                </div>
-                                <div className='flex flex-row items-center'>
-                                    <MdArrowForwardIos size={20} className='text-sky-900'/>
-                                    <div className='text-xl ml-2'>
-                                        Tempus leo eu aenean sed diam urna tempor. 
-                                    </div>
-                                </div>
-                                <div className='flex flex-row items-center'>
-                                    <MdArrowForwardIos size={20} className='text-sky-900'/>
-                                    <div className='text-xl ml-2'>
-                                        Ut hendrerit semper vel class aptent taciti sociosqu. 
-                                    </div>
+                        <div className='flex flex-col sm:flex-row items-start pl-2'>
+                            <AutoCarousel/>
+                            <div className='flex flex-col items-start'>
+                                <div className = "text-black font-bebas text-2xl font-bold my-2 ml-2 tracking-wide">
+                                    Description
                                 </div>
                             </div>
-                            <div className='flex flex-col w-[50%] border-2 border-sky-300 p-4 mx-2 rounded-md'>
-                                <div className='text-black font-bebas text-3xl '>
-                                    Benefits
-                                </div>
-                                <div className='flex flex-row items-center'>
-                                    <MdArrowForwardIos size={20} className='text-sky-900'/>
-                                    <div className='text-xl ml-2'>
-                                        Lorem ipsum dolor sit amet consectetur adipiscing elit
-                                    </div>
-                                </div>
-                                <div className='flex flex-row items-center'>
-                                    <MdArrowForwardIos size={20} className='text-sky-900'/>
-                                    <div className='text-xl ml-2'>
-                                        Quisque faucibus ex sapien vitae pellentesque
-                                    </div>
-                                </div>
-                                <div className='flex flex-row items-center'>
-                                    <MdArrowForwardIos size={20} className='text-sky-900'/>
-                                    <div className='text-xl ml-2'>
-                                        Tempus leo eu aenean sed diam urna tempor. 
-                                    </div>
-                                </div>
-                                <div className='flex flex-row items-center'>
-                                    <MdArrowForwardIos size={20} className='text-sky-900'/>
-                                    <div className='text-xl ml-2'>
-                                        Ut hendrerit semper vel class aptent taciti sociosqu. 
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
+                        </div>
+                        
                     </div>
                 </motion.div>
             </div>
