@@ -7,6 +7,9 @@ import { MdArrowForwardIos } from "react-icons/md";
 import AutoCarousel from '~/components/ImageCarousel';
 
 const GetInvolvedPage: React.FC = () => {
+    const committeePictures = ["/scrc.jpg", "/scrc.jpg", "/scrc.jpg"];
+    const designTeamPictures = ["/squad.jpg", "/squad.jpg", "/squad.jpg"];
+
     const [opacity, setOpacity] = useState<number>(1);
     useEffect(() => {
               const handleScroll = () => {
@@ -58,7 +61,7 @@ const GetInvolvedPage: React.FC = () => {
                             </motion.div>
                         </div>
                     <div className="flex flex-col sm:flex-row items-start pl-2">
-                        <AutoCarousel />
+                        <AutoCarousel items={committeePictures} alt = "Committee "/>
                         <div className="pl-4 pr-4 pt-4 md:w-1/2">
                             {/* <h1 className="font-bebas text-5xl">DESCRIPTION</h1> */}
                             <div className="pb-5 pt-5">
@@ -89,7 +92,7 @@ const GetInvolvedPage: React.FC = () => {
                             </motion.div>
                         </div>
                     <div className="flex flex-col sm:flex-row-reverse justify-end items-start pl-2 text-left">
-                        <AutoCarousel />
+                        <AutoCarousel items = {designTeamPictures} alt = {"Design Team "}/>
                         <div className="pl-4 pr-4 pt-4 md:w-1/2">
                             <div className="pb-5 pt-5">
                                 <div className="leading-relaxed text-lg text-gray-700">

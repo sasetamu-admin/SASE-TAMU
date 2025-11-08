@@ -3,16 +3,17 @@ import { motion, useMotionValue, animate, PanInfo } from "framer-motion";
 
 interface CarouselProps {
   className?: string; 
+  items: string[];
+  alt: string;
 }
 
 
-const AutoCarousel:React.FC<CarouselProps> = ({className = ''}) => {
+const AutoCarousel:React.FC<CarouselProps> = ({className = '', items, alt}) => {
   const [committeeCarouselIndex, setCommitteeCarouselIndex] = useState<number>(0);
       const [isCommitteeCarouselDragging, setCommitteeCarouselDragging] = useState<boolean>(false);
       const x = useMotionValue(0);
       const carouselRef = useRef<HTMLDivElement>(null);
-      const committeePictures = ["/scrc.jpg", "/scrc.jpg", "/scrc.jpg"];
-      const extendedPictures = [...committeePictures, ...committeePictures];
+      const extendedPictures = [...items, ...items];
   
       function handleDrag(e: TouchEvent | MouseEvent | PointerEvent, info: PanInfo) {
           setCommitteeCarouselDragging(false);
@@ -29,7 +30,7 @@ const AutoCarousel:React.FC<CarouselProps> = ({className = ''}) => {
               newIndex = offset > 0 ? committeeCarouselIndex - 1 : committeeCarouselIndex + 1;
           }
   
-          newIndex = Math.max(0, Math.min(committeePictures.length - 1, newIndex));
+          newIndex = Math.max(0, Math.min(items.length - 1, newIndex));
           setCommitteeCarouselIndex(newIndex);
       }
   
@@ -57,7 +58,7 @@ const AutoCarousel:React.FC<CarouselProps> = ({className = ''}) => {
           if (isCommitteeCarouselDragging) return;
   
           currentIndex += 1;
-          if (currentIndex > committeePictures.length) {
+          if (currentIndex > items.length) {
               currentIndex = 1;
               x.set(0);
           }
@@ -71,33 +72,33 @@ const AutoCarousel:React.FC<CarouselProps> = ({className = ''}) => {
       }, 4000); 
   
       return () => clearInterval(interval);
-  }, [x, isCommitteeCarouselDragging, committeePictures.length]);
+  }, [x, isCommitteeCarouselDragging, items.length]);
 
   
 
   return (
     <div ref={carouselRef} className={`flex relative overflow-hidden w-full sm:w-[40%] ${className}`}>
-                                <motion.div
-                                    className="flex"
-                                    drag="x"
-                                    dragElastic={0.2}
-                                    dragMomentum={false}
-                                    onDragStart={() => setCommitteeCarouselDragging(true)}
-                                    onDragEnd={(e, info) => {handleDrag(e, info)}}
-                                    style={{ x }}
-                                >
-                                    {extendedPictures.map((item, id) => (
-  <div key={id} className="shrink-0 w-full h-[50vh] sm:h-[400px]">
-    <img
-      src={item}
-      alt={`committee ${id}`}
-      className="w-full h-full object-cover rounded-lg pointer-events-none"
-      draggable={false}
-    />
-  </div>
-))}
-                                </motion.div>
-                            </div>
+      <motion.div
+        className="flex"
+        drag="x"
+        dragElastic={0.2}
+        dragMomentum={false}
+        onDragStart={() => setCommitteeCarouselDragging(true)}
+        onDragEnd={(e, info) => {handleDrag(e, info)}}
+        style={{ x }}
+      >
+        {extendedPictures.map((item, id) => (
+          <div key={id} className="shrink-0 w-full h-[50vh] sm:h-[400px]">
+            <img
+              src={item}
+              alt={`committee ${id}`}
+              className="w-full h-full object-cover rounded-lg pointer-events-none"
+              draggable={false}
+            />
+          </div>
+        ))}
+      </motion.div>
+    </div>
   );
 };
 
