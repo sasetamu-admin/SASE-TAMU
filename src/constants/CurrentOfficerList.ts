@@ -1,10 +1,12 @@
 import type { EBoardOfficerList, GeneralOfficerList } from "./constants";
 import { EBoardOfficerRoles, GeneralOfficerRoles } from "./constants";
 
+// add /comingsoon.png for placeholder images
+
 export const EBoardOfficers: EBoardOfficerList = {
   president: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/Pres_Pranav_2526.jpg",
       width: 256,
       height: 256,
       alt: "Pranav Headshot",
@@ -16,31 +18,31 @@ export const EBoardOfficers: EBoardOfficerList = {
   },
   evp: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/EVP_Kiera_2526.JPG",
       width: 256,
       height: 256,
       alt: "Kiera Headshot",
     },
     name: "Kiera Joy Ocampo",
-    major: "General Engineering '27",
+    major: "Industrial Distribution '27",
     role: EBoardOfficerRoles.EVP,
     link: "https://www.linkedin.com/in/kiera-joy-ocampo-2aa054300/",
   },
   ivp: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/IVP_Samantha_2526.JPG",
       width: 256,
       height: 256,
       alt: "Sam Headshot",
     },
     name: "Samantha Li",
-    major: "Biochemistry '27",
+    major: "Chemical Engineering '27",
     role: EBoardOfficerRoles.IVP,
     link: "https://www.linkedin.com/in/samantha-li-069a282b7/",
   },
   treasurer: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/Treasurer_Mya_2526.JPG",
       width: 256,
       height: 256,
       alt: "Mya Headshot",
@@ -52,7 +54,7 @@ export const EBoardOfficers: EBoardOfficerList = {
   },
   secretary: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/Secretary_Nick_2526.JPG",
       width: 256,
       height: 256,
       alt: "Nick Headshot",
@@ -67,7 +69,7 @@ export const EBoardOfficers: EBoardOfficerList = {
 export const GeneralOfficers: GeneralOfficerList = {
   techMarketing: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/Marketing_Elena_2526.JPG",
       width: 256,
       height: 256,
       alt: "Elena Headshot",
@@ -79,7 +81,7 @@ export const GeneralOfficers: GeneralOfficerList = {
   },
   historian: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/Historian_Maxwell_2526.JPG",
       width: 256,
       height: 256,
       alt: "Max Headshot",
@@ -91,7 +93,7 @@ export const GeneralOfficers: GeneralOfficerList = {
   },
   social: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/Social_Leon_2526.JPG",
       width: 256,
       height: 256,
       alt: "Leon Headshot",
@@ -103,7 +105,7 @@ export const GeneralOfficers: GeneralOfficerList = {
   },
   pr: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/PR_Kelly_2526.JPG",
       width: 256,
       height: 256,
       alt: "Kelly Headshot",
@@ -115,7 +117,7 @@ export const GeneralOfficers: GeneralOfficerList = {
   },
   fundraising: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/Fundraising_Tyler_2526.JPG",
       width: 256,
       height: 256,
       alt: "Tyler Headshot",
@@ -127,7 +129,7 @@ export const GeneralOfficers: GeneralOfficerList = {
   },
   logistics: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/Logistics_Matthew_2526.JPG",
       width: 256,
       height: 256,
       alt: "Matthew Headshot",
@@ -139,7 +141,7 @@ export const GeneralOfficers: GeneralOfficerList = {
   },
   science: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/Science_Aidan_2526.jpg",
       width: 256,
       height: 256,
       alt: "Aidan Headshot",
@@ -151,7 +153,7 @@ export const GeneralOfficers: GeneralOfficerList = {
   },
   sports: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/Sports_Ryan_2526.jpg",
       width: 256,
       height: 256,
       alt: "Ryan Headshot",
@@ -163,7 +165,7 @@ export const GeneralOfficers: GeneralOfficerList = {
   },
   development: {
     image: {
-      src: "/comingsoon.png",
+      src: "/headshots/25-26/Development_Emmaus_2526.JPG",
       width: 256,
       height: 256,
       alt: "Emmaus Headshot",
@@ -174,3 +176,7 @@ export const GeneralOfficers: GeneralOfficerList = {
     link: "https://www.linkedin.com/in/emmaustorres/",
   },
 };
+
+export const OfficerTeamPhoto = {
+  src: "/headshots/25-26/OfficerTeam_Photo_2526.jpg",
+}
