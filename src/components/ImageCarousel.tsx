@@ -77,7 +77,7 @@ const AutoCarousel:React.FC<CarouselProps> = ({className = '', items, alt}) => {
   
 
   return (
-    <div ref={carouselRef} className={`flex relative overflow-hidden w-full sm:w-[40%] ${className}`}>
+    <div ref={carouselRef} className={`flex relative overflow-hidden w-full lg:w-[40%] ${className}`}>
       <motion.div
         className="flex"
         drag="x"
@@ -88,7 +88,7 @@ const AutoCarousel:React.FC<CarouselProps> = ({className = '', items, alt}) => {
         style={{ x }}
       >
         {extendedPictures.map((item, id) => (
-          <div key={id} className="shrink-0 w-full h-[50vh] sm:h-[400px]">
+          <div key={id} className="shrink-0 w-full h-[50vh]">
             <img
               src={item}
               alt={`committee ${id}`}
