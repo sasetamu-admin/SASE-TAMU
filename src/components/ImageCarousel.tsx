@@ -49,35 +49,30 @@ const AutoCarousel:React.FC<CarouselProps> = ({className = '', items, alt}) => {
   
       
   
-      useEffect(() => {
-      if (!carouselRef.current) return;
-      const containerWidth = carouselRef.current.offsetWidth;
-      let currentIndex = 0;
-  
-      const interval = setInterval(() => {
-          if (isCommitteeCarouselDragging) return;
-  
-          currentIndex += 1;
-          if (currentIndex > items.length) {
-              currentIndex = 1;
-              x.set(0);
-          }
-  
-          // Animate to the next image
-          const targetX = -currentIndex * containerWidth;
-          animate(x, targetX, {
-              duration: 0.8,
-              ease: "easeInOut",
-          });
-      }, 4000); 
-  
-      return () => clearInterval(interval);
-  }, [x, isCommitteeCarouselDragging, items.length]);
+    useEffect(() => {
+        if (!carouselRef.current || isCommitteeCarouselDragging) return;
+
+        const containerWidth = carouselRef.current.offsetWidth;
+        // The width of a single item is not always containerWidth due to `lg:w-1/2`
+        const itemWidth = carouselRef.current.children[0]?.children[0]?.clientWidth ?? 0;
+        if (itemWidth === 0) return;
+
+        const totalWidth = itemWidth * items.length;
+        const duration = items.length * 5; // Adjust this for speed (e.g., 5 seconds per item)
+
+        const controls = animate(x, [-totalWidth, 0], {
+            ease: "linear",
+            duration: duration,
+            repeat: Infinity,
+        });
+
+        return () => controls.stop();
+    }, [isCommitteeCarouselDragging, items.length, x]);
 
   
 
   return (
-    <div ref={carouselRef} className={`flex relative overflow-hidden w-full lg:w-[40%] ${className}`}>
+    <div ref={carouselRef} className={`flex relative overflow-hidden w-full lg:w-[100%] ${className}`}>
       <motion.div
         className="flex"
         drag="x"
@@ -88,7 +83,7 @@ const AutoCarousel:React.FC<CarouselProps> = ({className = '', items, alt}) => {
         style={{ x }}
       >
         {extendedPictures.map((item, id) => (
-          <div key={id} className="shrink-0 w-full h-[50vh]">
+          <div key={id} className="shrink-0 lg:w-1/2 w-full h-[50vh]">
             <img
               src={item}
               alt={`committee ${id}`}
