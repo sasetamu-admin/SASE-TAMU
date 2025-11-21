@@ -39,10 +39,10 @@ const AutoCarousel:React.FC<CarouselProps> = ({className = '', items, alt}) => {
           const containerWidth = carouselRef.current.offsetWidth;
           const targetX = -committeeCarouselIndex * containerWidth;
   
-          animate(x, targetX, {
-          type: "spring",
-          stiffness: 150,
-          damping: 30,
+          void animate(x, targetX, {
+            type: "spring",
+            stiffness: 150,
+            damping: 30,
           });
       }
       }, [committeeCarouselIndex, x, isCommitteeCarouselDragging]);

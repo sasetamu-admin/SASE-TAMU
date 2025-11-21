@@ -1,9 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavBar } from '~/components/NavBar';
-import Image from "next/image";
-import { animate, motion, PanInfo, useMotionValue } from "framer-motion";
+import {motion} from "framer-motion";
 import { Footer } from '~/components/Footer';
-import { MdArrowForwardIos } from "react-icons/md";
 import AutoCarousel from '~/components/ImageCarousel';
 
 const GetInvolvedPage: React.FC = () => {
