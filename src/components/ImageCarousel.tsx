@@ -58,7 +58,7 @@ const AutoCarousel:React.FC<CarouselProps> = ({className = '', items, alt}) => {
         if (itemWidth === 0) return;
 
         const totalWidth = itemWidth * items.length;
-        const duration = items.length * 5; // Adjust this for speed (e.g., 5 seconds per item)
+        const duration = items.length * 15; // Adjust this for speed (e.g., 5 seconds per item)
 
         const controls = animate(x, [-totalWidth, 0], {
             ease: "linear",
