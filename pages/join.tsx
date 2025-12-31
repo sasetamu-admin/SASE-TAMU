@@ -3,6 +3,8 @@ import { NavBar } from "src/components/NavBar";
 import { Footer } from "src/components/Footer";
 import EventCard from "~/components/EventCard";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const join = () => {
   return (
@@ -12,9 +14,13 @@ const join = () => {
       </div>
 
       <div className="flex flex-col overflow-x-hidden bg-white pb-12 pt-28 font-source md:flex-row">
-        <div className="w-2/12 px-8 pb-10 md:w-1/2 md:pb-4">
-          <h1 className="font-bebas text-5xl">Interested in joining us?</h1>
-          <div className="pb-5 pt-5">
+        <div className="w-full px-8 pb-10 md:w-1/2 md:pb-4">
+          <h1 className="font-bebas text-5xl text-center">
+            <motion.span className = "text-emerald-700 font-bebas text-5xl font-bold my-2 ml-2 tracking-wide hover:text-6xl hover:text-emerald-800 transition-all duration-500 ease-in-out" whileHover={{ rotateZ: [0, 50, -50, 30, -30, 0], transition: { duration: 2, ease: "easeInOut", repeat: Infinity, repeatType: "mirror"}}}style={{ perspective: 600 }} animate={{ rotateZ: 0 }} transition={{duration: 0.4, ease: "easeInOut"}}>
+              Students!
+            </motion.span>
+            {" "}Join SASE here</h1>
+          <div className="pb-5 pt-5 text-center">
             <div>
               Dues are $25 per semester and $40 for a year. Indicate your
               interest by joining our Discord for further events!
@@ -26,12 +32,24 @@ const join = () => {
             </button>
           </div>
         </div>
+          <div className="self-center pl-10 pr-10 pt-5 w-full md:w-1/2">
+            <Image
+              className="w-full rounded-xl"
+              src="/scrc.jpg"
+              width={400}
+              height={300}
+              alt="Picture of SASE SCRC"
+            />
+          </div>
 
+      </div>
+
+      <div className="flex flex-col overflow-x-hidden bg-white pb-12 pt-28 font-source md:flex-row">
         <div
           id="projects"
-          className="w-10/12 flex-col bg-white font-source text-lg text-black"
+          className="w-full flex-col bg-white font-source text-lg text-black"
         >
-          <h1 className="px-6 pb-4 font-bebas text-5xl">Some Past Events :)</h1>
+          <h1 className="px-6 pb-4 font-bebas text-5xl text-center">Some Past Events :)</h1>
           <div className="overflow-x-auto whitespace-nowrap p-6 px-6">
             <div className="flex min-w-max gap-5 ">
               <EventCard
@@ -49,6 +67,19 @@ const join = () => {
                 title="Winter Social"
                 description="SASE's Winter Social!"
               />
+
+              <EventCard
+                src="/ging.jpg"
+                title="Placeholder Event"
+                description="Placeholder description for event card."
+              />
+
+              <EventCard
+                src="/ging.jpg"
+                title="Placeholder Event"
+                description="Placeholder description for event card."
+              />
+
             </div>
           </div>
         </div>

@@ -142,6 +142,32 @@ const about = () => {
                 </p>
               </div>
             </div>
+
+            {/* Community Service card */}
+            <div className="group overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+              <div className="bg-gradient-to-r from-green-500 to-green-600 px-6 py-4">
+                <h2 className="text-center font-bebas text-2xl text-white">Community Service</h2>
+              </div>
+              <div className="relative overflow-hidden">
+                <Image
+                  src="/STEMFEST.jpg"
+                  alt="SASE TAMU at STEMFest"
+                  width={384}
+                  height={320}
+                  className="h-80 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 flex items-center bg-black justify-center bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-40">
+                  <span className="font-bebas text-2xl text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    SASE @ STEMFest
+                  </span>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-700 leading-relaxed">
+                  Providing opportunities for members to make contributions to their local communities.
+                </p>
+              </div>
+            </div>
           </section>
           </div>
         </div>
