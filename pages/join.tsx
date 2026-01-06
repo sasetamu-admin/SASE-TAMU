@@ -22,8 +22,13 @@ const join = () => {
             {" "}Join SASE here</h1>
           <div className="pb-5 pt-5 text-center">
             <div>
-              Dues are $25 per semester and $40 for a year. Indicate your
-              interest by joining our Discord for further events!
+              <ul className="mx-auto mt-4 max-w-2xl list-disc space-y-3 pl-6 text-left text-lg text-gray-700">
+                <li>Free food at every GBM</li>
+                <li>Access to all upcoming GBMs and social events</li>
+                <li>Direct networking opportunities with recruiters and engineers</li>
+                <li>Opportunities to learn about and engage with Asian culture and heritage</li>
+                <li>$40 membership includes a free club shirt </li>
+              </ul>
             </div>
             <button className="mt-5 rounded border bg-sky-700 bg-opacity-75 px-4 py-2 text-white hover:bg-sky-700 hover:text-white">
               <Link href="https://linktr.ee/tamusase" target="_blank">
