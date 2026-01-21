@@ -76,25 +76,33 @@ const sponsor = () => {
         </div>
 
         <div className="pl-20 pr-20">
-          <div className="pt-5 text-center font-bebas text-5xl text-blue-400">
-            Platinum
+          <div className="rounded-lg bg-blue-100 p-10">
+            <div className="pt-5 text-center font-bebas text-6xl text-blue-400">
+              Platinum
+            </div>
+            <LogoList images={logosPlatinum} />
           </div>
-          <LogoList images={logosPlatinum} />
 
-          <div className="pt-5 text-center font-bebas text-5xl text-amber-300">
-            Gold
+          <div className="mt-8 rounded-lg bg-amber-50 p-10">
+            <div className="pt-5 text-center font-bebas text-6xl text-amber-300">
+              Gold
+            </div>
+            <LogoList images={logosGold} />
           </div>
-          <LogoList images={logosGold} />
 
-          <div className="pt-5 text-center font-bebas text-5xl text-gray-600">
-            Silver
+          <div className="mt-8 rounded-lg bg-gray-100 p-10">
+            <div className="pt-5 text-center font-bebas text-6xl text-gray-600">
+              Silver
+            </div>
+            <LogoList images={logosSilver} />
           </div>
-          <LogoList images={logosSilver} />
 
-          <div className="pt-5 text-center font-bebas text-5xl text-amber-600">
-            Bronze
+          <div className="mt-8 rounded-lg bg-amber-100 p-10">
+            <div className="pt-5 text-center font-bebas text-6xl text-amber-600">
+              Bronze
+            </div>
+            <LogoList images={logosBronze} />
           </div>
-          <LogoList images={logosBronze} />
         </div>
 
         <div className="flex h-max justify-center bg-white p-10 pt-20 md:p-20"></div>
