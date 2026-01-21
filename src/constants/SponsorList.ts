@@ -45,6 +45,11 @@ export const logosGold = [
     alt: "ExxonMobil",
     path: "/sponsors/exxon.png",
   },
+  {
+    link: "https://www.honeywell.com/us/en",
+    alt: "Honeywell",
+    path: "/sponsors/honeywell.png",
+  }
 
   // Add more logo paths as needed
 ];
