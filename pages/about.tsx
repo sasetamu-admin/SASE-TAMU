@@ -3,23 +3,35 @@ import { NavBar } from "src/components/NavBar";
 import { Footer } from "src/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import {motion} from "framer-motion";
+import OverlayCard from "~/components/OverlayCard";
+import EmphasisSpan from "~/components/EmphasisText";
+
+let event_description_array:string[] = ["Our General Body Meetings serve as the primary touchpoint for our members. For our sponsors, these meetings offer a direct pipeline to a diverse group of high-achieving engineers and scientists.",
+  "We believe that the strongest professional networks are built on genuine friendships. These events are designed to help new members have fun while celebrating the diverse backgrounds that make up our chapter."
+]
 
 const about = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <div className="fixed z-40 w-full">
         <NavBar />
       </div>
       <div className="flex h-max justify-center bg-white p-10 md:p-10"></div>
       <div className="bg-white font-source text-black">
-        <div className="flex flex-col bg-white font-source md:flex-row">
-          <div className="pl-10 pr-10 pt-10 md:w-1/2 md:pl-20">
+        <div className="flex flex-col bg-white font-source md:flex-row overflow-x-hidden">
+          <motion.div 
+            initial={{ opacity: 0, x: -100}}
+            whileInView={{ opacity: 1, x: 0}}
+            transition={{ duration: 1.0, ease: "easeInOut"}}
+            viewport={{ once: true }}
+            className="pl-10 pr-10 pt-10 md:w-1/2 md:pl-20">
             <h1 className="font-bebas text-5xl">OUR MISSION</h1>
-            <div className="pb-5 pt-5">
+            <div className="pb-5 pt-5 text-xl">
               <div>
-                The Society of Asian Scientists and Engineers (SASE) is dedicated to the advancement of Asian heritage
+                The <EmphasisSpan text = "Society of Asian Scientists and Engineers " color = "text-blue-600"/> (SASE) is dedicated to the advancement of Asian heritage 
                 scientists and engineers in education and employment so that
-                they can achieve their full career potential. In addition to
+                they can achieve their <EmphasisSpan text = "full career potential" color = "text-blue-600"/>. In addition to
                 professional development, SASE also encourages members to
                 contribute to the enhancement of the communities in which they
                 live.
@@ -42,8 +54,13 @@ const about = () => {
                 .
               </div>
             </div>
-          </div>
-          <div className="self-center pl-10 pr-10 pt-5 md:w-1/2">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 100}}
+            whileInView={{ opacity: 1, x: 0}}
+            transition={{ duration: 1.0, ease: "easeInOut"}}
+            viewport={{ once: true }}
+            className="self-center pl-10 pr-10 pt-5 md:w-1/2">
             <Image
               className="w-full rounded-xl"
               src="/scrc.jpg"
@@ -51,20 +68,30 @@ const about = () => {
               height={300}
               alt="Picture of SASE SCRC"
             />
-          </div>
+          </motion.div>
         </div>
 
         <div className="flex h-max justify-center bg-white p-10 pt-20 md:p-20"></div>
 
         <div className="bg-white py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h1 className="mb-12 text-center font-bebas text-5xl text-black">
+          <motion.h1 
+            initial={{ opacity: 0}}
+            whileInView={{ opacity: 1}}
+            transition={{ duration: 1.0, ease: "easeInOut"}}
+            viewport={{ once: true }}
+            className="mb-12 text-center font-bebas text-5xl text-black">
             Core Pillars
-          </h1>
+          </motion.h1>
 
           <section className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {/* Professional Development card */}
-            <div className="group overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <motion.div  
+              initial={{ opacity: 0}}
+              whileInView={{ opacity: 1}}
+              transition={{ duration: 0.8, ease: "easeInOut"}}
+              viewport={{ once: true }}
+              className="group overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
               <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
                 <h2 className="text-center font-bebas text-2xl text-white">Professional Development</h2>
               </div>
@@ -88,12 +115,18 @@ const about = () => {
                   the transnational, global business world.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Cultural Awareness card */}
-            <div className="group overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-              <div className="bg-gradient-to-r from-sky-600 to-sky-700 px-6 py-4">
-                <h2 className="text-center font-bebas text-2xl text-white">Cultural Awareness & Inclusion</h2>
+            <motion.div 
+              initial={{ opacity: 0}}
+              whileInView={{ opacity: 1}}
+              transition={{ duration: 1.1, ease: "easeInOut"}}
+              viewport={{ once: true }}
+            className="group overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+              <div className="bg-gradient-to-r from-sky-600 to-sky-700 px-6 py-4 rounded-t-xl">
+                <h2 className="text-center font-bebas text-2xl text-white">
+                  Cultural Awareness & Inclusion
+                </h2>
               </div>
               <div className="relative overflow-hidden">
                 <Image
@@ -111,14 +144,18 @@ const about = () => {
               </div>
               <div className="p-6">
                 <p className="text-gray-700 leading-relaxed">
-                  Promoting diversity and tolerance on campuses
-                  and in the workplace.
+                  Providing opportunities for members to make contributions to their local communities.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Community Service card */}
-            <div className="group overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <motion.div 
+              initial={{ opacity: 0}}
+              whileInView={{ opacity: 1}}
+              transition={{ duration: 1.4, ease: "easeInOut"}}
+              viewport={{ once: true }}
+            className="group overflow-hidden rounded-xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
               <div className="bg-gradient-to-r from-green-500 to-green-600 px-6 py-4">
                 <h2 className="text-center font-bebas text-2xl text-white">Community Service</h2>
               </div>
@@ -141,15 +178,43 @@ const about = () => {
                   Providing opportunities for members to make contributions to their local communities.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </section>
+
+          
+          </div>
+        </div>
+
+        <div className="bg-white py-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <motion.h1 
+              initial={{ opacity: 0}}
+              whileInView={{ opacity: 1}}
+              transition={{ duration: 1.0, ease: "easeInOut"}}
+              viewport={{ once: true }}
+              className="mb-12 text-center font-bebas text-5xl text-black">
+              Events We Host
+            </motion.h1>
+            <div className="flex flex-row justify-between items-center">
+              <OverlayCard title = "General Body Meetings" description = {event_description_array[0] ?? ""} image_path="/INFO.jpg"/>
+              <OverlayCard title = "Socials + Workshops" description = {event_description_array[1] ?? ""} image_path="/INFO.jpg"/>
+              <OverlayCard title = "Volunteering Events" description="test" image_path="/INFO.jpg"/>
+              
+            </div>
+            
           </div>
         </div>
 
         <div className="flex h-max justify-center bg-white p-5 md:p-20"></div>
 
         <div className="flex flex-col bg-white font-source md:flex-row">
-          <div className="pl-10 pr-10 md:w-1/2 md:pl-20">
+          <motion.div 
+            initial={{ opacity: 0, x: -100}}
+            whileInView={{ opacity: 1, x: 0}}
+            transition={{ duration: 1.0, ease: "easeInOut"}}
+            viewport={{ once: true }}
+          
+          className="pl-10 pr-10 md:w-1/2 md:pl-20">
             <h1 className="font-bebas text-5xl">Corporate Partnerships</h1>
             <div className="pb-5 pt-5">
               <div>
@@ -160,8 +225,13 @@ const about = () => {
                 <Link href="/sponsor">Learn more!</Link>
               </button>
             </div>
-          </div>
-          <div className="self-center pl-10 pr-10 pt-5 md:w-1/2">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 100}}
+            whileInView={{ opacity: 1, x: 0}}
+            transition={{ duration: 1.0, ease: "easeInOut"}}
+            viewport={{ once: true }}
+          className="self-center pl-10 pr-10 pt-5 md:w-1/2">
             <Image
               className="w-full rounded-xl"
               src="/INFO.jpg"
@@ -169,7 +239,7 @@ const about = () => {
               height={400}
               alt="Picture of SASE Meeting"
             />
-          </div>
+          </motion.div>
         </div>
         <div className="flex h-max justify-center bg-white p-10 pt-20 md:p-20"></div>
       </div>
