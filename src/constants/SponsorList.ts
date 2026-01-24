@@ -40,6 +40,16 @@ export const logosGold = [
     alt: "Burns & McDonnell",
     path: "/sponsors/burnsandmcdonnell.webp",
   },
+  {
+    link: "https://corporate.exxonmobil.com",
+    alt: "ExxonMobil",
+    path: "/sponsors/exxon.png",
+  },
+  {
+    link: "https://www.honeywell.com/us/en",
+    alt: "Honeywell",
+    path: "/sponsors/honeywell.png",
+  }
 
   // Add more logo paths as needed
 ];
@@ -55,6 +65,11 @@ export const logosSilver = [
     alt: "CDM Smith",
     path: "/sponsors/cdmsmith.webp",
   },
+  {
+    link: "https://www.lcra.org",
+    alt: "LCRA",
+    path: "/sponsors/lcra.jpg",
+  }
 
   // Add more logo paths as needed
 ];
