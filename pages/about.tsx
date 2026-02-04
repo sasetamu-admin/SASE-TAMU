@@ -8,7 +8,8 @@ import OverlayCard from "~/components/OverlayCard";
 import EmphasisSpan from "~/components/EmphasisText";
 
 let event_description_array:string[] = ["Our General Body Meetings serve as the primary touchpoint for our members. For our sponsors, these meetings offer a direct pipeline to a diverse group of high-achieving engineers and scientists.",
-  "We believe that the strongest professional networks are built on genuine friendships. These events are designed to help new members have fun while celebrating the diverse backgrounds that make up our chapter."
+  "We believe that the strongest professional networks are built on genuine friendships. These events are designed to help new members have fun while celebrating the diverse backgrounds that make up our chapter.",
+  "Giving back to the community is at the heart of SASE's mission. Through various volunteering events, we provide our members with opportunities to make a positive impact in the local community."
 ]
 
 const about = () => {
@@ -63,10 +64,10 @@ const about = () => {
             className="self-center pl-10 pr-10 pt-5 md:w-1/2">
             <Image
               className="w-full rounded-xl"
-              src="/scrc.jpg"
+              src="/NC2024.jpeg"
               width={400}
               height={300}
-              alt="Picture of SASE SCRC"
+              alt="Picture of SASE National Conference 2024"
             />
           </motion.div>
         </div>
@@ -138,7 +139,7 @@ const about = () => {
                 />
                 <div className="absolute inset-0 flex items-center bg-black justify-center bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-40">
                   <span className="font-bebas text-2xl text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    SASE TAMU @ NC
+                    SASE making New Years envelopes
                   </span>
                 </div>
               </div>
@@ -196,9 +197,9 @@ const about = () => {
               Events We Host
             </motion.h1>
             <div className="flex flex-row justify-between items-center">
-              <OverlayCard title = "General Body Meetings" description = {event_description_array[0] ?? ""} image_path="/INFO.jpg"/>
-              <OverlayCard title = "Socials + Workshops" description = {event_description_array[1] ?? ""} image_path="/INFO.jpg"/>
-              <OverlayCard title = "Volunteering Events" description="test" image_path="/INFO.jpg"/>
+              <OverlayCard title = "General Body Meetings" description = {event_description_array[0] ?? ""} image_path="/GE_VERNOVA.JPG"/>
+              <OverlayCard title = "Socials + Workshops" description = {event_description_array[1] ?? ""} image_path="/skating_social.jpeg"/>
+              <OverlayCard title = "Volunteering Events" description = {event_description_array[2] ?? ""} image_path="/marathon_volunteering.jpg"/>
               
             </div>
             
@@ -234,7 +235,7 @@ const about = () => {
           className="self-center pl-10 pr-10 pt-5 md:w-1/2">
             <Image
               className="w-full rounded-xl"
-              src="/INFO.jpg"
+              src="/southwest.JPG"
               width={600}
               height={400}
               alt="Picture of SASE Meeting"

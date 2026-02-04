@@ -127,13 +127,18 @@ const Team: NextPage = () => {
       <div className="flex justify-center font-bebas text-4xl text-gray-400">
         Executive Board
       </div>
-
-      {renderOfficerCards(EBoardOfficers)}
+      <div className="px-10">
+        {renderOfficerCards(EBoardOfficers)}
+      </div>
 
       <div className="flex justify-center pt-10 font-bebas text-4xl text-gray-400">
         General Officers
       </div>
-      {renderOfficerCards(GeneralOfficers)}
+
+      <div className="px-10">
+        {renderOfficerCards(GeneralOfficers)}
+      </div>
+      
 
       <div className="flex justify-center pt-10 font-bebas text-4xl text-gray-400">
         Advisors
