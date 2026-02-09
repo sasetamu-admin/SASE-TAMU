@@ -1,10 +1,13 @@
-import React, { useState, useRef } from "react";
+"use client";
+import React from "react";
 import { NavBar } from "src/components/NavBar";
 import { Footer } from "src/components/Footer";
 import EventCard from "~/components/EventCard";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
+import { useState, useEffect } from "react";
 
 const list = {
   hidden: {},
@@ -20,7 +23,17 @@ const item = {
 
 const Join = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
 
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    setCanScrollRight(maxScroll > 0);
+    setCanScrollLeft(el.scrollLeft > 1);
+  }, []);
   return (
     <div className="bg-white text-black">
       <div className="fixed z-40 w-full">
@@ -103,27 +116,63 @@ const Join = () => {
       </div>
 
       <div className="flex flex-col overflow-x-hidden bg-white pb-12 pt-28 font-source md:flex-row">
-        <div id="projects" className="w-full flex-col bg-white font-source text-lg text-black">
+        <div
+          id="projects"
+          className="w-full flex-col bg-white font-source text-lg text-black"
+        >
           <h1 className="px-6 pb-4 font-bebas text-5xl text-center">
             Some Past Events :)
           </h1>
 
           <div className="relative">
+            {canScrollRight && (
+  <>
             <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10" />
+              <button
+                onClick={() => {
+                  const el = scrollRef.current;
+                  if (!el) return;
 
-                        <motion.div
-              ref={scrollRef}
-              animate={{ x: ["0%", "-100%"] }} 
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop", 
-                  duration: 30,
-                  ease: "linear", 
-                },
+                  el.scrollBy({
+                    left: el.clientWidth * 0.8,
+                    behavior: "smooth",
+                  });
+                }}
+                className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-gradient-to-l from-white to-transparent px-4 py-2 font-bebas text-xl text-gray-700 shadow-md backdrop-blur hover:bg-white hover:text-black transition"
+              >
+                →
+              </button>
+  </>)}
+  {canScrollLeft && ( <>
+              <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10" />
+
+              <button
+                onClick={() => {
+                  const el = scrollRef.current;
+                  if (!el) return;
+
+                  el.scrollBy({
+                    left: -el.clientWidth * 0.8,
+                    behavior: "smooth",
+                  });
+                }}
+                className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/80 px-4 py-2 font-bebas text-xl text-gray-700 shadow-md backdrop-blur hover:bg-white hover:text-black transition"
+              >
+                ←
+              </button>
+              </>
+
+  )}
+            <div ref={scrollRef}
+              onScroll={() => {
+                const el = scrollRef.current;
+                if (!el) return;
+
+                const maxScroll = el.scrollWidth - el.clientWidth;
+                setCanScrollRight(el.scrollLeft < maxScroll - 1);
+                setCanScrollLeft(el.scrollLeft > 1);
               }}
-              className="flex min-w-max gap-5"
-                        >
+  className="overflow-x-auto whitespace-nowrap scroll-smooth p-6 px-6">
               <div className="flex min-w-max gap-5">
                 <EventCard
                   src="/NCNC.jpg"
@@ -155,13 +204,8 @@ const Join = () => {
                   title="Placeholder Event"
                   description="Placeholder description for event card."
                 />
-                <EventCard
-                  src="/ging.jpg"
-                  title="Placeholder Event"
-                  description="Placeholder description for event card."
-                />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
