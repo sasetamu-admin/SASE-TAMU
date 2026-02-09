@@ -60,11 +60,11 @@ const join = () => {
               className="mx-auto mt-4 max-w-2xl list-disc space-y-3 pl-6 text-left text-lg text-gray-700"
             >
               {[
-                "Free food at every GBM",
-                "Access to all upcoming GBMs and social events",
                 "Direct networking opportunities with recruiters and engineers",
-                "Learn and engage with Asian culture and heritage",
-                "$40 membership includes a free club shirt",
+                "Meeting a community of like-minded peers and building lifelong friendships",
+                "Developing leadership skills through officer and committee positions",
+                "Learning and engaging with Asian culture and heritage",
+                "Enabling personal and professional growth through workshops and events",
               ].map((text, i) => (
                 <motion.li key={i} variants={item}>
                   {text}
@@ -78,7 +78,7 @@ const join = () => {
               className="mt-6 rounded-lg bg-sky-700 px-6 py-3 text-white shadow-md hover:bg-sky-800"
             >
               <Link href="https://linktr.ee/tamusase" target="_blank">
-                Sign up here!
+                Sign up here through our linktr.ee!
               </Link>
             </motion.button>
           </div>
@@ -91,10 +91,10 @@ const join = () => {
   >
           <Image
             className="w-full rounded-xl"
-            src="/scrc.jpg"
+            src="/lonestarsquad.jpg"
             width={400}
             height={300}
-            alt="Picture of SASE SCRC"
+            alt="Picture of SASE Lonestar 2025!"
           />
           </motion.div>
         </div>
@@ -109,7 +109,7 @@ const join = () => {
             Some Past Events :)
           </h1>
           <div className="overflow-x-auto whitespace-nowrap p-6 px-6">
-            <div className="flex min-w-max gap-5 ">
+            <div className="flex min-w-max gap-5">
               <EventCard
                 src="/NCNC.jpg"
                 title="SASE @ NC"
@@ -121,19 +121,19 @@ const join = () => {
                 description="A fun day out at Century Square with our SASE Squads!"
               />
               <EventCard
-                src="/ging.jpg"
-                title="Winter Social"
-                description="SASE's Winter Social!"
+                src="/soccer.jpeg"
+                title="Intramural Soccer!"
+                description="SASE's Intramural Soccer Team!"
               />
               <EventCard
-                src="/ging.jpg"
-                title="Placeholder Event"
-                description="Placeholder description for event card."
+                src="/Halloween.JPG"
+                title="SASE Halloween Social!"
+                description="A fun Halloween event!"
               />
               <EventCard
-                src="/ging.jpg"
-                title="Placeholder Event"
-                description="Placeholder description for event card."
+                src="/marathon_volunteering.jpg"
+                title="Volunteering at the BCS Marathon!"
+                description="SASE volunteers at the BCS Marathon!"
               />
             </div>
           </div>
