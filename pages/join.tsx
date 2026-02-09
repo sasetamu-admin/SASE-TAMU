@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { NavBar } from "src/components/NavBar";
 import { Footer } from "src/components/Footer";
 import EventCard from "~/components/EventCard";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-
 
 const list = {
   hidden: {},
@@ -19,7 +18,9 @@ const item = {
   show: { opacity: 1, x: 0 },
 };
 
-const join = () => {
+const Join = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   return (
     <div className="bg-white text-black">
       <div className="fixed z-40 w-full">
@@ -83,59 +84,84 @@ const join = () => {
             </motion.button>
           </div>
         </div>
-              
+
         <div className="self-center pl-10 pr-10 pt-5 w-full md:w-1/2">
-              <motion.div whileHover={{ scale: 1.05 }}
-    transition={{ type: "spring", stiffness: 200, damping: 15 }}
-    className="overflow-hidden rounded-xl"
-  >
-          <Image
-            className="w-full rounded-xl"
-            src="/scrc.jpg"
-            width={400}
-            height={300}
-            alt="Picture of SASE SCRC"
-          />
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            className="overflow-hidden rounded-xl"
+          >
+            <Image
+              className="w-full rounded-xl"
+              src="/scrc.jpg"
+              width={400}
+              height={300}
+              alt="Picture of SASE SCRC"
+            />
           </motion.div>
         </div>
       </div>
 
       <div className="flex flex-col overflow-x-hidden bg-white pb-12 pt-28 font-source md:flex-row">
-        <div
-          id="projects"
-          className="w-full flex-col bg-white font-source text-lg text-black"
-        >
+        <div id="projects" className="w-full flex-col bg-white font-source text-lg text-black">
           <h1 className="px-6 pb-4 font-bebas text-5xl text-center">
             Some Past Events :)
           </h1>
-          <div className="overflow-x-auto whitespace-nowrap p-6 px-6">
-            <div className="flex min-w-max gap-5 ">
-              <EventCard
-                src="/NCNC.jpg"
-                title="SASE @ NC"
-                description="Our officer board and scholarship recipients are SASE's National Conference, hosted in Atlanta, GA!"
-              />
-              <EventCard
-                src="/winty.jpg"
-                title="SASE squad social!"
-                description="A fun day out at Century Square with our SASE Squads!"
-              />
-              <EventCard
-                src="/ging.jpg"
-                title="Winter Social"
-                description="SASE's Winter Social!"
-              />
-              <EventCard
-                src="/ging.jpg"
-                title="Placeholder Event"
-                description="Placeholder description for event card."
-              />
-              <EventCard
-                src="/ging.jpg"
-                title="Placeholder Event"
-                description="Placeholder description for event card."
-              />
-            </div>
+
+          <div className="relative">
+            <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10" />
+
+                        <motion.div
+              ref={scrollRef}
+              animate={{ x: ["0%", "-100%"] }} 
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop", 
+                  duration: 30,
+                  ease: "linear", 
+                },
+              }}
+              className="flex min-w-max gap-5"
+                        >
+              <div className="flex min-w-max gap-5">
+                <EventCard
+                  src="/NCNC.jpg"
+                  title="SASE @ NC"
+                  description="Our officer board and scholarship recipients are SASE's National Conference, hosted in Atlanta, GA!"
+                />
+                <EventCard
+                  src="/winty.jpg"
+                  title="SASE squad social!"
+                  description="A fun day out at Century Square with our SASE Squads!"
+                />
+                <EventCard
+                  src="/ging.jpg"
+                  title="Winter Social"
+                  description="SASE's Winter Social!"
+                />
+                <EventCard
+                  src="/ging.jpg"
+                  title="Placeholder Event"
+                  description="Placeholder description for event card."
+                />
+                <EventCard
+                  src="/ging.jpg"
+                  title="Placeholder Event"
+                  description="Placeholder description for event card."
+                />
+                <EventCard
+                  src="/ging.jpg"
+                  title="Placeholder Event"
+                  description="Placeholder description for event card."
+                />
+                <EventCard
+                  src="/ging.jpg"
+                  title="Placeholder Event"
+                  description="Placeholder description for event card."
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -146,4 +172,4 @@ const join = () => {
   );
 };
 
-export default join;
+export default Join;
