@@ -9,6 +9,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { useState, useEffect } from "react";
 
+
 const list = {
   hidden: {},
   show: {
@@ -16,19 +17,23 @@ const list = {
   },
 };
 
+
 const item = {
   hidden: { opacity: 0, x: -10 },
   show: { opacity: 1, x: 0 },
 };
+
 
 const Join = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollRight, setCanScrollRight] = useState(false);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
 
+
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
+
 
     const maxScroll = el.scrollWidth - el.clientWidth;
     setCanScrollRight(maxScroll > 0);
@@ -40,8 +45,10 @@ const Join = () => {
         <NavBar />
       </div>
 
+
       <div className="relative flex flex-col overflow-x-hidden bg-white pb-12 pt-28 font-source md:flex-row">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-emerald-200/60 via-emerald-100/30 to-transparent blur-3xl" />
+
 
         <div className="w-full px-8 pb-10 md:w-1/2 md:pb-4">
           <h1 className="font-bebas text-5xl text-center">
@@ -65,6 +72,7 @@ const Join = () => {
             Join SASE here
           </h1>
 
+
           <div className="pb-5 pt-5 text-center">
             <motion.ul
               variants={list}
@@ -86,6 +94,7 @@ const Join = () => {
               ))}
             </motion.ul>
 
+
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
@@ -97,6 +106,7 @@ const Join = () => {
             </motion.button>
           </div>
         </div>
+
 
         <div className="self-center pl-10 pr-10 pt-5 w-full md:w-1/2">
           <motion.div
@@ -115,6 +125,7 @@ const Join = () => {
         </div>
       </div>
 
+
       <div className="flex flex-col overflow-x-hidden bg-white pb-12 pt-28 font-source md:flex-row">
         <div
           id="projects"
@@ -124,6 +135,7 @@ const Join = () => {
             Some Past Events :)
           </h1>
 
+
           <div className="relative">
             {canScrollRight && (
   <>
@@ -132,6 +144,7 @@ const Join = () => {
                 onClick={() => {
                   const el = scrollRef.current;
                   if (!el) return;
+
 
                   el.scrollBy({
                     left: el.clientWidth * 0.8,
@@ -146,10 +159,12 @@ const Join = () => {
   {canScrollLeft && ( <>
               <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10" />
 
+
               <button
                 onClick={() => {
                   const el = scrollRef.current;
                   if (!el) return;
+
 
                   el.scrollBy({
                     left: -el.clientWidth * 0.8,
@@ -162,11 +177,13 @@ const Join = () => {
               </button>
               </>
 
+
   )}
             <div ref={scrollRef}
               onScroll={() => {
                 const el = scrollRef.current;
                 if (!el) return;
+
 
                 const maxScroll = el.scrollWidth - el.clientWidth;
                 setCanScrollRight(el.scrollLeft < maxScroll - 1);
@@ -210,10 +227,17 @@ const Join = () => {
         </div>
       </div>
 
+
       <div className="flex h-96 items-center justify-center bg-white bg-meow bg-cover bg-fixed bg-center md:block" />
       <Footer />
     </div>
   );
 };
 
+
 export default Join;
+
+
+
+
+
