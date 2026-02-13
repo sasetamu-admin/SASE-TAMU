@@ -109,18 +109,17 @@ const Join = () => {
 
 
         <div className="self-center pl-10 pr-10 pt-5 w-full md:w-1/2">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            className="overflow-hidden rounded-xl"
-          >
-            <Image
-              className="w-full rounded-xl"
-              src="/scrc.jpg"
-              width={400}
-              height={300}
-              alt="Picture of SASE SCRC"
-            />
+              <motion.div whileHover={{ scale: 1.05 }}
+    transition={{ type: "spring", stiffness: 200, damping: 15 }}
+    className="overflow-hidden rounded-xl"
+  >
+          <Image
+            className="w-full rounded-xl"
+            src="/lonestarsquad.jpg"
+            width={400}
+            height={300}
+            alt="Picture of SASE Lonestar 2025!"
+          />
           </motion.div>
         </div>
       </div>
@@ -192,35 +191,30 @@ const Join = () => {
   className="overflow-x-auto whitespace-nowrap scroll-smooth p-6 px-6">
               <div className="flex min-w-max gap-5">
                 <EventCard
-                  src="/NCNC.jpg"
-                  title="SASE @ NC"
-                  description="Our officer board and scholarship recipients are SASE's National Conference, hosted in Atlanta, GA!"
-                />
-                <EventCard
-                  src="/winty.jpg"
-                  title="SASE squad social!"
-                  description="A fun day out at Century Square with our SASE Squads!"
-                />
-                <EventCard
-                  src="/ging.jpg"
-                  title="Winter Social"
-                  description="SASE's Winter Social!"
-                />
-                <EventCard
-                  src="/ging.jpg"
-                  title="Placeholder Event"
-                  description="Placeholder description for event card."
-                />
-                <EventCard
-                  src="/ging.jpg"
-                  title="Placeholder Event"
-                  description="Placeholder description for event card."
-                />
-                <EventCard
-                  src="/ging.jpg"
-                  title="Placeholder Event"
-                  description="Placeholder description for event card."
-                />
+                src="/NCNC.jpg"
+                title="SASE @ NC"
+                description="Our officer board and scholarship recipients are SASE's National Conference, hosted in Atlanta, GA!"
+              />
+              <EventCard
+                src="/winty.jpg"
+                title="SASE squad social!"
+                description="A fun day out at Century Square with our SASE Squads!"
+              />
+              <EventCard
+                src="/soccer.jpeg"
+                title="Intramural Soccer!"
+                description="SASE's Intramural Soccer Team!"
+              />
+              <EventCard
+                src="/Halloween.JPG"
+                title="SASE Halloween Social!"
+                description="A fun Halloween event!"
+              />
+              <EventCard
+                src="/marathon_volunteering.jpg"
+                title="Volunteering at the BCS Marathon!"
+                description="SASE volunteers at the BCS Marathon!"
+              />
               </div>
             </div>
           </div>
