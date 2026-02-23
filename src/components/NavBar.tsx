@@ -6,10 +6,6 @@ import { useEffect, useState } from "react";
 
 export const NavBar = ({ transparent = false }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
   
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);

@@ -10,7 +10,7 @@ type FlipCardProps = {
 }
 
 const FlipCard:React.FC<FlipCardProps> = ({title, description, image_path}) => {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped] = useState(false);
 
   return (
     <div className="flex justify-center items-center w-fit cursor-pointer">

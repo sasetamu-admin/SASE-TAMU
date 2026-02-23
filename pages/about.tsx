@@ -7,7 +7,7 @@ import {motion} from "framer-motion";
 import OverlayCard from "~/components/OverlayCard";
 import EmphasisSpan from "~/components/EmphasisText";
 
-let event_description_array:string[] = ["Our General Body Meetings serve as the primary touchpoint for our members. For our sponsors, these meetings offer a direct pipeline to a diverse group of high-achieving engineers and scientists.",
+const event_description_array:string[] = ["Our General Body Meetings serve as the primary touchpoint for our members. For our sponsors, these meetings offer a direct pipeline to a diverse group of high-achieving engineers and scientists.",
   "We believe that the strongest professional networks are built on genuine friendships. These events are designed to help new members have fun while celebrating the diverse backgrounds that make up our chapter.",
   "Giving back to the community is at the heart of SASE's mission. Through various volunteering events, we provide our members with opportunities to make a positive impact in the local community."
 ]
