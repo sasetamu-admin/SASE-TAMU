@@ -131,9 +131,8 @@ const Join = () => {
           className="w-full flex-col bg-white font-source text-lg text-black"
         >
           <h1 className="px-6 pb-4 font-bebas text-5xl text-center">
-            Some Past Events :)
+            Some Past Events
           </h1>
-
 
           <div className="relative">
             {canScrollRight && (
@@ -188,8 +187,8 @@ const Join = () => {
                 setCanScrollRight(el.scrollLeft < maxScroll - 1);
                 setCanScrollLeft(el.scrollLeft > 1);
               }}
-  className="overflow-x-auto whitespace-nowrap scroll-smooth p-6 px-6">
-              <div className="flex min-w-max gap-5">
+  className="overflow-x-auto whitespace-nowrap scroll-smooth p-6">
+              <div className="flex min-w-max gap-5 px-11">
                 <EventCard
                 src="/NCNC.jpg"
                 title="SASE @ NC"
@@ -214,6 +213,26 @@ const Join = () => {
                 src="/marathon_volunteering.jpg"
                 title="Volunteering at the BCS Marathon!"
                 description="SASE volunteers at the BCS Marathon!"
+              />
+              <EventCard
+                src="/iceskating.jpeg"
+                title="Ice Skating!"
+                description="SASE ice skating event!"
+              />
+              <EventCard
+                src="/badminton.jpeg"
+                title="Badminton!"
+                description="SASE badminton team!"
+              />
+              <EventCard
+                src="/concessions.jpeg"
+                title="Concessions!"
+                description="SASE Football Concessions!"
+              />
+              <EventCard
+                src="/lonestarsquad.jpg"
+                title="LoneStar Showdown!"
+                description="SASE's largest sporting event!"
               />
               </div>
             </div>
