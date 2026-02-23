@@ -110,7 +110,7 @@ const Team: NextPage = () => {
         <NavBar />
       </div>
       
-      <div className="pt-20 flex justify-center font-bebas text-5xl text-black">
+      <div className="pt-36 flex justify-center font-bebas text-5xl text-black">
         Meet our Team 2025-26
       </div>
 
