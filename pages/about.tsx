@@ -142,6 +142,8 @@ const about = () => {
                 </p>
               </div>
             </div>
+
+            
           </section>
           </div>
         </div>
