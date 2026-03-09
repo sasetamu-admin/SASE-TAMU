@@ -17,6 +17,7 @@ export async function getUpcomingSaseEvents() {
         id: event.uid,
         title: event.summary,
         start: event.start.toISOString(),
+        end: event.end.toISOString(),
         location: event.location || "TBD",
         description: event.description || ""
       }));
@@ -43,6 +44,7 @@ export async function getPastSaseEvents() {
         id: event.uid,
         title: event.summary,
         start: event.start.toISOString(),
+        end: event.end.toISOString(),
         location: event.location || "TBD",
         description: event.description || ""
       }));
