@@ -1,5 +1,6 @@
 import { type Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
+const themeColors = require('./colors.json');
 
 export default {
   content: [
@@ -9,6 +10,7 @@ export default {
   ],
   theme: {
     extend: {
+      colors: themeColors,
       fontFamily: {
         bebas: ["Bebas Neue", "sans-serif"],
         source: ["Source Sans Pro", ...fontFamily.sans],

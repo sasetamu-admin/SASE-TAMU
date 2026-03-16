@@ -138,15 +138,15 @@ const EventCard:React.FC<EventCardProps> = ({title, start, location, description
   var date_start = new Date(start)
   var date_end = new Date(end)
   return (
-    <div className="pl-[4px] pb-[4px] bg-gradient-to-r from-blue-500 via-emerald-500 to-green-500">
-      <div className="bg-white rounded-[inherit] p-6 hover:bg-slate-200 transition-all duration-300 ease-in-out">
+    <div className="pl-[4px] pb-[4px] bg-gradient-to-r from-sweet-peony-800 via-sweet-peony-600 to-sweet-peony-400">
+      <div className="bg-soft-blush-100 rounded-[inherit] p-6 hover:bg-sweet-peony-200 transition-all duration-300 ease-in-out">
         <div className="grid grid-cols-10 grid-rows-3">
           <div className="row-start-1 row-end-3 col-start-1 col-end-3">
             <div className="flex flex-col">
-              <div className="text-5xl text-blue-900">
+              <div className="text-5xl text-black-cherry-700">
                 {date_start.getDate()}{getDayEnding(date_start.getDate())}
               </div>
-              <div className="text-2xl text-blue-700">
+              <div className="text-2xl text-black-cherry-700">
                 {Months[date_start.getMonth()]}, {Days[date_start.getDay()]}
               </div>
             </div>
@@ -154,16 +154,16 @@ const EventCard:React.FC<EventCardProps> = ({title, start, location, description
           <div className="row-start-2 row-end-4 col-start-4 col-end-11">
             <div className="flex flex-col">
               <div className="flex flex-row items-center">
-                <a className="relative text-4xl text-blue-900 group w-fit peer" href={getURL(description ?? "")} target="_blank" rel="noopener noreferrer">
+                <a className="relative font-bold text-4xl text-black-cherry-700 group w-fit peer" href={getURL(description ?? "")} target="_blank" rel="noopener noreferrer">
                   {title} 
-                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r to-blue-700 via-emerald-500 from-green-500 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-sweet-peony-800 via-sweet-peony-600 to-sweet-peony-400 transition-all duration-300 group-hover:w-full"></span>
                 </a>
-                <FaExternalLinkAlt className="text-blue-700 pl-2 pt-2 peer-hover:text-emerald-500 transition-all" size = {32}/>
+                <FaExternalLinkAlt className="text-black-cherry-700 pl-2 pt-1 peer-hover:text-glaucous-500 transition-all" size = {32}/>
               </div>
-              <div className="text-2xl text-blue-700">
+              <div className="text-2xl text-black-cherry-700">
                 {date_start.getHours() % 12 || 12} {date_start.getHours() >= 12 ? <span>PM</span> : <span>AM</span>} - {date_end.getHours() % 12 || 12} {date_end.getHours() >= 12 ? <span>PM</span> : <span>AM</span>}
               </div>
-              <div className="text-2xl text-blue-700">
+              <div className="text-2xl text-black-cherry-700">
                 {location}
               </div>
             </div>
@@ -178,12 +178,12 @@ const upcoming_events = ({ u_events, m_events}: UpcomingEventsProps) => {
   const isMobile: boolean = useMediaQuery('(max-width: 768px)');
   return (
     <>  
-      <div className="bg-white flex flex-col items-center">
+      <div className="bg-soft-blush-100 flex flex-col items-center">
         <div className="fixed z-40 w-full">
           <NavBar />
         </div>
         <div className="flex h-min-20 justify-center m-4 md:p-10"></div>
-        <div className="w-2/3 font-source text-black flex flex-col items-center justify-center">
+        <div className="w-2/3 font-source text-black-cherry-700 flex flex-col items-center justify-center">
           <h1 className="px-20  font-bebas text-5xl">
             Upcoming Events
           </h1>
@@ -213,8 +213,8 @@ const upcoming_events = ({ u_events, m_events}: UpcomingEventsProps) => {
             </div>
         </div>
       </div>
-      <div className="flex h-min-20 justify-center m-4 md:p-10"></div>
-      <div className="flex h-96 items-center justify-center bg-white bg-karaoke bg-cover bg-fixed bg-center"></div>
+      <div className="flex h-min-20 bg-soft-blush-100 justify-center md:p-10"></div>
+      <div className="flex h-96 items-center justify-center bg-soft-blush-100 bg-karaoke bg-cover bg-fixed bg-center"></div>
       <Footer />
     </>
   );
