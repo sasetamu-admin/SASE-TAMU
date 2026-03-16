@@ -1,13 +1,51 @@
 "use client"; // This is a client component
 
 import { type NextPage } from "next";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import { NavBar } from "src/components/NavBar";
 import { Footer } from "src/components/Footer";
 import Link from "next/link";
+import { getPastSaseEvents, getUpcomingSaseEvents } from "~/getCalendar";
+import { UpcomingEventsProps } from "~/types/GCalendarTypes";
+import { GCalEventCard, GCalEventCardMobile } from "~/components/GCalendarEventCard";
 
-const Home: NextPage = () => {
+export async function getStaticProps() {
+  const u_events = await getUpcomingSaseEvents();
+  const m_events = await getPastSaseEvents();
+  return {
+    props: {
+      u_events,
+      m_events
+    },
+    revalidate: 3600, 
+  };
+}
+
+export const useMediaQuery = (query: string): boolean => {
+  const [matches, setMatches] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const media = window.matchMedia(query);
+    
+    setMatches(media.matches);
+
+    const listener = (event: MediaQueryListEvent) => {
+      setMatches(event.matches);
+    };
+
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }, [query]);
+
+  return isMounted ? matches : false;
+};
+
+const Home = ({ u_events, m_events}: UpcomingEventsProps) => {
+  const isMobile: boolean = useMediaQuery('(max-width: 768px)');
   return (
     <>
       <Head>
@@ -96,28 +134,37 @@ const Home: NextPage = () => {
 
         <div className="flex justify-center bg-white pt-10 md:p-10"></div>
 
+        <div className="flex flex-col justify-start items-center">
+
         <h1 className="pb-10 pl-10 pr-5 font-bebas text-5xl md:pl-20">
           Upcoming Events
         </h1>
 
-        <div className="hidden md:block">
-          <div className="flex justify-center p-10">
-            <div className="googleCalendar">
-              <iframe src="https://calendar.google.com/calendar/embed?src=sasetamu%40gmail.com&ctz=America%2FChicago"></iframe>
-            </div>
+        <div className="flex pt-4 flex-col gap-y-8 w-5/6">
+        {isMobile && u_events.map((event) => (  
+                      <GCalEventCardMobile
+                        key={event.id}
+                        id={event.id} 
+                        description={event.description} 
+                        start={event.start} 
+                        location={event.location} 
+                        title={event.title}
+                        end = {event.end}
+                      />
+                    ))}
+                    {!isMobile && u_events.map((event) => (  
+                      <GCalEventCard
+                        key={event.id}
+                        id={event.id} 
+                        description={event.description} 
+                        start={event.start} 
+                        location={event.location} 
+                        title={event.title}
+                        end = {event.end}
+                      />
+                    ))}
           </div>
-        </div>
-
-        <div className="block md:hidden">
-          <div className="flex justify-center pl-10 pr-10 pt-5">
-            <div className="smgoogleCalendar">
-              <iframe
-                src="https://calendar.google.com/calendar/embed?src=sasetamu%40gmail.com&ctz=America%2FChicago&mode=AGENDA"
-                height="400"
-              ></iframe>
-            </div>
           </div>
-        </div>
 
         <div className="flex h-max justify-center bg-white p-10 pt-20 md:block md:p-20"></div>
       </div>
