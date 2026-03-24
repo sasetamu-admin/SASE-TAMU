@@ -4,13 +4,7 @@ import Image from 'next/image';
 import { motion } from "framer-motion"; 
 import { useEffect, useState } from "react";
 
-export const NavBar = ({ transparent = false }) => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
-  
+export const NavBar = ({ transparent = false }) => {  
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
