@@ -41,19 +41,34 @@ export const GCalEventCardMobile:React.FC<EventCardProps> = ({title, start, loca
 export const GCalEventCard:React.FC<EventCardProps> = ({title, start, location, description, end}) => {
   var date_start = new Date(start)
   var date_end = new Date(end)
+  const today = new Date();
+  /* console.log(date_start.getTime())
+  console.log(today.getTime()) */
   return (
     <div className="pl-[4px] pb-[4px] bg-gradient-to-r from-blue-500 via-emerald-500 to-green-500">
       <div className="bg-white rounded-[inherit] p-6 hover:bg-slate-200 transition-all duration-300 ease-in-out">
         <div className="grid grid-cols-10 grid-rows-3">
           <div className="row-start-1 row-end-3 col-start-1 col-end-3">
-            <div className="flex flex-col">
-              <div className="text-5xl text-blue-900">
-                {date_start.getDate()}{getDayEnding(date_start.getDate())}
+            {(date_start.getTime() < (today.getTime() + 1000 * 60 * 60 * 24 * 7)) && 
+              <div className="flex flex-col">
+                <div className="text-5xl text-blue-900">
+                  {Days[date_start.getDay()]}
+                </div>
+                <div className="text-2xl text-blue-700">
+                  {Months[date_start.getMonth()]} {date_start.getDate()}{getDayEnding(date_start.getDate())}
+                </div>
               </div>
-              <div className="text-2xl text-blue-700">
-                {Months[date_start.getMonth()]}, {Days[date_start.getDay()]}
+            }
+            { (date_start.getTime() >= (today.getTime() + 1000 * 60 * 60 * 24 * 7)) && 
+              <div className="flex flex-col">
+                <div className="text-5xl text-blue-900">
+                  {date_start.getDate()}{getDayEnding(date_start.getDate())} 
+                </div>
+                <div className="text-2xl text-blue-700">
+                  {Days[date_start.getDay()]}, {Months[date_start.getMonth()]} 
+                </div>
               </div>
-            </div>
+            }
           </div>
           <div className="row-start-2 row-end-4 col-start-4 col-end-11">
             <div className="flex flex-col">
