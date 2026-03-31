@@ -31,6 +31,9 @@ export const Days:TimeDict = {
 
 
 export function getDayEnding(day: number): string {
+  if(day == 11 || day == 12 || day == 13){
+    return "th";
+  }
   if(day % 10 == 1){
     return "st";
   }
