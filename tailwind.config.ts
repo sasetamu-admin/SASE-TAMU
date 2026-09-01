@@ -13,6 +13,26 @@ export default {
         bebas: ["Bebas Neue", "sans-serif"],
         source: ["Source Sans Pro", ...fontFamily.sans],
       },
+      colors: {
+        maroon: "#500000",
+        maroonDark: "#3c001c",
+        maroonLight: "#732f2f",
+        sakura: "#FFB7C5",
+        lantern: "#FF8C42",
+        paper: "#F5F0E8",
+        midnight: "#0D0D0D",
+        // sase colors
+        navy: "#141B4D",
+        nationalblue: "#89ABE4",
+        sandybrown: "#DBC8B6",
+        stoneGray: "#D0D0CE",
+        khakiBrown: "#ACA39A",
+        charcoalGray: "#3F4444",
+        ink: "#101820",
+        
+
+
+      },
       backgroundImage: {
         informational: "url('/footer/index_bg.jpg')",
         meow: "url('/footer/meow.jpg')",
@@ -24,6 +44,7 @@ export default {
         big: "url('/footer/big.jpg')",
         sweet: "url('/footer/sweet.jpg')",
         elevator: "url('/footer/elevator.jpg')",
+        squad: "url('/footer/squag_bg.png')",
       },
     },
   },

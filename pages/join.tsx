@@ -40,20 +40,20 @@ const Join = () => {
     setCanScrollLeft(el.scrollLeft > 1);
   }, []);
   return (
-    <div className="bg-white text-black">
+    <div className="bg-navy text-paper">
       <div className="fixed z-40 w-full">
         <NavBar />
       </div>
 
 
-      <div className="relative flex flex-col overflow-x-hidden bg-white pb-12 pt-28 font-source md:flex-row">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-emerald-200/60 via-emerald-100/30 to-transparent blur-3xl" />
+      <div className="relative flex flex-col overflow-x-hidden bg-navy pb-12 pt-28 font-source md:flex-row">
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-maroon/30 via-sakura/10 to-transparent blur-3xl" />
 
 
         <div className="w-full px-8 pb-10 md:w-1/2 md:pb-4">
           <h1 className="font-bebas text-5xl text-center">
             <motion.span
-              className="text-emerald-700 font-bebas text-5xl font-bold my-2 ml-2 tracking-wide hover:text-6xl hover:text-emerald-800 transition-all duration-500 ease-in-out"
+              className="text-maroon font-bebas text-5xl font-bold my-2 ml-2 tracking-wide hover:text-6xl hover:text-maroonDark transition-all duration-500 ease-in-out"
               whileHover={{
                 rotateZ: [0, 50, -50, 30, -30, 0],
                 transition: {
@@ -79,7 +79,7 @@ const Join = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="mx-auto mt-4 max-w-2xl list-disc space-y-3 pl-6 text-left text-lg text-gray-700"
+              className="mx-auto mt-4 max-w-2xl list-disc space-y-3 pl-6 text-left text-lg text-paper/80"
             >
               {[
                 "Direct networking opportunities with recruiters and engineers",
@@ -98,7 +98,7 @@ const Join = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="mt-6 rounded-lg bg-sky-700 px-6 py-3 text-white shadow-md hover:bg-sky-800"
+              className="mt-6 rounded-lg bg-maroon px-6 py-3 text-paper shadow-md hover:bg-maroonDark"
             >
               <Link href="https://linktr.ee/tamusase" target="_blank">
                 Sign up here through our linktr.ee!
@@ -125,10 +125,10 @@ const Join = () => {
       </div>
 
 
-      <div className="flex flex-col overflow-x-hidden bg-white pb-12 pt-28 font-source md:flex-row">
+      <div className="flex flex-col overflow-x-hidden bg-navy pb-12 pt-28 font-source md:flex-row">
         <div
           id="projects"
-          className="w-full flex-col bg-white font-source text-lg text-black"
+          className="w-full flex-col bg-navy font-source text-lg text-paper"
         >
           <h1 className="px-6 pb-4 font-bebas text-5xl text-center">
             Some Past Events
@@ -137,7 +137,7 @@ const Join = () => {
           <div className="relative">
             {canScrollRight && (
   <>
-            <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10" />
+            <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-navy to-transparent z-10" />
               <button
                 onClick={() => {
                   const el = scrollRef.current;
@@ -149,13 +149,13 @@ const Join = () => {
                     behavior: "smooth",
                   });
                 }}
-                className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-gradient-to-l from-white to-transparent px-4 py-2 font-bebas text-xl text-gray-700 shadow-md backdrop-blur hover:bg-white hover:text-black transition"
+                className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-gradient-to-l from-navy to-transparent px-4 py-2 font-bebas text-xl text-paper/70 shadow-md backdrop-blur hover:bg-navy hover:text-paper transition"
               >
                 →
               </button>
   </>)}
   {canScrollLeft && ( <>
-              <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10" />
+              <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-navy to-transparent z-10" />
 
 
               <button
@@ -169,7 +169,7 @@ const Join = () => {
                     behavior: "smooth",
                   });
                 }}
-                className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/80 px-4 py-2 font-bebas text-xl text-gray-700 shadow-md backdrop-blur hover:bg-white hover:text-black transition"
+                className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-navy/80 px-4 py-2 font-bebas text-xl text-paper/70 shadow-md backdrop-blur hover:bg-navy hover:text-paper transition"
               >
                 ←
               </button>
@@ -249,8 +249,3 @@ const Join = () => {
 
 
 export default Join;
-
-
-
-
-

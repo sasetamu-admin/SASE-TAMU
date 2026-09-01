@@ -80,7 +80,7 @@ const Team: NextPage = () => {
         <div className="mx-auto max-w-4xl px-4 mb-4">
           <button
             onClick={() => toggleYear(yearData.year)}
-            className="flex w-full items-center justify-between rounded-lg bg-gray-100 p-4 text-left font-bebas text-2xl text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            className="flex w-full items-center justify-between rounded-lg bg-maroon/20 p-4 text-left font-bebas text-2xl text-paper hover:bg-maroon/40 focus:outline-none focus:ring-2 focus:ring-sakura"
           >
             <span>{yearData.displayName}</span>
             <span className="text-xl">
@@ -90,11 +90,11 @@ const Team: NextPage = () => {
         </div>
         {openYear === yearData.year && (
           <div className="mt-2 pb-10">
-            <div className="flex justify-center font-bebas text-4xl text-gray-400">
+            <div className="flex justify-center font-bebas text-4xl text-paper/60">
               Executive Board
             </div>
             {renderOfficerCards(yearData.eboard)}
-            <div className="flex justify-center pt-10 font-bebas text-4xl text-gray-400">
+            <div className="flex justify-center pt-10 font-bebas text-4xl text-paper/60">
               General Officers
             </div>
             {renderOfficerCards(yearData.general)}
@@ -105,12 +105,12 @@ const Team: NextPage = () => {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-navy">
       <div className="fixed z-40 w-full">
         <NavBar />
       </div>
       
-      <div className="pt-36 flex justify-center font-bebas text-5xl text-black">
+      <div className="pt-36 flex justify-center font-bebas text-5xl text-paper">
         Meet our Team 2025-26
       </div>
 
@@ -124,14 +124,14 @@ const Team: NextPage = () => {
         />
       </div>
 
-      <div className="flex justify-center font-bebas text-4xl text-gray-400">
+      <div className="flex justify-center font-bebas text-4xl text-paper/60">
         Executive Board
       </div>
       <div className="px-10">
         {renderOfficerCards(EBoardOfficers)}
       </div>
 
-      <div className="flex justify-center pt-10 font-bebas text-4xl text-gray-400">
+      <div className="flex justify-center pt-10 font-bebas text-4xl text-paper/60">
         General Officers
       </div>
 
@@ -140,13 +140,13 @@ const Team: NextPage = () => {
       </div>
       
 
-      <div className="flex justify-center pt-10 font-bebas text-4xl text-gray-400">
+      <div className="flex justify-center pt-10 font-bebas text-4xl text-paper/60">
         Advisors
       </div>
 
       {renderOfficerCards(Advisors)}
 
-      <div className="flex justify-center pt-10 font-bebas text-4xl text-gray-400">
+      <div className="flex justify-center pt-10 font-bebas text-4xl text-paper/60">
         Former Officers
       </div>
 

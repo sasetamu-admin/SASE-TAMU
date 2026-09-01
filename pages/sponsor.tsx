@@ -14,16 +14,16 @@ import {
 const sponsor = () => {
   return (
     <div>
-      <div className="bg-white">
+      <div className="bg-navy">
         <div className="z-4 fixed w-full">
           <NavBar />
         </div>
 
-        <div className="flex h-max justify-center bg-white p-10 md:p-10"></div>
+        <div className="flex h-max justify-center bg-navy p-10 md:p-10"></div>
 
-        <div className="flex flex-col bg-white font-source text-black md:flex-row">
+        <div className="flex flex-col bg-navy font-source text-paper md:flex-row">
           <div className="pb-10 pl-10 pr-10 pt-5 md:w-1/2 md:pb-20 md:pl-20">
-            <h1 className="font-bebas text-5xl text-black">sponsorship</h1>
+            <h1 className="font-bebas text-5xl text-paper">sponsorship</h1>
             <div className="pb-5 pt-5">
               <div>
                 SASE is a non-profit 501(c)3 organization, and contributions to
@@ -41,7 +41,7 @@ const sponsor = () => {
                 </Link>
               </div>
               <div>Take a look at our current sponsorship package below.</div>
-              <button className="mt-5 rounded border bg-sky-700 bg-opacity-75 px-4 py-2 text-white hover:bg-sky-700 hover:text-white">
+              <button className="mt-5 rounded border border-maroon bg-maroon px-4 py-2 text-paper hover:bg-maroonDark">
                 <Link href="/SASE_TAMU_Corporate_Package.pdf" target="_blank">
                   View our Sponsorship Package Here!
                 </Link>
@@ -58,10 +58,10 @@ const sponsor = () => {
             />
           </div>
         </div>
-        <div className="pt-20 text-center font-bebas text-5xl text-black">
+        <div className="pt-20 text-center font-bebas text-5xl text-paper">
           sponsor sase tamu
         </div>
-        <div className="text-md p-5 pl-10 pr-10 text-center font-source text-black md:pl-40 md:pr-40">
+        <div className="text-md p-5 pl-10 pr-10 text-center font-source text-paper/80 md:pl-40 md:pr-40">
           <div className="">
             We would like to thoroughly thank our sponsors for their continued
             support and cooperation.
@@ -105,7 +105,7 @@ const sponsor = () => {
           </div>
         </div>
 
-        <div className="flex h-max justify-center bg-white p-10 pt-20 md:p-20"></div>
+        <div className="flex h-max justify-center bg-navy p-10 pt-20 md:p-20"></div>
       </div>
       <div className="flex h-96 items-center justify-center bg-white bg-sponsor bg-cover bg-fixed bg-center"></div>
       <Footer />
