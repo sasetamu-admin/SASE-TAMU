@@ -6,8 +6,26 @@ import Head from "next/head";
 import { NavBar } from "src/components/NavBar";
 import { Footer } from "src/components/Footer";
 import Link from "next/link";
+import { ReelsFeed } from "src/components/ReelsFeed";
+import { AnnouncementTicker } from "src/components/AnnouncementTicker";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const Home: NextPage = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 768);
+  }, []);
+
+  const fadeUp = isDesktop
+    ? {
+        initial: { opacity: 0, y: 60 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, amount: 0.3 },
+      }
+    : {};
+
   return (
     <>
       <Head>
@@ -17,15 +35,15 @@ const Home: NextPage = () => {
       <div className="fixed z-40 w-full">
         <NavBar />
       </div>
-      <div className="bg-white font-source text-black">
-        <div className="mb-12 flex h-screen items-center justify-center bg-white bg-informational bg-cover bg-fixed bg-center">
+      <div className="bg-navy font-source text-paper">
+        <div className="relative mb-12 flex h-screen items-center justify-center overflow-hidden bg-white bg-informational bg-cover bg-fixed bg-center [scroll-snap-align:start]">
           {/* DESKTOP */}
           <div className="animated animatedFadeInUp fadeInUp mt-12 hidden md:block">
             <div>
               <div className="dash md:dash-md mb-5"></div>
             </div>
             <div className="text-center">
-              <div className="font-bebas text-8xl text-white">
+              <div className="font-bebas text-8xl animate-gradient-text">
                 Howdy! We are SASE TAMU.
               </div>
             </div>
@@ -33,44 +51,50 @@ const Home: NextPage = () => {
               <div className="dash mt-3"></div>
             </div>
             <div className="mt-3 flex flex-row items-center justify-center space-x-5 font-source text-lg">
-              <button className="mt-5 rounded border bg-sky-700 bg-opacity-75 px-4 py-2 text-white hover:bg-sky-700 hover:text-white">
+              <button className="mt-5 rounded border border-maroon bg-maroon px-4 py-2 text-paper hover:bg-maroonDark">
                 <Link href="/join">Join SASE!</Link>
               </button>
-              <button className="mt-5 rounded border bg-slate-500 bg-opacity-25 px-4 py-2 text-white hover:bg-slate-500 hover:text-white">
+              <button className="mt-5 rounded border border-sakura/40 px-4 py-2 text-paper hover:border-sakura hover:text-sakura">
                 <Link href="/upcoming-events">Upcoming Events</Link>
               </button>
             </div>
           </div>
 
           {/* MOBILE */}
-          <div className="animated animatedFadeInUp fadeInUp block md:hidden">
+          <div className="animated animatedFadeInUp fadeInUp block px-6 md:hidden">
             <div>
               <div className="dash-sm mb-5"></div>
             </div>
             <div className="text-center">
-              <div className="font-bebas text-7xl text-white">
+              <div className="font-bebas text-4xl text-white">
                 Howdy! We are SASE TAMU.
               </div>
             </div>
             <div>
               <div className="dash-sm mt-3"></div>
             </div>
-            <div className="mt-3 flex flex-row items-center justify-center space-x-5 font-source text-lg">
-              <button className="mt-5 rounded border bg-sky-700 bg-opacity-75 px-4 py-2 text-white hover:bg-sky-700 hover:text-white">
+            <div className="mt-3 flex flex-row items-center justify-center gap-3">
+              <button className="mt-5 rounded border border-maroon bg-maroon px-3 py-1.5 text-sm text-paper hover:bg-maroonDark">
                 <Link href="/join">Join SASE!</Link>
               </button>
-              <button className="mt-5 rounded border bg-slate-500 bg-opacity-25 px-4 py-2 text-white hover:bg-slate-500 hover:text-white">
+              <button className="mt-5 rounded border border-sakura/40 px-3 py-1.5 text-sm text-paper hover:border-sakura hover:text-sakura">
                 <Link href="/upcoming-events">Upcoming Events</Link>
               </button>
             </div>
           </div>
+
+          <AnnouncementTicker />
         </div>
 
-        <div className="flex flex-col bg-white font-source md:flex-row">
-          <div className="pb-20 pl-10 pr-10 pt-5 md:w-1/2 md:pl-20">
-            <h1 className="font-bebas text-5xl">Our Mission</h1>
-            <div className="pt-5 md:pb-5">
-              <div>
+        <div className="mx-auto flex h-screen max-w-7xl flex-col items-center overflow-hidden bg-navy font-source md:flex-row [scroll-snap-align:start]">
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="px-6 pb-6 pt-24 text-center md:w-1/2 md:px-0 md:pb-20 md:pl-20 md:pt-5 md:pr-10 md:text-left"
+          >
+            <h1 className="font-bebas text-3xl md:text-5xl">Our Mission</h1>
+            <div className="pt-3 md:pt-5 md:pb-5">
+              <div className="text-sm md:text-base">
                 SASE is dedicated to the advancement of Asian heritage
                 scientists and engineers in education and employment so that
                 they can achieve their full career potential. In addition to
@@ -78,51 +102,35 @@ const Home: NextPage = () => {
                 contribute to the enhancement of the communities in which they
                 live.
               </div>
-              <button className="mt-5 rounded border bg-sky-700 bg-opacity-75 px-4 py-2 text-white hover:bg-sky-700 hover:text-white">
+              <button className="mt-2 rounded border border-maroon bg-maroon px-4 py-2 text-paper hover:bg-maroonDark">
                 <Link href="/about">Learn more!</Link>
               </button>
             </div>
-          </div>
-          <div className="-mt-10 self-center pl-10 pr-10 md:mt-0 md:w-1/2">
+          </motion.div>
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="mt-0 self-center px-6 md:mt-0 md:w-1/2 md:px-10"
+          >
             <Image
-              className="w-full rounded-xl"
+              className="max-h-[24vh] w-full rounded-xl object-cover md:max-h-none"
               src="/LONESTAR.jpg"
               width={450}
               height={50}
               alt="Picture of SASE at Lonestar"
             />
-          </div>
+          </motion.div>
         </div>
 
-        <div className="flex justify-center bg-white pt-10 md:p-10"></div>
+        <div className="flex h-screen flex-col items-center justify-center overflow-hidden px-4 [scroll-snap-align:start]">
+          <h1 className="pb-4 font-bebas text-3xl md:pb-10 md:text-5xl">Latest Content</h1>
 
-        <h1 className="pb-10 pl-10 pr-5 font-bebas text-5xl md:pl-20">
-          Upcoming Events
-        </h1>
-
-        <div className="hidden md:block">
-          <div className="flex justify-center p-10">
-            <div className="googleCalendar">
-              <iframe src="https://calendar.google.com/calendar/embed?src=sasetamu%40gmail.com&ctz=America%2FChicago"></iframe>
-            </div>
-          </div>
+          <ReelsFeed />
         </div>
 
-        <div className="block md:hidden">
-          <div className="flex justify-center pl-10 pr-10 pt-5">
-            <div className="smgoogleCalendar">
-              <iframe
-                src="https://calendar.google.com/calendar/embed?src=sasetamu%40gmail.com&ctz=America%2FChicago&mode=AGENDA"
-                height="400"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex h-max justify-center bg-white p-10 pt-20 md:block md:p-20"></div>
+        <div className="flex h-screen items-center justify-center overflow-hidden bg-white bg-cuties bg-cover bg-fixed bg-center [scroll-snap-align:start] md:block"></div>
+        <div className="flex h-screen items-center justify-center overflow-hidden bg-white bg-elevator bg-cover bg-fixed bg-center [scroll-snap-align:start] md:hidden"></div>
       </div>
-      <div className="flex h-96 items-center justify-center bg-white bg-cuties bg-cover bg-fixed bg-center md:block"></div>
-      <div className="flex h-96 items-center justify-center bg-white bg-elevator bg-cover bg-fixed bg-center md:hidden"></div>
       <Footer />
     </>
   );

@@ -20,7 +20,7 @@ const OfficerCard: React.FC<OfficerCardProps> = ({ cardInfo }) => {
           className="object-contain h-96 mt-6 bg-white"
         />
       </figure>
-      <div className="text-md card-body bg-white rounded-b-xl h-72">
+      <div className="text-md card-body bg-stoneGray rounded-b-xl h-72">
         <div className="flex flex-col">
           <div className="inline-flex">
             <p className="text-black">{cardInfo.role}</p>
@@ -34,8 +34,8 @@ const OfficerCard: React.FC<OfficerCardProps> = ({ cardInfo }) => {
               </Link>
             </div>
           </div>
-          <p className="text-gray-400">{cardInfo.name}</p>
-          <p className="text-gray-400 italic">{cardInfo.major}</p>
+          <p className="text-gray-600">{cardInfo.name}</p>
+          <p className="text-gray-600 italic">{cardInfo.major}</p>
         </div>
       </div>
     </div>

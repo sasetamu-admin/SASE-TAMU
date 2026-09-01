@@ -18,9 +18,9 @@ const about = () => {
       <div className="fixed z-40 w-full">
         <NavBar />
       </div>
-      <div className="flex h-max justify-center bg-white p-10 md:p-10"></div>
-      <div className="bg-white font-source text-black">
-        <div className="flex flex-col bg-white font-source md:flex-row overflow-x-hidden">
+      <div className="flex h-max justify-center bg-navy p-10 md:p-10"></div>
+      <div className="bg-navy font-source text-paper">
+        <div className="flex flex-col bg-navy font-source md:flex-row overflow-x-hidden">
           <motion.div 
             initial={{ opacity: 0, x: -100}}
             whileInView={{ opacity: 1, x: 0}}
@@ -30,9 +30,9 @@ const about = () => {
             <h1 className="font-bebas text-5xl">OUR MISSION</h1>
             <div className="pb-5 pt-5 text-xl">
               <div>
-                The <EmphasisSpan text = "Society of Asian Scientists and Engineers " color = "text-blue-600"/> (SASE) is dedicated to the advancement of Asian heritage 
+                The <EmphasisSpan text = "Society of Asian Scientists and Engineers " color = "text-maroon"/> (SASE) is dedicated to the advancement of Asian heritage 
                 scientists and engineers in education and employment so that
-                they can achieve their <EmphasisSpan text = "full career potential" color = "text-blue-600"/>. In addition to
+                they can achieve their <EmphasisSpan text = "full career potential" color = "text-maroon"/>. In addition to
                 professional development, SASE also encourages members to
                 contribute to the enhancement of the communities in which they
                 live.
@@ -72,9 +72,9 @@ const about = () => {
           </motion.div>
         </div>
 
-        <div className="flex h-max justify-center bg-white p-10 pt-20 md:p-20"></div>
+        <div className="flex h-max justify-center bg-navy p-10 pt-20 md:p-20"></div>
 
-        <div className="bg-white py-16">
+        <div className="bg-nationalblue py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.h1 
             initial={{ opacity: 0}}
@@ -186,14 +186,14 @@ const about = () => {
           </div>
         </div>
 
-        <div className="bg-white py-16">
+        <div className="bg-navy py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <motion.h1 
               initial={{ opacity: 0}}
               whileInView={{ opacity: 1}}
               transition={{ duration: 1.0, ease: "easeInOut"}}
               viewport={{ once: true }}
-              className="mb-12 text-center font-bebas text-5xl text-black">
+              className="mb-12 text-center font-bebas text-5xl text-paper">
               Events We Host
             </motion.h1>
             <div className="flex flex-row justify-between items-center">
@@ -206,9 +206,9 @@ const about = () => {
           </div>
         </div>
 
-        <div className="flex h-max justify-center bg-white p-5 md:p-20"></div>
+        <div className="flex h-max justify-center bg-navy p-5 md:p-20"></div>
 
-        <div className="flex flex-col bg-white font-source md:flex-row">
+        <div className="flex flex-col bg-navy font-source md:flex-row">
           <motion.div 
             initial={{ opacity: 0, x: -100}}
             whileInView={{ opacity: 1, x: 0}}
@@ -222,7 +222,7 @@ const about = () => {
                 SASE is a non-profit 501(c)3 organization, and contributions to
                 SASE are tax deductible.
               </div>
-              <button className="mt-5 rounded border bg-sky-700 bg-opacity-75 px-4 py-2 text-white hover:bg-sky-700 hover:text-white">
+              <button className="mt-5 rounded border border-maroon bg-maroon px-4 py-2 text-paper hover:bg-maroonDark">
                 <Link href="/sponsor">Learn more!</Link>
               </button>
             </div>
@@ -242,7 +242,7 @@ const about = () => {
             />
           </motion.div>
         </div>
-        <div className="flex h-max justify-center bg-white p-10 pt-20 md:p-20"></div>
+        <div className="flex h-max justify-center bg-navy p-10 pt-20 md:p-20"></div>
       </div>
 
       <div className="flex h-96 items-center justify-center bg-white bg-big bg-cover bg-fixed bg-center"></div>
