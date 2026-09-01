@@ -6,9 +6,9 @@ export const PageTransition = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    import("ldrs").then(({ quantum }) => quantum.register());
-  }, []);
+    useEffect(() => {
+    void import("ldrs").then(({ quantum }) => quantum.register());
+    }, []);
 
   useEffect(() => {
     const start = () => setLoading(true);

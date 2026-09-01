@@ -10,14 +10,14 @@ type Reel = {
 export const ReelsFeed = ({ limit = 3 }: { limit?: number }) => {
   const [reels, setReels] = useState<Reel[]>([]);
 
-  useEffect(() => {
+    useEffect(() => {
     const fetchReels = async () => {
-      const response = await fetch("/api/instagram");
-      const data = await response.json();
-      setReels(data);
+        const response = await fetch("/api/instagram");
+        const data = (await response.json()) as Reel[];
+        setReels(data);
     };
-    fetchReels();
-  }, []);
+    void fetchReels();
+    }, []);
 
   const topThree = reels.slice(0, limit);
 
