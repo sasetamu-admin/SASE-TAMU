@@ -36,9 +36,9 @@ const Home: NextPage = () => {
         <NavBar />
       </div>
       <div className="bg-navy font-source text-paper">
-        <div className="relative mb-12 flex h-screen items-center justify-center overflow-hidden bg-white bg-informational bg-cover bg-fixed bg-center [scroll-snap-align:start]">
-          {/* DESKTOP */}
-          <div className="animated animatedFadeInUp fadeInUp mt-12 hidden md:block">
+        {/* HERO — DESKTOP background */}
+        <div className="relative mb-12 hidden h-screen items-center justify-center overflow-hidden bg-white bg-informational bg-cover bg-fixed bg-center [scroll-snap-align:start] md:flex">
+          <div className="animated animatedFadeInUp fadeInUp mt-12 block">
             <div>
               <div className="dash md:dash-md mb-5"></div>
             </div>
@@ -60,8 +60,12 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          {/* MOBILE */}
-          <div className="animated animatedFadeInUp fadeInUp block px-6 md:hidden">
+          <AnnouncementTicker />
+        </div>
+
+        {/* HERO — MOBILE background */}
+        <div className="relative mb-12 flex h-screen items-center justify-center overflow-hidden bg-white bg-informational_mobile bg-cover bg-fixed bg-center [scroll-snap-align:start] md:hidden">
+          <div className="animated animatedFadeInUp fadeInUp block px-6">
             <div>
               <div className="dash-sm mb-5"></div>
             </div>
