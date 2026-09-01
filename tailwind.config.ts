@@ -35,6 +35,7 @@ export default {
       },
       backgroundImage: {
         informational: "url('/footer/index_bg.jpg')",
+        informational_mobile: "url('/footer/index_bg_mobile.JPG')",
         meow: "url('/footer/meow.jpg')",
         officer: "url('/footer/officer.jpg')",
         officer_mobile: "url('/footer/officer_mobile.jpg')",
