@@ -10,6 +10,9 @@ import { useRef } from "react";
 import { useState, useEffect } from "react";
 
 
+// Parent variant for the perks <ul>: staggerChildren means each <li> (using
+// the `item` variant below) animates in 0.2s after the one before it, rather
+// than all five list items popping in simultaneously.
 const list = {
   hidden: {},
   show: {
@@ -18,6 +21,8 @@ const list = {
 };
 
 
+// Per-item variant used by each perk <li> — slides in slightly from the left
+// while fading in. Referenced by `list`'s staggerChildren above.
 const item = {
   hidden: { opacity: 0, x: -10 },
   show: { opacity: 1, x: 0 },
@@ -25,11 +30,18 @@ const item = {
 
 
 const Join = () => {
+  // Ref to the horizontally-scrolling "Some Past Events" track, so the
+  // arrow buttons and scroll-position checks below can read/scroll it directly.
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Whether the past-events track can currently scroll further right/left.
+  // Drives whether each arrow button (and its edge-fade gradient) renders at all.
   const [canScrollRight, setCanScrollRight] = useState(false);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
 
 
+  // On mount, check the track's actual scrollable width so the right-arrow
+  // shows immediately if there's more content than fits on screen.
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -46,12 +58,17 @@ const Join = () => {
       </div>
 
 
+      {/* HERO — "Join SASE" pitch + perks list + linktree CTA, alongside a photo */}
       <div className="relative flex flex-col overflow-x-hidden bg-navy pb-12 pt-28 font-source md:flex-row">
+        {/* Decorative ambient glow behind the hero content, not interactive
+            (pointer-events-none) and sits behind everything (-z-10) */}
         <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-maroon/30 via-sakura/10 to-transparent blur-3xl" />
 
 
         <div className="w-full px-8 pb-10 md:w-1/2 md:pb-4">
           <h1 className="font-bebas text-5xl text-center">
+            {/* "Students!" wobbles/rotates continuously on hover, mirrored
+                back-and-forth via repeatType: "mirror" */}
             <motion.span
               className="text-maroon font-bebas text-5xl font-bold my-2 ml-2 tracking-wide hover:text-6xl hover:text-maroonDark transition-all duration-500 ease-in-out"
               whileHover={{
@@ -74,6 +91,7 @@ const Join = () => {
 
 
           <div className="pb-5 pt-5 text-center">
+            {/* Perks list — see `list`/`item` variants above for the stagger effect */}
             <motion.ul
               variants={list}
               initial="hidden"
@@ -95,6 +113,7 @@ const Join = () => {
             </motion.ul>
 
 
+            {/* External sign-up CTA — grows slightly on hover/press */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
@@ -108,6 +127,7 @@ const Join = () => {
         </div>
 
 
+        {/* Hero photo — subtle spring-based scale-up on hover */}
         <div className="self-center pl-10 pr-10 pt-5 w-full md:w-1/2">
               <motion.div whileHover={{ scale: 1.05 }}
     transition={{ type: "spring", stiffness: 200, damping: 15 }}
@@ -125,6 +145,10 @@ const Join = () => {
       </div>
 
 
+      {/* PAST EVENTS SECTION — horizontally scrolling carousel of EventCards.
+          Custom scroll UI (not a native scrollbar): arrow buttons + edge-fade
+          gradients only render when there's actually more to scroll to in
+          that direction (canScrollLeft / canScrollRight). */}
       <div className="flex flex-col overflow-x-hidden bg-navy pb-12 pt-28 font-source md:flex-row">
         <div
           id="projects"
@@ -135,6 +159,7 @@ const Join = () => {
           </h1>
 
           <div className="relative">
+            {/* Right arrow + fade — only shown while there's more content to the right */}
             {canScrollRight && (
   <>
             <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-navy to-transparent z-10" />
@@ -144,6 +169,7 @@ const Join = () => {
                   if (!el) return;
 
 
+                  // Scroll roughly one "page" (80% of the visible track width) at a time
                   el.scrollBy({
                     left: el.clientWidth * 0.8,
                     behavior: "smooth",
@@ -154,6 +180,7 @@ const Join = () => {
                 →
               </button>
   </>)}
+  {/* Left arrow + fade — only shown once the user has scrolled right at all */}
   {canScrollLeft && ( <>
               <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-navy to-transparent z-10" />
 
@@ -177,6 +204,8 @@ const Join = () => {
 
 
   )}
+            {/* The actual scrollable track. onScroll re-checks scroll position
+                on every scroll event to keep the arrow buttons in sync live. */}
             <div ref={scrollRef}
               onScroll={() => {
                 const el = scrollRef.current;
@@ -241,6 +270,7 @@ const Join = () => {
       </div>
 
 
+      {/* Bottom photo strip, full-bleed background image */}
       <div className="flex h-96 items-center justify-center bg-white bg-meow bg-cover bg-fixed bg-center md:block" />
       <Footer />
     </div>

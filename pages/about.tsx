@@ -7,6 +7,9 @@ import {motion} from "framer-motion";
 import OverlayCard from "~/components/OverlayCard";
 import EmphasisSpan from "~/components/EmphasisText";
 
+// Each string here maps 1:1 to an <OverlayCard> below (by array index).
+// Kept as a flat array rather than inline strings so the "Events We Host"
+// section's JSX isn't cluttered with paragraph-length text.
 const event_description_array:string[] = ["Our General Body Meetings serve as the primary touchpoint for our members. For our sponsors, these meetings offer a direct pipeline to a diverse group of high-achieving engineers and scientists.",
   "We believe that the strongest professional networks are built on genuine friendships. These events are designed to help new members have fun while celebrating the diverse backgrounds that make up our chapter.",
   "Giving back to the community is at the heart of SASE's mission. Through various volunteering events, we provide our members with opportunities to make a positive impact in the local community."
@@ -15,11 +18,21 @@ const event_description_array:string[] = ["Our General Body Meetings serve as th
 const about = () => {
   return (
     <div className="overflow-x-hidden">
+      {/* Fixed nav sits on top of every section below it (z-40) */}
       <div className="fixed z-40 w-full">
         <NavBar />
       </div>
+
+      {/* Spacer to push page content below the fixed nav's height */}
       <div className="flex h-max justify-center bg-navy p-10 md:p-10"></div>
+
       <div className="bg-navy font-source text-paper">
+
+        {/* MISSION SECTION
+            Two columns: mission text slides in from the left, photo slides in
+            from the right. Both use whileInView + viewport:{once:true}, so the
+            animation plays once the first time this section scrolls into view
+            and never replays on subsequent scrolls. */}
         <div className="flex flex-col bg-navy font-source md:flex-row overflow-x-hidden">
           <motion.div 
             initial={{ opacity: 0, x: -100}}
@@ -30,6 +43,8 @@ const about = () => {
             <h1 className="font-bebas text-5xl">OUR MISSION</h1>
             <div className="pb-5 pt-5 text-xl">
               <div>
+                {/* EmphasisSpan highlights key phrases in maroon within the
+                    surrounding paragraph text */}
                 The <EmphasisSpan text = "Society of Asian Scientists and Engineers " color = "text-maroon"/> (SASE) is dedicated to the advancement of Asian heritage 
                 scientists and engineers in education and employment so that
                 they can achieve their <EmphasisSpan text = "full career potential" color = "text-maroon"/>. In addition to
@@ -74,6 +89,15 @@ const about = () => {
 
         <div className="flex h-max justify-center bg-navy p-10 pt-20 md:p-20"></div>
 
+        {/* CORE PILLARS SECTION
+            Three cards on a light background (bg-nationalblue), each with a
+            colored gradient header + hover-darken image + caption reveal.
+            NOTE: each card is intentionally similar but not identical —
+            the "Cultural Awareness" card carries an extra `rounded-t-xl`
+            class the other two don't have, and each card's fade-in
+            `duration` is slightly staggered (0.8 / 1.1 / 1.4s) so they don't
+            all pop in at the exact same instant. Both are original design
+            choices preserved here, not inconsistencies to "fix." */}
         <div className="bg-nationalblue py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.h1 
@@ -96,6 +120,8 @@ const about = () => {
               <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
                 <h2 className="text-center font-bebas text-2xl text-white">Professional Development</h2>
               </div>
+              {/* `group-hover` on the parent card drives both the image
+                  zoom (scale-105) and the caption fade-in below */}
               <div className="relative overflow-hidden">
                 <Image
                   src="/NC2.jpg"
@@ -118,6 +144,7 @@ const about = () => {
               </div>
             </motion.div>
 
+            {/* Cultural Awareness & Inclusion card */}
             <motion.div 
               initial={{ opacity: 0}}
               whileInView={{ opacity: 1}}
@@ -186,6 +213,10 @@ const about = () => {
           </div>
         </div>
 
+        {/* EVENTS WE HOST SECTION
+            OverlayCard handles its own internal layout/hover behavior —
+            this section just supplies title/description/image per card,
+            pulling description text from event_description_array above. */}
         <div className="bg-navy py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <motion.h1 
@@ -208,6 +239,9 @@ const about = () => {
 
         <div className="flex h-max justify-center bg-navy p-5 md:p-20"></div>
 
+        {/* CORPORATE PARTNERSHIPS SECTION
+            Mirrors the Mission section's layout/animation pattern above
+            (text slides in left, image slides in right) */}
         <div className="flex flex-col bg-navy font-source md:flex-row">
           <motion.div 
             initial={{ opacity: 0, x: -100}}
@@ -245,6 +279,7 @@ const about = () => {
         <div className="flex h-max justify-center bg-navy p-10 pt-20 md:p-20"></div>
       </div>
 
+      {/* Bottom photo strip, full-bleed background image */}
       <div className="flex h-96 items-center justify-center bg-white bg-big bg-cover bg-fixed bg-center"></div>
 
       <Footer />

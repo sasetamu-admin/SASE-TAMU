@@ -5,6 +5,10 @@ import { NavBar } from "src/components/NavBar";
 import { Footer } from "src/components/Footer";
 import { ReelsFeed } from "src/components/ReelsFeed";
 
+// Shared entrance animation for every section on this page — fades in and
+// slides up slightly as each section scrolls into view. `amount: 0.2` means
+// the animation fires once 20% of the section is visible, rather than
+// waiting for the whole thing to be on-screen.
 const fadeUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
@@ -19,6 +23,7 @@ const UpcomingEvents = () => {
       </div>
 
       <div className="min-h-screen bg-navy font-source text-paper">
+
         {/* HEADER */}
         <motion.div
           {...fadeUp}
@@ -34,7 +39,13 @@ const UpcomingEvents = () => {
           </p>
         </motion.div>
 
-        {/* CALENDAR */}
+        {/* CALENDAR SECTION
+            Google's embedded calendar always renders with its own light/white
+            UI regardless of our theme, so it's wrapped in a bg-paper card here
+            rather than left to float directly on the navy background — makes
+            the white rectangle read as an intentional light card, not a bug.
+            Two separate iframes (desktop full month view vs. mobile agenda
+            list view) are swapped via hidden/flex at the md: breakpoint. */}
         <motion.section
           {...fadeUp}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
@@ -58,7 +69,10 @@ const UpcomingEvents = () => {
           </div>
         </motion.section>
 
-        {/* RECENT REELS */}
+        {/* RECENT REELS SECTION
+            ReelsFeed handles its own fetch/layout (including its own mobile
+            slider vs. desktop grid) — this section just supplies the heading
+            and a fallback "see more" link out to the actual Instagram profile. */}
         <motion.section
           {...fadeUp}
           transition={{ duration: 0.7, ease: "easeOut" }}
@@ -85,6 +99,7 @@ const UpcomingEvents = () => {
         </motion.section>
       </div>
 
+      {/* Bottom photo strip, full-bleed background image */}
       <div className="flex h-96 items-center justify-center bg-white bg-karaoke bg-cover bg-fixed bg-center"></div>
       <Footer />
     </>
