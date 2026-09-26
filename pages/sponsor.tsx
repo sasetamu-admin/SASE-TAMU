@@ -19,8 +19,11 @@ const sponsor = () => {
           <NavBar />
         </div>
 
+        {/* Spacer to push page content below the fixed nav's height */}
         <div className="flex h-max justify-center bg-navy p-10 md:p-10"></div>
 
+        {/* INTRO SECTION — pitch text + contact info + package download,
+            alongside a photo from the fall informational */}
         <div className="flex flex-col bg-navy font-source text-paper md:flex-row">
           <div className="pb-10 pl-10 pr-10 pt-5 md:w-1/2 md:pb-20 md:pl-20">
             <h1 className="font-bebas text-5xl text-paper">sponsorship</h1>
@@ -58,6 +61,7 @@ const sponsor = () => {
             />
           </div>
         </div>
+
         <div className="pt-20 text-center font-bebas text-5xl text-paper">
           sponsor sase tamu
         </div>
@@ -75,6 +79,12 @@ const sponsor = () => {
           </div>
         </div>
 
+        {/* SPONSOR TIERS — four tiers, each its own light-background box
+            (bg-blue-100 / bg-amber-50 / bg-gray-100 / bg-amber-100) so
+            transparent sponsor-logo PNGs stay legible; kept light/uncolored
+            to your navy theme deliberately, not an oversight. Each box is
+            structurally identical (heading + <LogoList>), just differing
+            in background/text color and which logo array it renders. */}
         <div className="pl-20 pr-20">
           <div className="rounded-lg bg-blue-100 p-10">
             <div className="pt-5 text-center font-bebas text-6xl text-blue-400">
@@ -107,6 +117,8 @@ const sponsor = () => {
 
         <div className="flex h-max justify-center bg-navy p-10 pt-20 md:p-20"></div>
       </div>
+
+      {/* Bottom photo strip, full-bleed background image */}
       <div className="flex h-96 items-center justify-center bg-white bg-sponsor bg-cover bg-fixed bg-center"></div>
       <Footer />
     </div>
