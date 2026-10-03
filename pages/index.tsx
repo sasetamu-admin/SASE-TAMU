@@ -35,7 +35,7 @@ const Home: NextPage = () => {
             </div>
             <div className="text-center">
               <div className="animate-gradient-text font-bebas text-8xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.6)]">
-                Howdy! We are SASE TAMU.
+                Howdy! We are AADI.
               </div>
             </div>
             <div>
