@@ -10,7 +10,7 @@ export const NavBar = () => {
 
   return (
     <div className="font-source bg-transparent" id="desktop-nav">
-      <nav className="bg-transparent p-2 text-lg">
+      <nav className="bg-midnight/60 backdrop-blur-sm border-b border-sakura/20 p-2 text-lg">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="flex-shrink-0">
