@@ -42,10 +42,10 @@ export const PhotoCollage = () => {
         <motion.div
           key={p.src}
           initial={{ opacity: 0, x: p.from.x, y: p.from.y, rotate: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, x: 0, y: 0, rotate: p.rotate, scale: 1 }}
-          whileHover={{ scale: 1.05, rotate: 0, zIndex: 40 }}
+          whileInView={{ opacity: 1, x: 0, y: 0, rotate: p.rotate, scale: 1, filter: "brightness(0.5)" }}
+          whileHover={{ scale: 1.10, rotate: 0, zIndex: 40, filter: "brightness(1)" }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, delay: 0.2 + i * 0.15, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0, ease: "easeOut" }}
           className={`absolute ${p.position}`}
         >
           <Image
