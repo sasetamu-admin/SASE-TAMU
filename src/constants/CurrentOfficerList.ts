@@ -101,7 +101,7 @@ export const GeneralOfficers: GeneralOfficerList = {
   development: {
     image: { src: "/headshots/26-27/Development_2627.png", width: 256, height: 256, alt: "Development Chair Headshot" },
     name: "Rishi Sakhamuri",
-    major: "ITDE '29",
+    major: "ELEN '29",
     role: GeneralOfficerRoles.DC,
     link: "https://www.linkedin.com/in/rishi-sakhamuri/",
   },
