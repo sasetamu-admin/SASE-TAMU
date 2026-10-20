@@ -12,6 +12,9 @@ import { EBoardOfficers, GeneralOfficers, OfficerTeamPhoto } from "~/constants/C
 import {PastEBoardOfficers2324, PastGeneralOfficers2324} from "~/constants/pastofficerlists/PastOfficerList23-24";
 //24-25
 import { PastEBoardOfficers2425, PastGeneralOfficers2425 } from "~/constants/pastofficerlists/PastOfficerList24-25";
+//25-26
+//25-26
+import { PastEBoardOfficers2526, PastGeneralOfficers2526 } from "~/constants/pastofficerlists/PastOfficerList25-26";
 
 // Interface for past officer years
 interface PastOfficerYear {
@@ -39,6 +42,12 @@ const Team: NextPage = () => {
    * 3. Place the newest year at the top of the array for correct display order.
    */
   const pastOfficerYears: PastOfficerYear[] = [
+    {
+    year: "2025-26",
+    displayName: "2025-26 Officers",
+    eboard: PastEBoardOfficers2526,
+    general: PastGeneralOfficers2526,
+    },
     {
       year: "2024-25",
       displayName: "2024-25 Officers",
