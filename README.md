@@ -38,6 +38,8 @@ This website has been made by the efforts of:
 - Luis Albos | Historian 2024-2025 | @Luis-Albos
 - Vijayadatta Seetharam | Design Intern 2024-2025 | @MikamiV
 - Nick Truong | Secretary 2025-2026 | @nicktnc24
+- Abhilash Sunkara | Design Intern 2025-2026 | @abhilash-sunkara
+- Vishjit Chandramohan | Design Intern 2025-2026 / Historian 2026-2027 | @vishjit
 
 If there are any issues regarding the website, please first reach out to __**NICK TRUONG**__ via email [nicktnc24@gmail.com](mailto:nicktnc24@gmail.com).
 
