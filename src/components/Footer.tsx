@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <div>
       <footer className="bottom-0 left-0 z-20 flex w-full flex-col items-center justify-between border-t border-gray-200 bg-white p-10 shadow md:flex-row md:p-2 md:pl-10 md:pr-10">
-        <div>Email us: sasetamu@gmail.com</div>
+        <div className="text-gray-500">Email us: sasetamu@gmail.com</div>
         <ul className="mr-5 mt-5 flex flex-wrap justify-center gap-7 text-center text-xl text-gray-500">
           <li>
             <Link
