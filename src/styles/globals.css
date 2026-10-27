@@ -31,6 +31,30 @@ html {
   scroll-snap-type: y mandatory;
 }
 
+/* outermost container for a page */
+.outside-container {
+  min-height: 100lvh;
+  min-width: 100lvw;
+  max-width: 100lvw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  display: grid;
+  grid-row: auto;
+  background-color: transparent;
+}
+
+/* section container for a page; to hold all sections */
+.section-container {
+  min-height: 100lvh;
+  min-width: 100%;
+  max-width: 100lvw;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-row: auto;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
