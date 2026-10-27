@@ -1,9 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap')
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyUI";
+
+@theme {
+  --font-bebas: Bebas Neue, sans-serif;
+  --font-source:
+    Source Sans Pro, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --color-maroon: #500000;
+  --color-maroonDark: #3c001c;
+  --color-maroonLight: #732f2f;
+  --color-sakura: #ffb7c5;
+  --color-lantern: #ff8c42;
+  --color-paper: #f5f0e8;
+  --color-midnight: #0d0d0d;
+  --color-navy: #141b4d;
+  --color-nationalblue: #89abe4;
+  --color-sandybrown: #dbc8b6;
+  --color-stoneGray: #d0d0ce;
+  --color-khakiBrown: #aca39a;
+  --color-charcoalGray: #3f4444;
+  --color-ink: #101820;
+
+  --background-image-informational: url('/footer/index_bg.jpg');
+  --background-image-informational_mobile: url('/footer/index_bg_mobile.JPG');
+  --background-image-meow: url('/footer/meow.jpg');
+  --background-image-officer: url('/footer/officer.jpg');
+  --background-image-officer_mobile: url('/footer/officer_mobile.jpg');
+  --background-image-sponsor: url('/footer/sponsor.jpg');
+  --background-image-cuties: url('/footer/cutiess.jpg');
+  --background-image-karaoke: url('/footer/karaoke.jpg');
+  --background-image-big: url('/footer/big.jpg');
+  --background-image-sweet: url('/footer/sweet.jpg');
+  --background-image-elevator: url('/footer/elevator.jpg');
+  --background-image-squad: url('/footer/squag_bg.png');
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 :root {
   --blue-0: #131A4D;
