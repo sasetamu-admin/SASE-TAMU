@@ -16,9 +16,9 @@ const FlipCard:React.FC<FlipCardProps> = ({title, description, image_path}) => {
       className="flex justify-center items-center w-fit cursor-pointer"
       onClick={() => setIsFlipped(!isFlipped)}
     >
-      <div className="relative w-96 h-fit [perspective:1000px]">
+      <div className="relative w-96 h-fit perspective-[1000px]">
         <motion.div
-          className="relative w-full h-full [transform-style:preserve-3d]"
+          className="relative w-full h-full transform-3d"
           initial={{ rotateY: 180 }}
           whileInView={{ rotateY: isFlipped ? 180 : 0 }}
           transition={{ duration: 0.9}}
@@ -39,7 +39,7 @@ const FlipCard:React.FC<FlipCardProps> = ({title, description, image_path}) => {
                 </span>
             </div>
           </div>
-          <div className="flex-col px-4 absolute inset-0 w-full h-full bg-slate-800 text-white text-xl flex items-start justify-center rounded-xl shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <div className="flex-col px-4 absolute inset-0 w-full h-full bg-slate-800 text-white text-xl flex items-start justify-center rounded-xl shadow-lg backface-hidden transform-[rotateY(180deg)]">
             <div className="text-2xl font-bold pb-2">
               <div className="pr-4 pb-1">
                 {title}

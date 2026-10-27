@@ -62,7 +62,7 @@ const Join = () => {
       <div className="relative flex flex-col overflow-x-hidden bg-navy pb-12 pt-28 font-source md:flex-row">
         {/* Decorative ambient glow behind the hero content, not interactive
             (pointer-events-none) and sits behind everything (-z-10) */}
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-maroon/30 via-sakura/10 to-transparent blur-3xl" />
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-br from-maroon/30 via-sakura/10 to-transparent blur-3xl" />
 
 
         <div className="w-full px-8 pb-10 md:w-1/2 md:pb-4">
@@ -162,7 +162,7 @@ const Join = () => {
             {/* Right arrow + fade — only shown while there's more content to the right */}
             {canScrollRight && (
   <>
-            <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-navy to-transparent z-10" />
+            <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-linear-to-l from-navy to-transparent z-10" />
               <button
                 onClick={() => {
                   const el = scrollRef.current;
@@ -175,14 +175,14 @@ const Join = () => {
                     behavior: "smooth",
                   });
                 }}
-                className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-gradient-to-l from-navy to-transparent px-4 py-2 font-bebas text-xl text-paper/70 shadow-md backdrop-blur hover:bg-navy hover:text-paper transition"
+                className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-linear-to-l from-navy to-transparent px-4 py-2 font-bebas text-xl text-paper/70 shadow-md backdrop-blur hover:bg-navy hover:text-paper transition"
               >
                 →
               </button>
   </>)}
   {/* Left arrow + fade — only shown once the user has scrolled right at all */}
   {canScrollLeft && ( <>
-              <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-navy to-transparent z-10" />
+              <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-linear-to-r from-navy to-transparent z-10" />
 
 
               <button

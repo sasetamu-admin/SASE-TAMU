@@ -46,7 +46,7 @@ export const TiltCard = ({ children, maxTilt = 12, className = "" }: TiltCardPro
       ref={ref}
       onPointerMove={handleMove}
       onPointerLeave={reset}
-      className={`group [perspective:1000px] ${className}`}
+      className={`group perspective-[1000px] ${className}`}
     >
       <motion.div
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}

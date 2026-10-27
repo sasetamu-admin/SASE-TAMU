@@ -19,7 +19,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ title, description, image_path }) =
       <div className="relative aspect-square w-full max-w-xs sm:max-w-sm md:max-w-md">
         {/* Rotation is ONLY the one-time flip-in when the card scrolls into view */}
         <motion.div
-          className="relative h-full w-full [transform-style:preserve-3d]"
+          className="relative h-full w-full transform-3d"
           initial={{ rotateY: 180 }}
           whileInView={{ rotateY: 0 }}
           viewport={{ once: true }}

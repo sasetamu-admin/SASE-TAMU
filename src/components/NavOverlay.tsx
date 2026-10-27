@@ -7,12 +7,12 @@ const pages = [
   { label: "About", href: "/about" },
   { label: "Events", href: "/upcoming-events" },
   { label: "Our Team", href: "/our-team" },
-  // { label: "Development", href: "/development" },
+  { label: "Development", href: "/development" },
   { label: "Get Involved", href: "/get-involved" },
   { label: "Sponsors", href: "/sponsor" },
   // { label: "SCRC", href: "/scrc" },
   { label: "Join SASE", href: "/join" },
-  // {label: "Photos", href: "/contact" },
+  // {label: "Photos", href: "/photos" },
 ];
 
 type NavOverlayProps = {

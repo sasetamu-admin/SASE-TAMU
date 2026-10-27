@@ -72,7 +72,7 @@ const AutoCarousel:React.FC<CarouselProps> = ({className = '', items, alt}) => {
   
 
   return (
-    <div ref={carouselRef} className={`flex relative overflow-hidden w-full lg:w-[100%] ${className}`}>
+    <div ref={carouselRef} className={`flex relative overflow-hidden w-full lg:w-full ${className}`}>
       <motion.div
         className="flex"
         drag="x"
