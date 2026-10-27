@@ -23,11 +23,11 @@ const Home: NextPage = () => {
       <div className="fixed z-40 w-full">
         <NavBar />
       </div>
-      <div className="bg-navy font-source text-paper">
+      <div className="bg-[--blue-1] font-source text-[--neutral-1]">
         {/* HERO — DESKTOP background */}
         <div className="relative mb-12 hidden h-screen items-center justify-center overflow-hidden bg-white bg-informational bg-cover bg-fixed bg-center [scroll-snap-align:start] md:flex">
           {/* Navy scrim so the title/buttons stay readable over the photo */}
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/40 to-navy/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/50 via-navy/30 to-navy/50" />
 
           <div className="animated animatedFadeInUp fadeInUp relative z-10 mt-12 block">
             <div>
@@ -84,10 +84,10 @@ const Home: NextPage = () => {
         </div>
 
         {/* MISSION — DESKTOP: word-reveal statement + animated photo collage */}
-        <div className="hidden h-screen items-center overflow-hidden bg-navy [scroll-snap-align:start] md:flex">
+        <div className="hidden h-screen items-center overflow-hidden [scroll-snap-align:start] md:flex">
           <div className="mx-auto grid w-full max-w-[88rem] grid-cols-[1.1fr_1fr] items-center gap-16 px-12 xl:gap-24 xl:px-20">
             <div>
-              <motion.p
+              {/* <motion.p
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -96,7 +96,7 @@ const Home: NextPage = () => {
               >
                 <span className="h-px w-12 bg-sakura" />
                 Our Mission
-              </motion.p>
+              </motion.p> */}
 
               <MissionReveal
                 className="font-bebas text-5xl leading-[1.05] xl:text-6xl"
@@ -114,7 +114,7 @@ const Home: NextPage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 1.2 }}
               >
-                <p className="mt-8 max-w-xl text-base text-paper/70 xl:text-lg">
+                <p className="font-source mt-8 max-w-xl text-base text-[--neutral-0] xl:text-lg">
                   In addition to professional development, SASE also encourages
                   members to contribute to the enhancement of the communities in
                   which they live.
@@ -176,10 +176,6 @@ const Home: NextPage = () => {
             See more on Instagram →
           </a>
         </div>
-
-        {/* Photo strips — cuties is desktop-only, elevator is mobile-only */}
-        <div className="hidden h-screen overflow-hidden bg-white bg-cuties bg-cover bg-fixed bg-center [scroll-snap-align:start] md:block"></div>
-        <div className="flex h-[100svh] overflow-hidden bg-white bg-elevator bg-cover bg-center [scroll-snap-align:start] md:hidden"></div>
       </div>
       <Footer />
     </>

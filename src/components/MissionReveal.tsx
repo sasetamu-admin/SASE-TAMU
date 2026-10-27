@@ -35,7 +35,7 @@ export const MissionReveal = ({ segments, className = "" }: MissionRevealProps) 
               key={`${si}-${wi}`}
               variants={word}
               className={`mr-[0.25em] inline-block ${
-                seg.highlight ? "text-sakura" : "text-paper/60"
+                seg.highlight ? "text-[--blue-0]" : "text-[--neutral-0]"
               }`}
             >
               {w}

@@ -5,6 +5,27 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --blue-0: #131A4D;
+  --blue-1: #89AAE2;
+  --beige: #DBC8B6;
+  --neutral-0: #0F181F;
+  --neutral-1: #3F4444;
+  --neutral-2: #978C87;
+  --neutral-3: #CFCFCD;
+  --neutral-4: #E8E8E8;
+
+  --maroon: #500000;
+  --white: #FFFFFF;
+  --secondary-0: #202020;
+  --secondary-1: #3E3E3E;
+  --secondary-2: #707070;
+  --secondary-3: #D1D1D1;
+  --secondary-4: #D6D3C4;
+  --accent-0: #3C0000;
+  --accent-1: #732F2f;
+}
+
 
 html {
   scroll-snap-type: y mandatory;
@@ -36,7 +57,7 @@ html {
 }
 
 .animate-gradient-text {
-  background: linear-gradient(90deg, navy, #ACA39A, navy);
+  background: linear-gradient(90deg, var(--white), var(--blue-1), var(--white));
   background-size: 200% 200%;
   animation: gradientShift 6s ease infinite;
   -webkit-background-clip: text;
