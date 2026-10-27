@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap')
-layer(base);
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap')
-layer(base);
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap') layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap') layer(base);
 @import "tailwindcss";
-@plugin "daisyUI";
+
+@plugin "daisyui";
 
 @theme {
   --font-bebas: Bebas Neue, sans-serif;
@@ -39,27 +37,7 @@ layer(base);
   --background-image-sweet: url('/footer/sweet.jpg');
   --background-image-elevator: url('/footer/elevator.jpg');
   --background-image-squad: url('/footer/squag_bg.png');
-}
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
-}
-
-:root {
   --blue-0: #131A4D;
   --blue-1: #89AAE2;
   --beige: #DBC8B6;
@@ -80,13 +58,8 @@ layer(base);
   --accent-1: #732F2f;
 }
 
-
-html {
-  scroll-snap-type: y mandatory;
-}
-
 /* outermost container for a page */
-.outside-container {
+@utility outside-container {
   min-height: 100lvh;
   min-width: 100lvw;
   max-width: 100lvw;
@@ -98,8 +71,8 @@ html {
   background-color: transparent;
 }
 
-/* section container for a page; to hold all sections */
-.section-container {
+/* div container for a page; to hold all inner divs */
+@utility div-container {
   min-height: 100lvh;
   min-width: 100%;
   max-width: 100lvw;
@@ -107,6 +80,38 @@ html {
   padding: 0;
   display: grid;
   grid-row: auto;
+  padding-top: 80px; /* account for navbar */
+}
+
+button {
+  cursor: pointer;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  background-color: var(--blue-0);
+  color: var(--white);
 }
 
 @keyframes marquee {
@@ -118,7 +123,7 @@ html {
   }
 }
 
-.animate-marquee {
+@utility animate-marquee {
   animation: marquee 20s linear infinite;
 }
 
@@ -130,19 +135,15 @@ html {
     background-position: 100% 50%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 0% 50
   }
 }
 
-.animate-gradient-text {
+@utility animate-gradient-text {
   background: linear-gradient(90deg, var(--white), var(--blue-1), var(--white));
   background-size: 200% 200%;
   animation: gradientShift 6s ease infinite;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-body {
-  @apply bg-navy text-paper;
 }

@@ -23,11 +23,11 @@ const Home: NextPage = () => {
       <div className="fixed z-40 w-full">
         <NavBar />
       </div>
-      <div className="bg-[--blue-1] font-source text-[--neutral-1]">
+      <div className="bg-(--blue-1) font-source text-(--neutral-1)">
         {/* HERO — DESKTOP background */}
-        <div className="relative mb-12 hidden h-screen items-center justify-center overflow-hidden bg-white bg-informational bg-cover bg-fixed bg-center [scroll-snap-align:start] md:flex">
+        <div className="relative mb-12 hidden h-screen items-center justify-center overflow-hidden bg-white bg-informational bg-cover bg-fixed bg-center snap-start md:flex">
           {/* Navy scrim so the title/buttons stay readable over the photo */}
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/50 via-navy/30 to-navy/50" />
+          <div className="absolute inset-0 bg-linear-to-b from-navy/50 via-navy/30 to-navy/50" />
 
           <div className="animated animatedFadeInUp fadeInUp relative z-10 mt-12 block">
             <div>
@@ -55,8 +55,8 @@ const Home: NextPage = () => {
         </div>
 
         {/* HERO — MOBILE background */}
-        <div className="relative mb-12 flex h-[100svh] items-center justify-center overflow-hidden bg-white bg-informational_mobile bg-cover bg-center [scroll-snap-align:start] md:hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/40 to-navy/80" />
+        <div className="relative mb-12 flex h-svh items-center justify-center overflow-hidden bg-white bg-informational_mobile bg-cover bg-center snap-start md:hidden">
+          <div className="absolute inset-0 bg-linear-to-b from-navy/70 via-navy/40 to-navy/80" />
 
           <div className="animated animatedFadeInUp fadeInUp relative z-10 block px-6">
             <div>
@@ -84,20 +84,9 @@ const Home: NextPage = () => {
         </div>
 
         {/* MISSION — DESKTOP: word-reveal statement + animated photo collage */}
-        <div className="hidden h-screen items-center overflow-hidden [scroll-snap-align:start] md:flex">
-          <div className="mx-auto grid w-full max-w-[88rem] grid-cols-[1.1fr_1fr] items-center gap-16 px-12 xl:gap-24 xl:px-20">
+        <div className="hidden h-screen items-center overflow-hidden snap-start md:flex">
+          <div className="mx-auto grid w-full max-w-352 grid-cols-[1.1fr_1fr] items-center gap-16 px-12 xl:gap-24 xl:px-20">
             <div>
-              {/* <motion.p
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="mb-6 flex items-center gap-4 font-source text-xs uppercase tracking-[0.3em] text-sakura"
-              >
-                <span className="h-px w-12 bg-sakura" />
-                Our Mission
-              </motion.p> */}
-
               <MissionReveal
                 className="font-bebas text-5xl leading-[1.05] xl:text-6xl"
                 segments={[
@@ -114,7 +103,7 @@ const Home: NextPage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 1.2 }}
               >
-                <p className="font-source mt-8 max-w-xl text-base text-[--neutral-0] xl:text-lg">
+                <p className="font-source mt-8 max-w-xl text-base text-(--neutral-0) xl:text-lg">
                   In addition to professional development, SASE also encourages
                   members to contribute to the enhancement of the communities in
                   which they live.
@@ -130,7 +119,7 @@ const Home: NextPage = () => {
         </div>
 
         {/* MISSION — MOBILE */}
-        <div className="flex h-[100svh] flex-col items-center overflow-hidden bg-navy font-source [scroll-snap-align:start] md:hidden">
+        <div className="flex h-svh flex-col items-center overflow-hidden bg-navy font-source snap-start md:hidden">
           <div className="px-6 pb-6 pt-24 text-center">
             <h1 className="font-bebas text-3xl">Our Mission</h1>
             <div className="pt-3">
@@ -159,7 +148,7 @@ const Home: NextPage = () => {
         </div>
 
         {/* LATEST CONTENT — mobile keeps a plain heading, desktop gets the typing effect */}
-        <div className="flex h-[100svh] flex-col items-center justify-center overflow-hidden px-4 [scroll-snap-align:start] md:h-screen">
+        <div className="flex h-svh flex-col items-center justify-center overflow-hidden px-4 snap-start md:h-screen">
           <h1 className="pb-4 font-bebas text-3xl md:hidden">Latest Content</h1>
           <h1 className="hidden pb-10 font-bebas text-5xl md:block">
             <TypingText text="Latest Content" />

@@ -13,7 +13,7 @@ export const NavBar = () => {
       <nav className="bg-transparent p-2 text-lg">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <Link href="/" className="flex items-center">
                   <span className="self-center">
                     <div className="flex flex-row items-center">
@@ -41,7 +41,7 @@ export const NavBar = () => {
                 onClick={() => setNavOpen(true)}
                 aria-label="Open menu"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><title>hamburger-menu-linear</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M20 7L4 7"/><path d="M20 12L4 12"/><path d="M20 17L4 17"/></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><title>hamburger-menu-linear</title><g fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5"><path d="M20 7L4 7"/><path d="M20 12L4 12"/><path d="M20 17L4 17"/></g></svg>
               </button>
             </div>
           </div>
