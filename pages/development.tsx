@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { cn } from "../utils/cn";
 import { ReactNode, useState, useEffect } from "react";
+import OpenPages from "~/components/OpenPages";
 
 const Join = () => {
     const SmoothHoverMenuItem = ({
@@ -57,9 +58,7 @@ const Join = () => {
                 <div className="h-[85lvh] w-[140lvh] max-w-full flex flex-row gap-0 justify-around">
                     <div className="bg-blue-0 flex-1 rounded-md flex items-center justify-center p-2">
                         <div className="relative bg-neutral-4 h-full w-full flex flex-row justify-around items-center">
-                            <div className="bg-linear-to-l from-neutral-3 to-neutral-4 to-20% h-full w-1/2"></div>
-                            <div className="bg-neutral-2/30 h-full w-px"></div>
-                            <div className="bg-linear-to-r from-neutral-3 to-neutral-4 to-20% h-full w-1/2"></div>
+                            <OpenPages />
                             <button id="page-back" className="absolute left-3 top-3 text-neutral-0">back</button>
                             <button id="page-next" className="absolute right-3 top-3 text-neutral-0">next</button>
                         </div>
