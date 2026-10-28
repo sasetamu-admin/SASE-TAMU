@@ -29,7 +29,7 @@ export const NavOverlay = ({ open, onClose }: NavOverlayProps) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-50 bg-maroonDark bg-opacity-95"
+          className="pointer-events-auto fixed inset-0 z-50 bg-maroonDark bg-opacity-95"
         >
           <div className="flex justify-end px-6 py-4">
             <button

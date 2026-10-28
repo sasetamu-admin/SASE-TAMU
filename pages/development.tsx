@@ -5,22 +5,75 @@ import { Footer } from "~/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
-import { useState, useEffect } from "react";
-
+import { cn } from "../utils/cn";
+import { ReactNode, useState, useEffect } from "react";
 
 const Join = () => {
-    const text = "Development Info";
+    const SmoothHoverMenuItem = ({
+        children,
+        transitionDelayInMs = 300,
+        }: { children: ReactNode; transitionDelayInMs?: number }) => {
+            const [isHovered, setIsHovered] = useState(false);
+
+        return (
+            <div
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className={cn(
+                "whitespace-nowrap overflow-hidden rounded-r-lg border cursor-pointer",
+                isHovered
+                ? "border-blue-0 scale-100"
+                : "border-blue-1 scale-100",
+            )}
+            style={{
+                transition: "border-color, transform",
+                transitionDuration: isHovered
+                ? "0ms"
+                : `${transitionDelayInMs + 300}ms`,
+            }}
+            >
+            <div
+                className={cn("px-1 py-2", isHovered ? "bg-blue-0" : "bg-blue-1")}
+                style={{
+                transition: "background-color",
+                transitionDuration: isHovered
+                    ? "0ms"
+                    : `${transitionDelayInMs + 300}ms`,
+                }}
+            >
+                <span className="text-sm font-medium [writing-mode:vertical-rl] max-h-[16ch]">{children}</span>
+            </div>
+            </div>
+        );
+    };
 
     return (
-    <div className="outside-container bg-linear-to-b from-(--neutral-4) to-(--blue-1)">
-        <div className="fixed z-40 w-full">
-            <NavBar />
+    <div className="outside-container bg-linear-to-b from-neutral-4 to-blue-1">
+        <div className="fixed z-40 w-full pointer-events-none">
+            <NavBar />            
         </div>
         <div className="div-container">
-            <div className="flex flex-col justify-center mx-auto content-center">
-                <p>
-                    <strong>This page is under construction,</strong> come back soon for tips and resources on your career!
-                </p>
+            <div className="flex flex-col justify-center mx-auto content-center py-12 px-4">
+                <div className="h-[85lvh] w-[140lvh] max-w-full flex flex-row gap-0 justify-around">
+                    <div className="bg-blue-0 flex-1 rounded-md flex items-center justify-center p-2">
+                        <div className="relative bg-neutral-4 h-full w-full flex flex-row justify-around items-center">
+                            <div className="bg-linear-to-l from-neutral-3 to-neutral-4 to-20% h-full w-1/2"></div>
+                            <div className="bg-neutral-2/30 h-full w-px"></div>
+                            <div className="bg-linear-to-r from-neutral-3 to-neutral-4 to-20% h-full w-1/2"></div>
+                            <button id="page-back" className="absolute left-3 top-3 text-neutral-0">back</button>
+                            <button id="page-next" className="absolute right-3 top-3 text-neutral-0">next</button>
+                        </div>
+                    </div>
+                    <div className="h-auto flex flex-col justify-evenly items-start flex-0">
+                        <SmoothHoverMenuItem>test 1</SmoothHoverMenuItem>
+                        <SmoothHoverMenuItem>test 2</SmoothHoverMenuItem>
+                        <SmoothHoverMenuItem>test 3</SmoothHoverMenuItem>
+                        <SmoothHoverMenuItem>super long test with too many characters</SmoothHoverMenuItem>
+                        <SmoothHoverMenuItem>test 5</SmoothHoverMenuItem>
+                        <SmoothHoverMenuItem>test 6</SmoothHoverMenuItem>
+                        <SmoothHoverMenuItem>h</SmoothHoverMenuItem>
+                    </div>
+                </div>
             </div>
         </div>
         <Footer />

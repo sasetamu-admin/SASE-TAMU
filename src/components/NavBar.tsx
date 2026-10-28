@@ -9,7 +9,7 @@ export const NavBar = () => {
   const [isNavOpen, setNavOpen] = useState(false);
 
   return (
-    <div className="font-source bg-transparent" id="desktop-nav">
+    <div className="font-source bg-transparent pointer-events-none" id="desktop-nav">
       <nav className="bg-transparent p-2 text-lg">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
@@ -37,6 +37,7 @@ export const NavBar = () => {
                 </Link>
               </div>
               <button
+                className="pointer-events-auto"
                 type="button"
                 onClick={() => setNavOpen(true)}
                 aria-label="Open menu"

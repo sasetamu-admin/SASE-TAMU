@@ -38,30 +38,29 @@
   --background-image-elevator: url('/footer/elevator.jpg');
   --background-image-squad: url('/footer/squag_bg.png');
 
-  --blue-0: #131A4D;
-  --blue-1: #89AAE2;
-  --beige: #DBC8B6;
-  --neutral-0: #0F181F;
-  --neutral-1: #3F4444;
-  --neutral-2: #978C87;
-  --neutral-3: #CFCFCD;
-  --neutral-4: #E8E8E8;
+  --color-blue-0: #131A4D;
+  --color-blue-1: #89AAE2;
+  --color-beige: #DBC8B6;
+  --color-neutral-0: #0F181F;
+  --color-neutral-1: #3F4444;
+  --color-neutral-2: #978C87;
+  --color-neutral-3: #CFCFCD;
+  --color-neutral-4: #E8E8E8;
 
-  --maroon: #500000;
-  --white: #FFFFFF;
-  --secondary-0: #202020;
-  --secondary-1: #3E3E3E;
-  --secondary-2: #707070;
-  --secondary-3: #D1D1D1;
-  --secondary-4: #D6D3C4;
-  --accent-0: #3C0000;
-  --accent-1: #732F2f;
+  --color-maroon: #500000;
+  --color-white: #FFFFFF;
+  --color-secondary-0: #202020;
+  --color-secondary-1: #3E3E3E;
+  --color-secondary-2: #707070;
+  --color-secondary-3: #D1D1D1;
+  --color-secondary-4: #D6D3C4;
+  --color-accent-0: #3C0000;
+  --color-accent-1: #732F2f;
 }
 
 /* outermost container for a page */
 @utility outside-container {
   min-height: 100lvh;
-  min-width: 100lvw;
   max-width: 100lvw;
   margin: 0;
   padding: 0;
