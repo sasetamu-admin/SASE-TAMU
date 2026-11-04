@@ -10,7 +10,7 @@ import { ReactNode, useState, useEffect } from "react";
 import OpenPages from "~/components/OpenPages";
 
 const Join = () => {
-    const SmoothHoverMenuItem = ({
+    const BookTab = ({
         children,
         transitionDelayInMs = 300,
         }: { children: ReactNode; transitionDelayInMs?: number }) => {
@@ -21,7 +21,7 @@ const Join = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             className={cn(
-                "whitespace-nowrap overflow-hidden rounded-r-lg border cursor-pointer",
+                "whitespace-nowrap overflow-hidden rounded-r-sm cursor-pointer",
                 isHovered
                 ? "border-blue-0 scale-100"
                 : "border-blue-1 scale-100",
@@ -34,7 +34,7 @@ const Join = () => {
             }}
             >
             <div
-                className={cn("px-1 py-2", isHovered ? "bg-blue-0" : "bg-blue-1")}
+                className={cn("px-0.5 py-2", isHovered ? "bg-blue-0" : "bg-blue-1")}
                 style={{
                 transition: "background-color",
                 transitionDuration: isHovered
@@ -49,7 +49,7 @@ const Join = () => {
     };
 
     return (
-    <div className="outside-container bg-linear-to-b from-neutral-4 to-blue-1">
+    <div className="outside-container bg-linear-to-b from-blue-1 to-neutral-4">
         <div className="fixed z-40 w-full pointer-events-none">
             <NavBar />            
         </div>
@@ -63,14 +63,12 @@ const Join = () => {
                             <button id="page-next" className="absolute right-3 top-3 text-neutral-0">next</button>
                         </div>
                     </div>
-                    <div className="h-auto flex flex-col justify-evenly items-start flex-0">
-                        <SmoothHoverMenuItem>test 1</SmoothHoverMenuItem>
-                        <SmoothHoverMenuItem>test 2</SmoothHoverMenuItem>
-                        <SmoothHoverMenuItem>test 3</SmoothHoverMenuItem>
-                        <SmoothHoverMenuItem>super long test with too many characters</SmoothHoverMenuItem>
-                        <SmoothHoverMenuItem>test 5</SmoothHoverMenuItem>
-                        <SmoothHoverMenuItem>test 6</SmoothHoverMenuItem>
-                        <SmoothHoverMenuItem>h</SmoothHoverMenuItem>
+                    <div className="h-auto py-2 flex flex-col justify-evenly items-start flex-0">
+                        <BookTab>Resume</BookTab>
+                        <BookTab>Research</BookTab>
+                        <BookTab>AI/ML</BookTab>
+                        <BookTab>CAD</BookTab>
+                        <BookTab>Other</BookTab>
                     </div>
                 </div>
             </div>
