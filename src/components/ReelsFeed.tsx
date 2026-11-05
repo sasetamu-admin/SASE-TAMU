@@ -42,7 +42,7 @@ export const ReelsFeed = ({ limit = 3 }: { limit?: number }) => {
           >
             <video
               src={reel.media_url}
-              className="aspect-[9/16] w-64 max-h-[55vh] rounded-xl object-cover"
+              className="aspect-9/16 w-64 max-h-[55vh] rounded-xl object-cover"
               autoPlay
               muted
               loop
@@ -64,7 +64,7 @@ export const ReelsFeed = ({ limit = 3 }: { limit?: number }) => {
             >
               <video
                 src={reel.media_url}
-                className="aspect-[9/16] max-h-[52vh] w-full rounded-xl object-cover"
+                className="aspect-9/16 max-h-[52vh] w-full rounded-xl object-cover"
                 autoPlay
                 muted
                 loop

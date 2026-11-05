@@ -52,7 +52,7 @@ export const CtaLink = ({
             {children}
           </span>
         </div>
-        <div className="absolute left-0 top-0 z-10 flex h-full w-full translate-x-12 items-center justify-center gap-2 text-paper opacity-0 transition-all duration-300 group-hover:-translate-x-0 group-hover:opacity-100">
+        <div className="absolute left-0 top-0 z-10 flex h-full w-full translate-x-12 items-center justify-center gap-2 text-paper opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
           <span>{children}</span>
           <FiArrowRight />
         </div>
