@@ -35,7 +35,7 @@ const photos: Photo[] = [
 
 export const PhotoCollage = () => {
   return (
-    <div className="relative aspect-[5/4] w-full">
+    <div className="relative aspect-5/4 w-full">
       <div className="pointer-events-none absolute inset-[15%] rounded-full bg-maroon/30 blur-3xl" />
 
       {photos.map((p, i) => (
@@ -53,7 +53,7 @@ export const PhotoCollage = () => {
             alt={p.alt}
             width={800}
             height={600}
-            className="aspect-[4/3] w-full rounded-xl object-cover shadow-2xl ring-1 ring-paper/10"
+            className="aspect-4/3 w-full rounded-xl object-cover shadow-2xl ring-1 ring-paper/10"
           />
         </motion.div>
       ))}
