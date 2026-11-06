@@ -109,8 +109,8 @@ html {
 }
 
 body {
-  background-color: var(--blue-0);
-  color: var(--white);
+  background-color: var(--color-blue-0);
+  color: var(--color-white);
 }
 
 @keyframes marquee {
@@ -139,7 +139,7 @@ body {
 }
 
 @utility animate-gradient-text {
-  background: linear-gradient(90deg, var(--white), var(--blue-1), var(--white));
+  background: linear-gradient(90deg, var(--color-white), var(--color-blue-1), var(--color-white));
   background-size: 200% 200%;
   animation: gradientShift 6s ease infinite;
   -webkit-background-clip: text;
