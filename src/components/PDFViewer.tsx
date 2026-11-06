@@ -1,18 +1,7 @@
-const PDFViewer = ({href}: {href: string}) => {
-    return (
-        <div style={{ width: '100%', height: '100%' }}>
-        <object
-            data={href}
-            type="application/pdf"
-            width="100%"
-            height="100%"
-        >
-            <p>Your browser does not support PDFs. 
-            <a href={href}>Download the PDF</a> instead.
-            </p>
-        </object>
-        </div>
-    );
-}
+"use client";
+import dynamic from "next/dynamic";
+
+// pdf.js touches browser-only APIs, so skip server rendering for it.
+const PDFViewer = dynamic(() => import("./PDFViewerInner"), { ssr: false });
 
 export default PDFViewer;
