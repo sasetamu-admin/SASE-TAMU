@@ -28,10 +28,23 @@ export default async function handler(
         const response = await fetch(url);
         const data = (await response.json()) as InstagramResponse;
 
-        const posts = data.data.filter((post) => post.media_product_type === "REELS");
-        res.status(200).json(posts);
-    } catch(error)
-    {
-        res.status(500).json({ error: "failed to fetch instagram posts" });
+        if (!response.ok) {
+            console.error("Instagram fetch details:", data);
+            return res.status(response.status).json({
+                message: "Meta Graph API error",
+                metaError: data
+            });
+        }
+
+        const typedData = data as InstagramResponse;
+        const posts = typedData.data.filter((post) => post.media_product_type === "REELS");
+        return res.status(200).json(posts);
+
+    } catch (error: any) {
+        console.error("Internal Server Catch Block:", error);
+        return res.status(500).json({ 
+            error: "Internal server error occurred", 
+            details: error?.message || error 
+        });
     }
 }
