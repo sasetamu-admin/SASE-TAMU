@@ -87,7 +87,7 @@ const GetInvolvedPage: React.FC = () => {
     return (
         <>
             {/* Fixed nav bar sits above all page content */}
-            <div className="z-40 w-full absolute">
+            <div className="fixed z-40 w-full">
                 <NavBar />
             </div>
             <div className='bg-navy font-source text-paper overflow-x-hidden overflow-y-hidden'>
