@@ -120,7 +120,7 @@ const Team: NextPage = () => {
       </div>
       
       <div className="pt-36 flex justify-center font-bebas text-5xl text-paper">
-        Meet our Team 2025-26
+        Meet our Team 2026-27
       </div>
 
       <div className="my-10 mx-5 flex justify-center">

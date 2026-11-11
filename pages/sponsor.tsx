@@ -93,12 +93,14 @@ const sponsor = () => {
             <LogoList images={logosPlatinum} />
           </div>
 
-          <div className="mt-8 rounded-lg bg-amber-50 p-10">
+          
+          {/* Add these back later if we have GOLD sponsors */}
+          {/* <div className="mt-8 rounded-lg bg-amber-50 p-10">
             <div className="pt-5 text-center font-bebas text-6xl text-amber-300">
               Gold
             </div>
             <LogoList images={logosGold} />
-          </div>
+          </div> */}
 
           <div className="mt-8 rounded-lg bg-gray-100 p-10">
             <div className="pt-5 text-center font-bebas text-6xl text-gray-600">
