@@ -1,16 +1,21 @@
 //NOTE THAT WHEN ADDING, FILE PATHS ARE CASE-SENSITIVE!
 
 export const logosPlatinum = [
+  // {
+  //   link: "https://chevron.com",
+  //   alt: "Chevron",
+  //   path: "/sponsors/chevron.png",
+  // },
+  // {
+  //   link: "https://phillips66.com",
+  //   alt: "Phillips 66",
+  //   path: "/sponsors/phillips66.webp",
+  // },
   {
-    link: "https://chevron.com",
-    alt: "Chevron",
-    path: "/sponsors/chevron.png",
-  },
-  {
-    link: "https://phillips66.com",
-    alt: "Phillips 66",
-    path: "/sponsors/phillips66.webp",
-  },
+    link: "https://www.shell.com/",
+    alt: "Shell",
+    path: "/sponsors/Shell.svg",
+  }
   // Add more logo paths as needed
 ];
 
@@ -41,11 +46,6 @@ export const logosGold = [
     path: "/sponsors/burnsandmcdonnell.webp",
   },
   {
-    link: "https://corporate.exxonmobil.com",
-    alt: "ExxonMobil",
-    path: "/sponsors/exxon.png",
-  },
-  {
     link: "https://www.honeywell.com/us/en",
     alt: "Honeywell",
     path: "/sponsors/honeywell.png",
@@ -60,31 +60,42 @@ export const logosSilver = [
     alt: "GE Vernova",
     path: "/sponsors/gevernova.svg",
   },
+
+
+  // Add more logo paths as needed
+];
+
+export const logosBronze = [
+  // {
+  //   link: "https://lockheedmartin.com",
+  //   alt: "Lockheed Martin",
+  //   path: "/sponsors/lockheed.svg",
+  // },
+  // {
+  //   link: "https://www.swri.org",
+  //   alt: "Southwest Research Institute",
+  //   path: "/sponsors/swri.webp",
+  // },
+  {
+    link: "https://www.lcra.org",
+    alt: "LCRA",
+    path: "/sponsors/lcra.jpg",
+  },
   {
     link: "https://www.cdmsmith.com",
     alt: "CDM Smith",
     path: "/sponsors/cdmsmith.webp",
   },
   {
-    link: "https://www.lcra.org",
-    alt: "LCRA",
-    path: "/sponsors/lcra.jpg",
+    link: "https://corporate.exxonmobil.com",
+    alt: "ExxonMobil",
+    path: "/sponsors/exxon.png",
+  },
+  {
+    link: "https://about.google/",
+    alt: "Google",
+    path: "/sponsors/Google.svg",
   }
-
-  // Add more logo paths as needed
-];
-
-export const logosBronze = [
-  {
-    link: "https://lockheedmartin.com",
-    alt: "Lockheed Martin",
-    path: "/sponsors/lockheed.svg",
-  },
-  {
-    link: "https://www.swri.org",
-    alt: "Southwest Research Institute",
-    path: "/sponsors/swri.webp",
-  },
 
   // Add more logo paths as needed
 ];
