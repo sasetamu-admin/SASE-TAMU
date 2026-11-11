@@ -6,11 +6,11 @@ export const logosPlatinum = [
   //   alt: "Chevron",
   //   path: "/sponsors/chevron.png",
   // },
-  // {
-  //   link: "https://phillips66.com",
-  //   alt: "Phillips 66",
-  //   path: "/sponsors/phillips66.webp",
-  // },
+  {
+    link: "https://phillips66.com",
+    alt: "Phillips 66",
+    path: "/sponsors/phillips66.webp",
+  },
   {
     link: "https://www.shell.com/",
     alt: "Shell",
