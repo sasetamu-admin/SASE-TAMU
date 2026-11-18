@@ -1,4 +1,4 @@
-The purpose of this overhaul is as follows:
+# The purpose of this overhaul is as follows:
 
 - Website ORIGAMI theme with graphics and animations (ask graphics team idk how to do any of that stuff)
 - Science and engineering as SEPARATE sections + area where past workshop slides accessible
@@ -9,3 +9,5 @@ Personal (Andrew) thoughts on current website:
 - Not a huge fan of the UI, a lot to take in and nothing jumps out to you from the start
     - (Big fan of how TAMUHack's website is built)
     - UT Austin has a similar format but with a much cleaner design
+
+DELETE / ARCHIVE this file when finished.
