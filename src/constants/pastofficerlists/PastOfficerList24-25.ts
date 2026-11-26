@@ -4,7 +4,7 @@ import { EBoardOfficerRoles, GeneralOfficerRoles } from "../constants";
 export const PastEBoardOfficers2425: EBoardOfficerList = {
   president: {
     image: {
-      src: "/headshots/24-25/Pres_Noah.JPG",
+      src: "/our-team/headshots/24-25/Pres_Noah.JPG",
       width: 256,
       height: 256,
       alt: "Noah Saria Headshot",
@@ -16,7 +16,7 @@ export const PastEBoardOfficers2425: EBoardOfficerList = {
   },
   evp: {
     image: {
-      src: "/headshots/24-25/EVP_Amey.JPG",
+      src: "/our-team/headshots/24-25/EVP_Amey.JPG",
       width: 256,
       height: 256,
       alt: "Amey Halappanavar Headshot",
@@ -28,7 +28,7 @@ export const PastEBoardOfficers2425: EBoardOfficerList = {
   },
   ivp: {
     image: {
-      src: "/headshots/24-25/IVP_Charisa.JPG",
+      src: "/our-team/headshots/24-25/IVP_Charisa.JPG",
       width: 256,
       height: 256,
       alt: "Charisa Chairat Headshot",
@@ -40,7 +40,7 @@ export const PastEBoardOfficers2425: EBoardOfficerList = {
   },
   treasurer: {
     image: {
-      src: "/headshots/24-25/Tres_Art.JPG",
+      src: "/our-team/headshots/24-25/Tres_Art.JPG",
       width: 256,
       height: 256,
       alt: "Art Young Headshot",
@@ -52,7 +52,7 @@ export const PastEBoardOfficers2425: EBoardOfficerList = {
   },
   secretary: {
     image: {
-      src: "/headshots/24-25/Secr_Jojo.JPG",
+      src: "/our-team/headshots/24-25/Secr_Jojo.JPG",
       width: 256,
       height: 256,
       alt: "Joseph Nguyen Headshot",
@@ -67,7 +67,7 @@ export const PastEBoardOfficers2425: EBoardOfficerList = {
 export const PastGeneralOfficers2425: GeneralOfficerList = {
   techMarketing: {
     image: {
-      src: "/headshots/24-25/TMD_Sam.JPG",
+      src: "/our-team/headshots/24-25/TMD_Sam.JPG",
       width: 256,
       height: 256,
       alt: "Samantha Li Headshot",
@@ -79,7 +79,7 @@ export const PastGeneralOfficers2425: GeneralOfficerList = {
   },
   historian: {
     image: {
-      src: "/headshots/24-25/Hist_Luis.JPG",
+      src: "/our-team/headshots/24-25/Hist_Luis.JPG",
       width: 256,
       height: 256,
       alt: "Luis Albos Headshot",
@@ -91,7 +91,7 @@ export const PastGeneralOfficers2425: GeneralOfficerList = {
   },
   social: {
     image: {
-      src: "/headshots/24-25/SD_Nikki.JPG",
+      src: "/our-team/headshots/24-25/SD_Nikki.JPG",
       width: 256,
       height: 256,
       alt: "Nicole Arackal Headshot",
@@ -103,7 +103,7 @@ export const PastGeneralOfficers2425: GeneralOfficerList = {
   },
   pr: {
     image: {
-      src: "/headshots/24-25/PR_Kiera.JPG",
+      src: "/our-team/headshots/24-25/PR_Kiera.JPG",
       width: 256,
       height: 256,
       alt: "Kiera Joy Ocampo Headshot",
@@ -115,7 +115,7 @@ export const PastGeneralOfficers2425: GeneralOfficerList = {
   },
   fundraising: {
     image: {
-      src: "/headshots/24-25/FD_Pranav.JPG",
+      src: "/our-team/headshots/24-25/FD_Pranav.JPG",
       width: 256,
       height: 256,
       alt: "Pranav Moogala Headshot",
@@ -127,7 +127,7 @@ export const PastGeneralOfficers2425: GeneralOfficerList = {
   },
   logistics: {
     image: {
-      src: "/headshots/24-25/LD_Mya.JPG",
+      src: "/our-team/headshots/24-25/LD_Mya.JPG",
       width: 256,
       height: 256,
       alt: "Mya Tinsay Headshot",
@@ -139,7 +139,7 @@ export const PastGeneralOfficers2425: GeneralOfficerList = {
   },
   science: {
     image: {
-      src: "/headshots/24-25/SC_Mihir.JPG",
+      src: "/our-team/headshots/24-25/SC_Mihir.JPG",
       width: 256,
       height: 256,
       alt: "Mihir Kalvakaalva Headshot",
@@ -151,7 +151,7 @@ export const PastGeneralOfficers2425: GeneralOfficerList = {
   },
   sports: {
     image: {
-      src: "/headshots/24-25/SC_Nick.JPG",
+      src: "/our-team/headshots/24-25/SC_Nick.JPG",
       width: 256,
       height: 256,
       alt: "Nick Truong Headshot",

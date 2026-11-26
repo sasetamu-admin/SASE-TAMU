@@ -79,7 +79,7 @@ const about = () => {
             className="self-center pl-10 pr-10 pt-5 md:w-1/2">
             <Image
               className="w-full rounded-xl"
-              src="/NC2024.jpeg"
+              src="/about/NC2024.jpeg"
               width={400}
               height={300}
               alt="Picture of SASE National Conference 2024"
@@ -124,7 +124,7 @@ const about = () => {
                   zoom (scale-105) and the caption fade-in below */}
               <div className="relative overflow-hidden">
                 <Image
-                  src="/NC2.jpg"
+                  src="/about/NC2.jpg"
                   alt="SASE TAMU at National Conference"
                   width={384}
                   height={320}
@@ -158,7 +158,7 @@ const about = () => {
               </div>
               <div className="relative overflow-hidden">
                 <Image
-                  src="/LANTERN.jpg"
+                  src="/about/LANTERN.jpg"
                   alt="Lantern Making Social"
                   width={384}
                   height={320}
@@ -189,7 +189,7 @@ const about = () => {
               </div>
               <div className="relative overflow-hidden">
                 <Image
-                  src="/STEMFEST.jpg"
+                  src="/about/STEMFEST.jpg"
                   alt="SASE TAMU at STEMFest"
                   width={384}
                   height={320}
@@ -228,9 +228,9 @@ const about = () => {
               Events We Host
             </motion.h1>
             <div className="flex flex-row justify-between items-center">
-              <OverlayCard title = "General Body Meetings" description = {event_description_array[0] ?? ""} image_path="/GE_VERNOVA.JPG"/>
-              <OverlayCard title = "Socials + Workshops" description = {event_description_array[1] ?? ""} image_path="/skating_social.jpeg"/>
-              <OverlayCard title = "Volunteering Events" description = {event_description_array[2] ?? ""} image_path="/marathon_volunteering.jpg"/>
+              <OverlayCard title = "General Body Meetings" description = {event_description_array[0] ?? ""} image_path="/about/ge-vernova-gbm.JPG"/>
+              <OverlayCard title = "Socials + Workshops" description = {event_description_array[1] ?? ""} image_path="/about/skating-social.jpeg"/>
+              <OverlayCard title = "Volunteering Events" description = {event_description_array[2] ?? ""} image_path="/about/pumpkin-volunteering.jpg"/>
               
             </div>
             
@@ -269,7 +269,7 @@ const about = () => {
           className="self-center pl-10 pr-10 pt-5 md:w-1/2">
             <Image
               className="w-full rounded-xl"
-              src="/southwest.JPG"
+              src="/about/southwest.JPG"
               width={600}
               height={400}
               alt="Picture of SASE Meeting"

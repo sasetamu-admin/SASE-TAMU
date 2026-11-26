@@ -135,7 +135,7 @@ const Join = () => {
   >
           <Image
             className="w-full rounded-xl"
-            src="/lonestarsquad.jpg"
+            src="/join/lonestar-squad.jpg"
             width={400}
             height={300}
             alt="Picture of SASE Lonestar 2025!"
@@ -219,47 +219,47 @@ const Join = () => {
   className="overflow-x-auto whitespace-nowrap scroll-smooth p-6">
               <div className="flex min-w-max gap-5 px-11">
                 <EventCard
-                src="/NCNC.jpg"
+                src="/join/ncnc.jpg"
                 title="SASE @ NC"
                 description="Our officer board and scholarship recipients are SASE's National Conference, hosted in Atlanta, GA!"
               />
               <EventCard
-                src="/winty.jpg"
+                src="/join/winty.jpg"
                 title="SASE squad social!"
                 description="A fun day out at Century Square with our SASE Squads!"
               />
               <EventCard
-                src="/soccer.jpeg"
+                src="/join/soccer.jpeg"
                 title="Intramural Soccer!"
                 description="SASE's Intramural Soccer Team!"
               />
               <EventCard
-                src="/Halloween.JPG"
+                src="/join/halloween.jpeg"
                 title="SASE Halloween Social!"
                 description="A fun Halloween event!"
               />
               <EventCard
-                src="/marathon_volunteering.jpg"
+                src="/join/marathon-volunteering.jpg"
                 title="Volunteering at the BCS Marathon!"
                 description="SASE volunteers at the BCS Marathon!"
               />
               <EventCard
-                src="/iceskating.jpeg"
+                src="/join/ice-skating.jpeg"
                 title="Ice Skating!"
                 description="SASE ice skating event!"
               />
               <EventCard
-                src="/badminton.jpeg"
+                src="/join/badminton.jpeg"
                 title="Badminton!"
                 description="SASE badminton team!"
               />
               <EventCard
-                src="/concessions.jpeg"
+                src="/join/concessions.jpeg"
                 title="Concessions!"
                 description="SASE Football Concessions!"
               />
               <EventCard
-                src="/lonestarsquad.jpg"
+                src="/join/lonestar-squad.jpg"
                 title="LoneStar Showdown!"
                 description="SASE's largest sporting event!"
               />

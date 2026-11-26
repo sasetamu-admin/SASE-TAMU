@@ -150,7 +150,7 @@ const Home: NextPage = () => {
           <div className="mt-0 self-center px-6">
             <Image
               className="max-h-[24vh] w-full rounded-xl object-cover"
-              src="/LONESTAR.jpg"
+              src="/index/lonestar.jpg"
               width={450}
               height={50}
               alt="Picture of SASE at Lonestar"
