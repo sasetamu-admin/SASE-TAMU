@@ -1,7 +1,7 @@
 import type { EBoardOfficerList, GeneralOfficerList } from "./constants";
 import { EBoardOfficerRoles, GeneralOfficerRoles } from "./constants";
 
-// add /comingsoon.png for placeholder images
+// add /headshots/coming-soon.png for placeholder images
 
 export const EBoardOfficers: EBoardOfficerList = {
   president: {

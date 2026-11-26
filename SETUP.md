@@ -1,5 +1,7 @@
 ## Local setup
 
+(could move to README if necessary)
+
 ### Prerequisites
 
 - macOS, Windows, or Linux.

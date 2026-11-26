@@ -63,8 +63,8 @@ const GetInvolvedSection: React.FC<GetInvolvedSectionProps> = ({
 const GetInvolvedPage: React.FC = () => {
     // Image sets for the two auto-scrolling carousels below.
     // add picutres for the committee and design team in the future!!
-    const committeePictures = ["get-involved/halloween.JPG", "get-involved/halloween1.jpg", "get-involved/banquet.jpg", "get-involved/brasil.jpeg", "get-involved/ban.jpeg"];
-    const designTeamPictures = ["get-involved/Committee_Reveal.png", "get-involved/Design_Reveal.png", "get-involved/recap.png", "get-involved/recapp.png"];
+    const committeePictures = ["get-involved/halloween.Jjpg", "get-involved/halloween1.jpg", "get-involved/banquet1.jpg", "get-involved/brasil.jpeg", "get-involved/banquet.jpeg"];
+    const designTeamPictures = ["get-involved/committee-reveal.png", "get-involved/design-reveal.png", "get-involved/recap.png", "get-involved/recap1.png"];
 
     // Controls the hero section's fade-out-on-scroll effect.
     // Starts fully opaque (1) and linearly fades to fully transparent (0)

@@ -228,9 +228,9 @@ const about = () => {
               Events We Host
             </motion.h1>
             <div className="flex flex-row justify-between items-center">
-              <OverlayCard title = "General Body Meetings" description = {event_description_array[0] ?? ""} image_path="/GE_VERNOVA.JPG"/>
-              <OverlayCard title = "Socials + Workshops" description = {event_description_array[1] ?? ""} image_path="/skating_social.jpeg"/>
-              <OverlayCard title = "Volunteering Events" description = {event_description_array[2] ?? ""} image_path="/marathon_volunteering.jpg"/>
+              <OverlayCard title = "General Body Meetings" description = {event_description_array[0] ?? ""} image_path="/about/ge-vernova-gbm.JPG"/>
+              <OverlayCard title = "Socials + Workshops" description = {event_description_array[1] ?? ""} image_path="/about/skating-social.jpeg"/>
+              <OverlayCard title = "Volunteering Events" description = {event_description_array[2] ?? ""} image_path="/about/pumpkin-volunteering.jpg"/>
               
             </div>
             

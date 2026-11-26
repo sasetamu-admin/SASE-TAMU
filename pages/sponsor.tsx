@@ -54,7 +54,7 @@ const sponsor = () => {
           <div className="self-center pb-5 pl-10 pr-10 md:w-1/2 md:pt-5">
             <Image
               className="rounded-xl"
-              src="/INFO.jpg"
+              src="/sponsor/info.jpg"
               width={1063}
               height={664}
               alt="SASE Fall Informational"
