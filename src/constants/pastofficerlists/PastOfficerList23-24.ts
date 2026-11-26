@@ -4,7 +4,7 @@ import { EBoardOfficerRoles, GeneralOfficerRoles } from "../constants";
 export const PastEBoardOfficers2324: EBoardOfficerList = {
   president: {
     image: {
-      src: "/headshots/23-24/Pres_Victoria.jpg",
+      src: "/our-team/headshots/23-24/Pres_Victoria.jpg",
       width: 256,
       height: 256,
       alt: "Victoria Headshot",
@@ -16,7 +16,7 @@ export const PastEBoardOfficers2324: EBoardOfficerList = {
   },
   evp: {
     image: {
-      src: "/headshots/23-24/EVP_Li.jpg",
+      src: "/our-team/headshots/23-24/EVP_Li.jpg",
       width: 256,
       height: 256,
       alt: "Li Headshot",
@@ -28,7 +28,7 @@ export const PastEBoardOfficers2324: EBoardOfficerList = {
   },
   ivp: {
     image: {
-      src: "/headshots/23-24/IVP_Thea.jpg",
+      src: "/our-team/headshots/23-24/IVP_Thea.jpg",
       width: 256,
       height: 256,
       alt: "Thea Headshot",
@@ -40,7 +40,7 @@ export const PastEBoardOfficers2324: EBoardOfficerList = {
   },
   treasurer: {
     image: {
-      src: "/headshots/23-24/TRES_Emma.jpg",
+      src: "/our-team/headshots/23-24/TRES_Emma.jpg",
       width: 256,
       height: 256,
       alt: "Emma Headshot",
@@ -52,7 +52,7 @@ export const PastEBoardOfficers2324: EBoardOfficerList = {
   },
   secretary: {
     image: {
-      src: "/headshots/23-24/SEC_Roshan.jpg",
+      src: "/our-team/headshots/23-24/SEC_Roshan.jpg",
       width: 256,
       height: 256,
       alt: "Roshan Headshot",
@@ -67,7 +67,7 @@ export const PastEBoardOfficers2324: EBoardOfficerList = {
 export const PastGeneralOfficers2324: GeneralOfficerList = {
   techMarketing: {
     image: {
-      src: "/headshots/23-24/TMD_Jojo.jpg",
+      src: "/our-team/headshots/23-24/TMD_Jojo.jpg",
       width: 256,
       height: 256,
       alt: "Jojo Headshot",
@@ -79,7 +79,7 @@ export const PastGeneralOfficers2324: GeneralOfficerList = {
   },
   social: {
     image: {
-      src: "/headshots/23-24/SOCIAL_Nathan.jpg",
+      src: "/our-team/headshots/23-24/SOCIAL_Nathan.jpg",
       width: 256,
       height: 256,
       alt: "Nathan Headshot",
@@ -91,7 +91,7 @@ export const PastGeneralOfficers2324: GeneralOfficerList = {
   },
   pr: {
     image: {
-      src: "/headshots/23-24/PR_Charisa.jpg",
+      src: "/our-team/headshots/23-24/PR_Charisa.jpg",
       width: 256,
       height: 256,
       alt: "Charisa Headshot",
@@ -103,7 +103,7 @@ export const PastGeneralOfficers2324: GeneralOfficerList = {
   },
   fundraising: {
     image: {
-      src: "/headshots/23-24/FD_Monisha.jpg",
+      src: "/our-team/headshots/23-24/FD_Monisha.jpg",
       width: 256,
       height: 256,
       alt: "Monisha Headshot",
@@ -115,7 +115,7 @@ export const PastGeneralOfficers2324: GeneralOfficerList = {
   },
   logistics: {
     image: {
-      src: "/headshots/23-24/LD_Noah.jpg",
+      src: "/our-team/headshots/23-24/LD_Noah.jpg",
       width: 256,
       height: 256,
       alt: "Noah Headshot",

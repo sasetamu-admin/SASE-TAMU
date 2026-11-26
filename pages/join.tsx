@@ -135,7 +135,7 @@ const Join = () => {
   >
           <Image
             className="w-full rounded-xl"
-            src="/lonestarsquad.jpg"
+            src="/join/lonestar-squad.jpg"
             width={400}
             height={300}
             alt="Picture of SASE Lonestar 2025!"

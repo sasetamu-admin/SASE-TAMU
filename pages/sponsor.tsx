@@ -45,7 +45,7 @@ const sponsor = () => {
               </div>
               <div>Take a look at our current sponsorship package below.</div>
               <button className="mt-5 rounded border border-maroon bg-maroon px-4 py-2 text-paper hover:bg-maroonDark">
-                <Link href="/SASE_TAMU_Corporate_Package.pdf" target="_blank">
+                <Link href="/sponsor/SASE_TAMU_Corporate_Package.pdf" target="_blank">
                   View our Sponsorship Package Here!
                 </Link>
               </button>

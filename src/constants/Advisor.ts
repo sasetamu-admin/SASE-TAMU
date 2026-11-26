@@ -3,7 +3,7 @@ import type {AdvisorList} from "./constants";
 export const Advisors: AdvisorList = {
     pauline: {
         image: {
-            src: "/headshots/advisor.png",
+            src: "/our-team/headshots/advisor.png",
             width: 256,
             height: 256,
             alt: "Pauline Wade Headshot",

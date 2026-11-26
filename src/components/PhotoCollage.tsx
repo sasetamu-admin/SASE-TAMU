@@ -11,21 +11,21 @@ type Photo = {
 
 const photos: Photo[] = [
   {
-    src: "/NC2024.jpeg",
+    src: "/about/NC2024.jpeg",
     alt: "SASE at National Conference 2024",
     position: "right-0 top-0 w-[55%] z-10",
     rotate: 5,
     from: { x: 60, y: -40 },
   },
   {
-    src: "/LONESTAR.jpg",
+    src: "/index/lonestar.jpg",
     alt: "SASE at Lonestar",
     position: "left-0 top-[12%] w-[62%] z-20",
     rotate: -4,
     from: { x: -60, y: 30 },
   },
   {
-    src: "/LANTERN.jpg",
+    src: "/about/LANTERN.jpg",
     alt: "SASE lantern making social",
     position: "right-[6%] bottom-0 w-[48%] z-30",
     rotate: -2,

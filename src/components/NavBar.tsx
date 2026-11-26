@@ -18,7 +18,7 @@ export const NavBar = () => {
                   <span className="self-center">
                     <div className="flex flex-row items-center">
                       <Image
-                        src="/SASE_LOGO.png"
+                        src="/navbar/SASE_LOGO.png"
                         width={150}
                         height={50}
                         className="h-8 w-auto md:h-12"
@@ -26,7 +26,7 @@ export const NavBar = () => {
                       />
                       <div className="ml-2 mr-2 h-8 w-px bg-paper/40 md:ml-4 md:mr-3 md:h-12"></div>
                       <Image
-                        src="/TAMU_LOGO.png"
+                        src="/navbar/TAMU_LOGO.png"
                         width={50}
                         height={50}
                         className="h-8 w-auto md:h-12"
@@ -42,7 +42,7 @@ export const NavBar = () => {
                 aria-label="Open menu"
               >
                 <Image
-                  src="/torii.svg"
+                  src="/navbar/torii.svg"
                   width={32}
                   height={32}
                   className="h-10 w-10 md:h-12 md:w-12"
